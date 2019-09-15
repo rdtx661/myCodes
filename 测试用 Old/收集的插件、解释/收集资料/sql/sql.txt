@@ -1,0 +1,36 @@
+
+使用case when 更新数据时 必须在end前加上 else 字段名 来默认保留不符合条件的字段
+
+https://blog.csdn.net/asdkwq/article/details/77881850 mysql在当前时间的基础上增加时间
+
+UPDATE mytable 
+    SET myfield = CASE id 
+        WHEN 1 THEN 'value'
+        WHEN 2 THEN 'value'
+        WHEN 3 THEN 'value'
+    END
+WHERE id IN (1,2,3)
+
+当你不再需要该表时， 用 drop；当你仍要保留该表，但要删除所有记录时， 用 truncate；当你要删除部分记录时（always with a WHERE clause), 用 delete.
+
+select cast(19.16558 as decimal(9,2))精确到几位 
+select round(123.5); 四舍五入 
+select floor(123.5);取整数部分 
+select ceil(123.5);四舍五入
+
+!= 为空不被查找，需要加上or xx not null
+
+查找结果默认显示 c2表内容
+SELECT * FROM {$prefix}blog_category c1 JOIN {$prefix}blog_category c2 ON c1.id=c2.parent_id 
+
+describe func;查看表结构和字段类型
+
+cmd用mysql添加数据的时候，字段名不加引号
+
+mysql查看建表语句 SHOW CREATE TABLE TEST
+
+group_concat( [distinct] 要连接的字段 [order by 排序字段 asc/desc ] [separator '分隔符'] )
+
+例(整合id、标题 根据类别id)：
+根据类别字段（t1.cid）分组一次查询 使用GROUP_CONCAT获取查找数据的拼接字符串 避免多条sql语句
+$qstr = "SELECT t1.cid,GROUP_CONCAT(id) AS ids, GROUP_CONCAT(title SEPARATOR '@*|*@') AS title FROM (" . implode(" UNION ALL ", $qstr) . ") AS t1 GROUP BY t1.cid;";

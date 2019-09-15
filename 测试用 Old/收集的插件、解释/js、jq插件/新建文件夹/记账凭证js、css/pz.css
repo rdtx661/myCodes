@@ -1,0 +1,637 @@
+.editcontainer{
+    position: absolute;
+    z-index: 999;
+    top: 300px;
+    left: 400px;
+    height: 578px;
+    width: 1050px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.editcontainer .edittitle{
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+.editcontainer .tuichu{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 15px;
+    height: 15px;
+    background:url('/v/p/g/img/saas/background.png') no-repeat -526px -252px;
+}
+.editcontainer .tuichu:hover{
+    cursor: pointer;
+    background:url('/v/p/g/img/saas/background.png') no-repeat -526px -324px;
+}
+/*=========================================================*/
+.vcmain{
+    background-color:#fff;
+}
+.vcmainhead{
+    height: 40px;
+    width: 85%;
+    margin:0px auto;
+    margin-top: 10px;
+}
+.vcmainhead>div{
+    margin-left: 20px;
+}
+.vcmainhead .vch_01{
+    width: 150px;
+    float: left;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+.vcmainhead .vch_01 .vch_01_show{
+    width:120px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+.vch_01 .vch_01_show input{
+    text-indent: 0px;
+    text-align: center;
+}
+.vcmainhead .vch_msg_hd{
+    position: absolute;
+    z-index: 50;
+    width: 110px;
+    height: 25px;
+    line-height: 25px;
+    text-indent: 10px;
+    text-align: left;
+    top: 0px;
+    right: -105px;
+    border-radius:5px;
+    border:1px solid rgba(200,200,200,1);
+    border-left: none;
+    box-shadow:2px 4px 8px rgba(30,30,30,0.4); 
+    background: rgba(245,245,245,1);
+    display: none;
+    opacity: 0;
+}
+.vcmainhead .vch_msg_hd .hd_over{
+    position: absolute;
+    line-height: 15px;
+    text-indent: 0px;
+    width: 15px;
+    height: 15px;
+    left:-16px;
+    top:1px;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select:none;
+    user-select:none;
+}
+.vcmainhead>.datewarp{
+    float:left;
+    height: 30px;
+    width: 200px;
+    position: relative;
+}
+.vcmainhead .vch_03{
+    width: 200px;
+    float: right;
+    text-align: right;
+    position: relative;
+}
+.vcmainhead .vch_03 .chakan{
+    color: #96D309;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.vcmainhead .vch_03 .chakan:hover{
+    text-decoration:underline;
+}
+.vcmainhead>div input{
+    border-radius: 3px;
+    text-indent: 10px;
+    margin:0px 5px;
+    border:1px solid rgba(170,170,170,1);
+    width: 60px;
+    outline:none;
+    height: 30px;
+}
+.vcmainhead>div input:focus{
+    border:1px solid rgba(3,160,250,0.6);
+}
+.vcmain .common_list{
+    border:1px solid rgba(170,170,170,0.8);
+    width: 899px;
+    margin:0px auto;
+}
+.common_list>.maincl_warp{
+    height:240px;
+    width: 950px;
+    overflow:auto;
+    overflow-x:hidden;
+    padding:1px;
+    padding-top: 0px;
+    padding-left: 30px;
+    margin-left: -30px;
+    position: relative;
+    z-index: 5;
+}
+.common_list>.cl_divs_sum{
+    border-top:1px solid rgba(170,170,170,0.8);
+    position: relative;
+}
+.common_list>.maincl_warp>div{
+    height: 60px;
+}
+.common_list>.cl_headdiv{
+    height: 60px;
+}
+.common_list>.maincl_warp>div ul{
+    height: 60px;
+} 
+.common_list li{
+    float: left;
+    border-right:1px solid rgba(170,170,170,0.5);
+    border-bottom:1px solid rgba(170,170,170,0.8);
+}
+.common_list>li:last-child{
+    border-left: none;
+} 
+.cl_headdiv>ul>li{
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    font-size: 14px;
+}
+.cl_headiv_ul .vcsummary{
+    width:200px;
+    position: relative;
+}
+.cl_headiv_ul .nvproj{
+    width:360px;
+}
+.cl_headiv_ul .vcmoneytitle{
+    width:168px;
+    height: 60px;
+    border-right:1px solid rgba(200,200,200,1);
+}
+.cl_headiv_ul .vcmoneytitle .lineblue{
+    border-right:1px solid rgba(3,160,250,0.4);
+}
+.cl_headiv_ul .vcmoneytitle .linered{
+    border-right:1px solid rgba(250,30,50,0.4);
+}
+.cl_headiv_ul .vcmoneytitle:last-child{
+    border-right:none; 
+}
+.cl_headiv_ul .vcmoneytitle div{
+    height: 30px;
+    line-height: 30px;
+    border-bottom:1px solid rgba(200,200,200,0.6);
+}
+.cl_headiv_ul .vcmoneytitle ul li{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: none;
+    font-weight: normal;
+    font-size:12px;
+    width: 14px;
+}
+.cl_headiv_ul .vcmoneytitle ul li:last-child{
+    border-right:none;
+}
+.common_list .cl_divs{
+    width: 899px;
+    height: 60px;
+    position: relative;
+}
+.common_list .cl_divs:hover .ulovericon{
+    display: block;
+}
+.common_list .cl_divs .ulovericon{
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 60px;
+}
+.common_list .cl_divs .ulovericon:hover{
+    cursor: pointer;
+}
+.common_list .cl_divs .ulovericon span{
+    width: 16px;
+    height: 16px;
+}
+.common_list .cl_divs:hover .ulovericon{
+    display: block;
+}
+.common_list .cl_divs>.addulicon{
+    left: -25px;    
+}
+.common_list .cl_divs>.addulicon span{
+    position: absolute;
+    display: block;
+    right: 5px;
+    top: 20px;
+    background: url('/v/p/g/img/saas/add-subject.png') no-repeat;
+    background-size: 15px 15px;
+}
+.common_list .cl_divs>.addulicon:hover span{
+    background: url('/v/p/g/img/saas/add-subject-active.png') no-repeat;
+    background-size: 15px 15px;
+}
+.common_list .cl_divs>.delulicon{
+    right: -25px;
+}
+.common_list .cl_divs>.delulicon span{
+    position: absolute;
+    display: block;
+    left: 5px;
+    top: 20px;
+    background: url('/v/p/g/img/saas/del-subject.png') no-repeat;
+    background-size: 15px 15px;
+}
+.common_list .cl_divs>.delulicon:hover span{
+    background: url('/v/p/g/img/saas/del-subject-hover.png') no-repeat;
+    background-size: 15px 15px;
+}
+.cl_divs .cl_divs_ul{
+    height: 60px;
+    position: absolute;
+    top: 0px;
+}
+.cl_divs .cl_divs_ul:hover{
+    background-color: rgba(230,230,230,0.6);
+}
+.cl_divs_sum .cl_divs_ul:hover{
+    background-color: rgba(255,255,255,0);
+}
+.cl_divs_sum .cl_divs_ul .vcmoney .fuzhai li{
+    color: red;
+}
+.cl_divs_ul .vcmoney .fuzhi li{
+    color: red;
+}
+.cl_divs .cl_divs_ul_hv{
+    background-color: rgba(230,230,230,0.6);
+}
+.cl_divs .cl_divs_ul>li{
+    font-weight: bold;
+    text-align: center;
+    height: 100%;
+    line-height: 60px;
+    font-size: 13px;
+    position: relative;
+}
+.cl_divs_sum li{
+    border-bottom: none;
+}
+.cl_divs .cl_divs_ul .vcsummary{
+    width:200px;
+    line-height: 20px;
+    text-align: left;
+    text-indent: 5px;
+}
+.cl_divs_sum .cl_divs_ul .vcsummary{
+    width: 561px;
+}
+.cl_divs .cl_divs_ul li .liover{
+    position: absolute;
+    z-index: 5;
+    height: 60px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+.cl_divs .cl_divs_ul li .liover .textmore{
+    position: absolute;
+    z-index: 4;
+    height: 56px;
+    outline: none;
+    border:none;
+    left: 0px;
+    top: 0px;
+}
+.cl_divs .cl_divs_ul li .liover .moneynum{
+    position: absolute;
+    z-index: 5;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 0px;
+    color: rgba(130,130,130,1);
+}
+.cl_divs .cl_divs_ul li .liover .moneynum>.num{
+    text-decoration:underline;
+}
+.cl_divs .cl_divs_ul li .liover .moneynum>.num:hover{
+    color: #3EC8DD;
+    cursor: pointer;
+}
+.cl_divs .cl_divs_ul li .projselect_warp .textmore{
+    width: 356px;
+}
+.cl_divs .cl_divs_ul li .summary_warp .textmore{
+    width: 196px;
+} 
+.cl_divs .cl_divs_ul li .liover .textmore:focus{
+    border:2px solid rgba(3,160,250,0.6);
+}
+.projselect{
+    position: absolute;
+    display: none;
+    z-index:9999;
+    top: 0px;
+    left: 0px;
+    height: 150px;
+    width:360px;
+    background-color: #fff;
+    border:1px solid #E6E6E6;
+}
+.normalproj{
+    height:150px;
+}
+.errorproj{
+    height: 65px;    
+}
+ .projselect .nomate{
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    text-indent: 5px;
+    color: rgba(100,100,100,1);
+    font-size: 12px;
+    font-weight: normal;
+}
+ .normalproj .nomate{
+    display: none;
+}
+ .errorproj .nomate{
+    display: block;
+}
+.projselect .addrow{
+    height: 30px;
+    line-height: 30px;
+    color: #52CCDC;
+    border-top: 1px solid rgba(230,230,230,1);
+    text-align: center;
+    background-color: #fff;
+}
+ .projselect .addrow>span{
+    display: inline-block;
+    margin:0px auto;
+    height: 30px;
+    line-height: 30px;
+}
+ .projselect .addrow>span span{
+    float: left;
+    font-weight: normal;
+}
+ .projselect .addrow>span .addicon{
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: 7px;
+    background: url('/v/p/g/img/saas/background.png') no-repeat -228px -387px;
+    margin-right: 5px;
+}
+.projselect:hover{
+    cursor: pointer;
+}
+ .projselect .selects{
+    height: 120px;
+    overflow-y:scroll;
+}
+.errorproj .selects{
+   display: none; 
+}
+.projselect .selects>div{
+    height: 30px;
+    line-height: 30px;
+    text-indent: 5px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: normal;
+    color: rgba(60,60,60,1);
+}
+.projselect .selects>div:hover{
+    background-color: #EFFCEB;
+}
+.cl_divs .cl_divs_ul .nvproj{
+    width:360px;
+}
+.cl_divs .cl_divs_ul .nvproj>.defwarp{
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    display: none;
+}
+.cl_divs .cl_divs_ul .nvproj>.lioverdef{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.cl_divs .cl_divs_ul .vcsummary>.lioverdef{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.cl_divs .cl_divs_ul .vcmoney>.lioverdef{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.cl_divs .cl_divs_ul .nvproj>.defwarp>div{
+    height: 30px;
+    line-height: 30px;    
+    left: 0px;
+    text-align: left;
+    text-indent: 5px;
+    font-weight: bold;
+    font-size: 12px;
+}
+.cl_divs .cl_divs_ul .nvproj>.defwarp>.typename{
+    position: absolute;
+    top: 0px;
+    color: rgba(60,60,60,1);
+}
+.cl_divs .cl_divs_ul .nvproj>.defwarp>.moneynum{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: 0px;
+    color: rgba(130,130,130,1);
+}
+.cl_divs .cl_divs_ul .nvproj>.defwarp>.moneynum>.num{
+    text-decoration:underline;
+}
+.cl_divs .cl_divs_ul .nvproj>.defwarp>.moneynum>.num:hover{
+    color: #3EC8DD;
+    cursor: pointer;
+}
+.cl_divs .cl_divs_ul .vcmoney{
+    width:168px;
+    height: 60px;   
+    position: relative;
+    border-right:1px solid rgba(200,200,200,1);
+}
+.cl_divs_ul .vcmoney ul{
+    height: 60px;
+}
+.cl_divs_ul .vcmoney ul li{
+    border-bottom: none;
+    font-weight: bold;
+    text-align: center;
+    font-size:20px;
+    color: #000;
+    width: 14px;
+    height: 60px;
+    font-family: 宋体;
+}
+.cl_divs_ul .vcmoney ul li:last-child{
+    border-right:none;
+}
+.cl_divs_ul .vcmoney .lineblue{
+    border-right:1px solid rgba(3,160,250,0.4);
+}
+.cl_divs_ul .vcmoney .linered{
+    border-right:1px solid rgba(250,30,50,0.4);
+}
+.vcsummary .vcsummary_heji{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    text-indent: 20px;
+}
+.vcmoney .getmoney{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.vcmoney .getmoney input{
+    width: 168px;
+    height: 60px;
+    font-size: 22px;
+    font-family: 宋体;
+    text-align: right;
+    border:none;
+    outline: none;
+    opacity: 0;
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    font-weight: bold;
+}
+.vcmoney .getmoney input:focus{
+    border:2px solid rgba(3,160,250,0.6);
+    width: 164px;
+    height: 56px;
+}
+.cl_divs_ul .vcmoney:last-child{
+    border-right:none;
+}
+.btncontainer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 70px;
+}
+.btncontainer div{
+    width: 300px;
+    height: 70px;
+    margin:0px auto;
+}
+.btncontainer div span{
+    display: block;
+    width: 120px;
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 5px;
+    font-size:14px;
+}
+.btncontainer div .quxiao{
+    border:1px solid #86BF02;
+    color:#93D200; 
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.btncontainer div .baocun{
+    float: right;
+    background-color: #93D201;
+    color: #fff;
+}
+.btncontainer div span:hover{
+    background-color: #86BF02;
+    color: #fff;
+    cursor: pointer;
+}
+.cl_footdiv{
+    width: 85%;
+    height: 40px;
+    line-height: 40px;
+    margin:0px auto;
+}
+.cl_footdiv .customer{
+    color:rgba(200,200,200,1);
+    font-size:12px;
+    width: 200px;
+    float: left;
+    position: relative;
+}
+.cl_footdiv .customer .md_name{
+    position: relative;
+}
+.cl_footdiv .customer .md_name:hover{
+    cursor: pointer;
+}
+.cl_footdiv .customer .md_name:hover .editicon{
+     display: block; 
+}
+.cl_footdiv .customer .md_name .editicon{
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 15px;
+    right: -20px;
+    top: 0px;
+}
+.cl_footdiv .customer .md_name .focusicon{
+    display: block;
+}
+.cl_footdiv .customer .md_name .editicon:hover{
+    cursor: pointer;
+}
+.cl_footdiv .customer .md_name .editicon:hover span{
+    cursor: pointer;
+    background: url('/v/p/g/img/saas/edit-hover.png') no-repeat;
+}
+.cl_footdiv .customer .md_name .editicon span{
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 0px;
+    top: 0px;
+    background: url('/v/p/g/img/saas/edit.png') no-repeat;
+}
+.defbtn>div{
+    background-color:#93D200;
+}

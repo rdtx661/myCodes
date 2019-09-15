@@ -1,0 +1,4 @@
+
+	/*var oldTime = (new Date("2011/11/11 20:10:10")).getTime(); //得到毫秒数
+	var newTime = new Date(oldTime); //就得到普通的时间了*/
+	// date_warp part_warp

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>图片放大</title>
+  <script type="text/javascript" src="../jquery.js"></script>
+  <style>
+    .bigOne{
+      display: none;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="warpDiv" style="position:relative;width: 200px;height: 200px;margin:100px auto;">
+      <div class="overDiv" style="position: absolute;top:0px;left:0px;width:200px;height:200px;z-index: 10;"></div>
+      <div class="smallOne" style="position:relative;z-index:1;width: 200px;height: 200px;margin-bottom: 100px;overflow: hidden;">
+          <img style="width:100%;height: 100%;" src="meinv.jpg" alt="图片">
+          <div class="bigOne" style="position:absolute;;top:0px;left:0px;border:2px solid rgba(200,200,200,0.8);border-radius: 100px;position:absolute;width: 100px;height: 100px;overflow: hidden;">
+            <img style="position:absolute;top:0px;left:0px;width: 510px;height: 450px;" src="meinv.jpg" alt="图片">
+          </div>
+      </div>
+    </div>
+  </body>
+  <script>
+      $(function(){
+          $(".overDiv").mousemove(function(event) {
+             $(".bigOne").css("display","block");
+             $(".bigOne img").width($(this).width()*2);
+             $(".bigOne img").height($(this).height()*2);
+              var bigCW=$(".bigOne").width();
+              var bigCH=$(".bigOne").height();
+              var getX=event.offsetX;
+              var getY=event.offsetY;
+              $(".bigOne").css({"top":getY-bigCH/2,"left":getX-bigCW/2});
+              //获取小图中鼠标的宽高比 在大图中显示 
+              var sW=$(".smallOne>img").width();
+              var sH=$(".smallOne>img").height();
+              var wP=getX/sW;
+              var hP=getY/sH;
+              var bigIW=$(".bigOne img").width();
+              var bigIH=$(".bigOne img").height();
+              var bSetX=wP*bigIW,bSetY=hP*bigIH;
+              $(".bigOne img").css({"top":-bSetY+bigCH/2,"left":-bSetX+bigCW/2});
+
+          });
+          $(".smallOne").mouseleave(function(event) {
+              $(".bigOne").css("display","none");
+          })
+      })
+  </script>
+</html>

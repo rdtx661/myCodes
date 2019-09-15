@@ -1,0 +1,11 @@
+$('.mod-form-hd').each(function(index, el) {
+                if ($(document).scrollTop() < $(this).offset().top-20) {
+                    if(index==0){
+                        return false;
+                    }
+                    var activeId = $(".mod-form-hd").eq(index-1).attr('id');
+                    $('.menu.maoLink .menuContains a').removeClass('active');
+                    $('.menu.maoLink .menuContains a[href="#'+activeId+'"]').addClass('active');
+                    return false;
+                }
+            });

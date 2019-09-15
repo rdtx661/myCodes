@@ -1,0 +1,280 @@
+return 作为函数返回值或结束语句,是返回的数据的指针,也就是数据存放的地址,而接口需要返回的是真实的数据,因为前后端使用的是不同的内存系统,所以无法根据地址找到相应的数据,而echo print sprinf等这些能够在浏览器中打印数据的函数都是基于http协议传输的真是数据,所以在前端是可以获取和判断的.
+
+框架里面返回数据用的return，但是原生的php返回数据用echo
+--------------------- 
+作者：初心向上up 
+来源：CSDN 
+原文：https://blog.csdn.net/weixin_42809940/article/details/81567110 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+win10远程出现内部错误 运行cmd 用管理员身份运行 执行 netsh winsock reset 然后重启
+
+内联元素之间会有空隙，font-size取消
+
+内联配合不换行可超出屏幕
+
+transition  css3动态效果
+
+padding也作为容器高度一部分
+
+布局出现奇怪问题可能是flex布局造成
+
+ie css渲染可以避免半透明等兼容
+
+ie8支持半透明rgba
+360不支持rgba
+
+jqjs互相转换：
+jq--js var jsVar=$(xxx)[0];(jq对象变量是数组)
+js--jq var jqVar=$(dom);(把dom放入‘$()’制造工厂)
+
+
+利用css的继承属性提高样式的灵活性
+
+阻止360ie9的浏览器自带图片悬浮显示功能菜单，需要在外部容器设置背景颜色 然后设置透明度 opacity: 0;
+
+window7 windows+L键进入锁屏
+
+qq图片打开默认背景色
+
+行动是治愈恐惧的良药,而犹豫拖延将不断滋养恐惧。
+
+增强页面输入框静态禁用可用性 失焦判断（失焦聚焦禁用一次）
+
+html a标签打开方式默认_self
+
+js加载都是从前往后的，但是一样的函数名，前面的函数会被后面的覆盖掉，所以，调用函数a的时候，永远都是去执行第二个函数。
+
+权重，优先执行
+margin-left:20px!important;
+placeholder替代符
+<input type="text" placeholder="" value="">
+	
+	$('.hd_showtable .hdtablewarp .date_info_warp tbody tr td .ctnContainer').map(function() {
+		//文字宽度和容器宽度	
+		    if (this.offsetWidth < this.scrollWidth){
+			    	$(this).addClass('isoverspan');
+			    }
+		});
+
+
+	text-overflow:ellipsis;
+	white-space: nowrap; 
+	overflow:hidden;
+
+去掉select的原生css
+ appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+/*避免inline||inline-block元素影响位置 给互相影响的元素添加*/
+vertical-align:top;
+
+根据ie版本判断调用jquery版本
+ <!--[if lt IE 9]>  
+        <script src={{ URL::asset('js/jquery.js') }}></script>  
+      <![endif]-->  
+      <!--[if gte IE 9]><!-->  
+      <!--<![endif]--> 
+
+php转换数字：intval
+
+href后面的url加/是绝对定位链接 不加是相对当前页面的链接
+
+判断是否是ie8以下
+// if($.support.leadingWhitespace==false){
+		// 	// $.support.leadingWhitespace ie特有属性 其他返回undefined
+		// 	var ofl=$('.headlist_select').offset().left;
+		// 	var ofl2=$(this).parents('li').offset().left;
+		// 	$(this).parents('li').find('.hddiv').css('left',-(ofl2-ofl)+'px');
+		// }else{
+		// 	$(this).parents('li').css('position','static');
+		// }
+文字竖直排列
+writing-mode:tb-rl;
+
+
+//各大浏览器兼容前缀
+Chrome(谷歌浏览器) Safari(苹果浏览器) ：WebKit内核   -webkit-
+ Firefox(火狐浏览器) ：Gecko内核       -moz-
+ IE(IE浏览器) ：          Trident内核           -ms-
+ Opera(欧朋浏览器) ：Presto内核          -o-
+
+iframe标签获取引用内容高度
+$('.content_docs_iframe iframe').load(function(){
+		var ifHeight = $('.content_docs_iframe iframe').contents().find("body").height();
+		$('.content_docs_iframe iframe').css('height', ifHeight);
+		$(".open_zm345_devedoc .zm345_devedoc_content .fixedLoad").css("display","none");
+	})
+
+锚链接地址，如果要fixed定位，先在原位上加一个fixed定位元素前的宽高相同的元素以免破坏文档的高度，
+导致锚链接不准确
+
+
+.cus_serv_list .showMember .tableWarp::-webkit-scrollbar {
+ 	width: 10px;
+}
+.cus_serv_list .showMember .tableWarp::-webkit-scrollbar-track { 
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	/*border-radius: 10px;*/
+}
+.cus_serv_list .showMember .tableWarp::-webkit-scrollbar-thumb { 
+	/*border-radius: 10px; */
+	background: rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+js内导入js
+	    var oHead = document.getElementsByTagName('HEAD').item(0);
+		    var oScript= document.createElement("script");
+				oScript.type = "text/javascript";
+			// 获取活动账套，获取该账套所属会计制度，根据制度引入js
+			if(getzd_ID=='2007qiye'){
+				oScript.src="/v/p/p/admin/enterpr/app/finjz/a/shezhi/__LIST/kemuqichu/assets/js/kmsubjecthelp_2007qiye.js";
+			}else if(getzd_ID=='2013xiaoqi'){
+				oScript.src="/v/p/p/admin/enterpr/app/finjz/a/shezhi/__LIST/kemuqichu/assets/js/kmsubjecthelp_2013xiaoqi.js";
+			}else if(getzd_ID=='minjianfei'){
+				oScript.src="/v/p/p/admin/enterpr/app/finjz/a/shezhi/__LIST/kemuqichu/assets/js/kmsubjecthelp_minjianfei.js";
+			}
+			oHead.appendChild(oScript);
+
+
+确定页面只有一个单独的内容块，类名基本不重复时，直接获取类名，不用this
+
+注释不要写太详细，拖时间，能省略直接省略
+
+$.post(url_sendCode, {reg_iden: regIden}, null, "json").fail(function(xhr){
+}).done(function(){
+   //成功执行内容
+
+		
+})
+
+	var ajax =$.ajax({
+		type:"post",
+		url:'/admin/enterpr/app/finjz/apireq',
+		data:{"_cmd": "get_kmUser", "data": [getztId,jilu]},
+		dataType:'json'
+		});
+	ajax.fail(function(xhr){
+		
+	});
+	ajax.done(function(data){
+	    if(data.status === 'ok'){
+	    
+		}else{
+			
+	    }
+	});
+
+
+
+
+这个例子里两者都可，但是更推荐用setTimeout，举个简单的例子；
+
+第一种写法：
+
+funciton xxx(){
+//函数代码，此处执行时间约20毫秒
+setTimeout(xxx,10)
+}
+第二种写法：
+
+funciton xxx(){
+//函数代码，此处执行时间约20毫秒
+}
+setInterval(xxx,10)
+第一种写法中，只有执行完20ms的代码后，再等10ms才会开始下一个循环；
+
+第二种写法中，无论有没有执行完20ms的代码，10ms后都会开始下一个循环
+
+
+
+flex自动铺满一格宽度
+
+
+
+获取页面等级
+
+   // 获取页面等级
+   function Page_Path(level){ 
+        var strUrl=window.location.href;
+        var arrUrl=strUrl.split("/");
+        var strPage=arrUrl[arrUrl.length-level];
+        var cutNum=0;
+        if(location.href.substr(0,5)=='https'){
+            cutNum=8;
+        }else{
+            cutNum=7;
+        }
+        var filePath = location.href.substring(cutNum, location.href.indexOf(strPage));
+        var r = /%20/g;
+        filePath = filePath.replace(r," ");
+        return filePath;
+    }
+
+隐式转换，都遵循
+对象->字符串->数字  
+布尔值-> 数字 
+一般是左边的先转换与右边的对比，对不上，右边的在转换一遍，做最终对比
+https://www.cnblogs.com/chenmeng0818/p/5954215.html
+
+[HTML]解决textarea光标初始位置没有在最左上角的问题 <textarea></textarea>之间不能有空格
+
+
+empty伪类使用 选择内容为空的元素 再使用after或before 在css中设置content达到placeholder的效果（转换成字符 使用站长工具http://tool.chinaz.com/Tools/Unicode.aspx）
+
+div模拟input 
+<div class="talkStart" contenteditable="true" style="outline: none;height:;">
+						在此输入文本或者粘贴QQ截图
+					</div>
+
+box-showdow 可设置内部阴影 inset
+
+mouseover和mouseenter的区别:
+当绑定事件的元素里面有子元素的时候，鼠标经过绑定mouseover的当前元素以及它里面的子元素的时候，都会触发，而经过绑定mouseenter的元素时，只会在鼠标刚进入的时候触发，当进入其子元素的时候，是不会再触发的了
+
+点击网页其它元素隐藏该元素（排除类）
+ $("body *").click(function(event){
+	//parents里是要隐藏的类
+        if($(event.target).parents("").length<=0){
+		//操作
+        }
+   });
+
+php界定符保存、输出html格式内容 
+<<<XX
+XX;（结尾必须在一行顶头，XX是自定义名称）
+
+图片垂直居中调试
+.off-online-note div{
+    /*0边距*/
+    /*font-size: 0px;*/
+    line-height: 0px;
+    height: 26px;
+    padding:0px;
+    vertical-align: middle;
+}
+.off-online-note div img{
+    height: 16px;
+    width: 16px;
+    margin-top:4px;
+}
+.off-online-note div span{
+    line-height: 26px;
+    vertical-align: top;
+}
+
+
+.element {
+    position: absolute; 
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%, -50%); /* 50%为自身尺寸的一半 */
+    -webkit-transform: translate(-50%, -50%);
+}
+
+
+sublime 快捷键 https://www.cnblogs.com/wangjunfei/p/7658523.html
+
+php发送电子邮件 http://www.w3school.com.cn/php/php_mail.asp
+
+autocomplete="off" 关闭自动填充

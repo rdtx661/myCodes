@@ -1,0 +1,32 @@
+a:hover{
+	border:1px solid red;
+}
+:hover a{
+	border:1px solid green;
+}
+@font-face
+{
+	font-family: myFirstFont;
+	src: url('ygyxsziti2.0.ttf') /* IE9+ */
+}
+@font-face
+{
+	font-family: myFirstFont2;
+	src: url('gangbi.ttf') /* IE9+ */
+}
+div{
+	font-family: myFirstFont2;
+}
+a{
+	font-family: myFirstFont;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	transition: width 0.2s;
+	background-color: red;
+}
+a:hover{
+	width: 200px;
+}
+
+/*效果开始于指定的 CSS 属性改变值时*/

@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>初始测试模板</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="test.css">
+		<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript" src="vue.js"></script>
+    <style>         
+div{border: 1px solid green;}        
+p{margin: 0;}        
+img,span{
+display: inline-block;	
+}
+img{width: 30px;}        
+img.sub,span.sub {vertical-align:sub}        
+img.super,span.super {vertical-align:super}        
+img.top,span.top {vertical-align:top}        
+img.text_top,span.text_top {vertical-align:text-top}        
+img.middle,span.middle {vertical-align:middle;}        
+img.text_bottom,span.text_bottom {vertical-align:text-bottom}        
+img.bottom,span.bottom {vertical-align:bottom}        
+img.number,span.number {vertical-align:-30px;}        
+span{border: 1px solid red;height: 30px;width: 30px;}    
+</style>
+
+
+
+	</head>
+	<body>
+		 <div><p>这是一幅<img border="0" src="./images/one.jpg" />默认值 位于段落中的图像。</p></div>    
+		 <div><p>这是一幅<img class="sub" border="0" src="./images/one.jpg" />sub垂直对齐文本的下标。</p></div>    
+		 <div><p>这是一幅<img class="super" border="0" src="./images/one.jpg" />super垂直对齐文本的上标。</p></div>
+		 <div><p>这是一幅<img class="top" border="0" src="./images/one.jpg" />top把元素的顶端与行中最高元素(这里为p)的顶端对齐。</p></div>    
+		 <div><p>这是一幅<img class="text_top" border="0" src="./images/one.jpg" />text-top把元素的顶端与父元素字体的顶端对齐。</p></div>    
+		 <div><p>这是一幅<img class="middle" border="0" src="./images/one.jpg" />middle把此元素放置在父元素的中部。</p></div>    
+		 <div><p>这是一幅<img class="text_bottom" border="0" src="./images/one.jpg" />text-bottom把元素的底端与父元素字体的底端对齐。</p></div>    
+		 <div><p>这是一幅<img class="bottom" border="0" src="./images/one.jpg" />bottom把元素的顶端与行中最低的元素(这里为p)的底端对齐。</p></div>    
+		 <div><p>这是一幅<img class="number" border="0" src="./images/one.jpg" />length自定义距离。</p></div>
+=================================================================================================================================================
+		  <div><p>这是一幅<span>111</span>默认值 位于段落中的图像。</p></div>    
+		 <div><p>这是一幅<span class="sub" ></span>sub垂直对齐文本的下标。</p></div>    
+		 <div><p>这是一幅<span class="super"></span>super垂直对齐文本的上标。</p></div>
+		 <div><p>这是一幅<span class="top"></span>top把元素的顶端与行中最高元素(这里为p)的顶端对齐。</p></div>    
+		 <div><p>这是一幅<span class="text_top"></span>text-top把元素的顶端与父元素字体的顶端对齐。</p></div>    
+		 <div><p>这是一幅<span class="middle"></span>middle把此元素放置在父元素的中部。</p></div>    
+		 <div><p>这是一幅<span class="text_bottom"></span>text-bottom把元素的底端与父元素字体的底端对齐。</p></div>    
+		 <div><p>这是一幅<span class="bottom"></span>bottom把元素的顶端与行中最低的元素(这里为p)的底端对齐。</p></div>    
+		 <div><p>这是一幅<span class="number"></span>length自定义距离。</p></div>
+	</body>
+</html>

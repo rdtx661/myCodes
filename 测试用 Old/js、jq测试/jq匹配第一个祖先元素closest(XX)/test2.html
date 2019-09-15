@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>初始测试模板</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="test.css">
+		<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript" src="vue.js"></script>
+	</head>
+	<body>
+		<li class="parentLi">
+			<div>
+				<div>
+					<div>
+						<div class="childDiv"></div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<script type="text/javascript">
+			alert($(".childDiv").closest("li").attr("class"));
+		</script>
+	</body>
+</html>

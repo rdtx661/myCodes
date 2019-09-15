@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="vue.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="" type="text/css">
+	<style>
+		#inputid{
+			
+		}
+	</style>
+</head>
+<body>
+	<input type="button" text="1111">
+	<div id="vueApp">{{ msg }}</div>
+	<script>
+		
+		var msgShow= new Vue({
+			el:'#vueApp',
+			data:{
+				msg:'123'
+			}
+		});
+	</script>
+</body>
+</html>

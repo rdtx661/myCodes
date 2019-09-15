@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>jquery ajax</title>
+  <script type="text/javascript" src="../jquery.js"></script>
+<style>
+	span{
+		border:1px solid red;
+	}
+</style>
+</head>
+<body>
+<form action="">
+  <label>用户名：</label><span id="check_username">检测</span>
+  <input type="text" id="t_username" placeholder="请输入"/>
+  <hr/>
+  <label>邮箱：</label><span id="check_email">检测</span>
+  <input type="text" id="t_email" placeholder="请输入"/>
+  <hr/>
+  <label>手机：</label><span id="check_phone">检测</span>
+  <input type="text" id="t_phone" placeholder="请输入"/>
+  <hr/>
+</form>
+</body>
+<script>
+  $(function () {
+    // 用户名
+    $("#check_username").click(function(){
+      var str = $("#t_username").val();
+      var ret = /^[a-zA-Z][a-zA-Z0-9_]{5,20}$/;
+      if(ret.test(str)){
+        alert('ok');
+      }else{
+        alert('wrong');
+      }
+    });
+    // 邮件
+    $("#check_email").click(function(){
+      var str = $("#t_email").val();
+      var ret = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
+      if(ret.test(str)){
+        alert('ok');
+      }else{
+        alert('wrong');
+      }
+    });
+    // 手机
+    $("#check_phone").click(function(){
+      var str = $("#t_phone").val();
+      var ret = /^[\d]{5,20}$/;
+      if(ret.test(str)){
+        alert('ok');
+      }else{
+        alert('wrong');
+      }
+    });
+  });
+</script>
+</html>

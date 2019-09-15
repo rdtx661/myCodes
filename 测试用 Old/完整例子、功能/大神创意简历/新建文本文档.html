@@ -1,0 +1,201 @@
+<html><head><meta charset="utf-8"><title>resume-a-resume</title><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><link href="/animating-resume/public/static/css/app.121ce650a966130fb0f2ffacb130b3de.css" rel="stylesheet"></head><body><div data-v-288975d1="" id="app"><div data-v-2ca90776="" data-v-288975d1="" class="styleEditor"><div data-v-2ca90776="" class="code"><style>/*
+* Inspired by http://strml.net/
+* 大家好，我是方方
+* 二月了，好多公司都在招聘，你是不是也在准备简历呀。
+* 说做就做，我也来写一份简历！
+*/
+
+/* 首先给所有元素加上过渡效果 */
+* {
+  transition: all .3s;
+}
+/* 白色背景太单调了，我们来点背景 */
+html {
+  color: rgb(222,222,222); background: rgb(0,43,54);
+}
+/* 文字离边框太近了 */
+.styleEditor {
+  padding: .5em;
+  border: 1px solid;
+  margin: .5em;
+  overflow: auto;
+  width: 45vw; height: 90vh;
+}
+/* 代码高亮 */
+.token.selector{ color: rgb(133,153,0); }
+.token.property{ color: rgb(187,137,0); }
+.token.punctuation{ color: yellow; }
+.token.function{ color: rgb(42,161,152); }
+
+/* 加点 3D 效果呗 */
+html{
+  perspective: 1000px;
+}
+.styleEditor {
+  position: fixed; left: 0; top: 0;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transform: rotateY(10deg) translateZ(-100px) ;
+          transform: rotateY(10deg) translateZ(-100px) ;
+}
+
+/* 接下来我给自己准备一个编辑器 */
+.resumeEditor{
+  position: fixed; right: 0; top: 0;
+  padding: .5em;  margin: .5em;
+  width: 48vw; height: 90vh;
+  border: 1px solid;
+  background: white; color: #222;
+  overflow: auto;
+}
+/* 好了，我开始写简历了 */
+
+
+
+/* 这个简历好像差点什么
+ * 对了，这是 Markdown 格式的，我需要变成对 HR 更友好的格式
+ * 简单，用开源工具翻译成 HTML 就行了
+ */
+
+/* 再对 HTML 加点样式 */
+.resumeEditor{
+  padding: 2em;
+}
+.resumeEditor h2{
+  display: inline-block;
+  border-bottom: 1px solid;
+  margin: 1em 0 .5em;
+}
+.resumeEditor ul,.resumeEditor ol{
+  list-style: none;
+}
+.resumeEditor ul> li::before{
+  content: '•';
+  margin-right: .5em;
+}
+.resumeEditor ol {
+  counter-reset: section;
+}
+.resumeEditor ol li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  margin-right: .5em;
+}
+.resumeEditor blockquote {
+  margin: 1em;
+  padding: .5em;
+  background: #ddd;
+}
+</style></div> <pre data-v-2ca90776=""><span class="token comment" spellcheck="true">/*
+* Inspired by http://strml.net/
+* 大家好，我是方方
+* 二月了，好多公司都在招聘，你是不是也在准备简历呀。
+* 说做就做，我也来写一份简历！
+*/</span>
+
+<span class="token comment" spellcheck="true">/* 首先给所有元素加上过渡效果 */</span>
+<span class="token selector">*</span> <span class="token punctuation">{</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> all .3s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/* 白色背景太单调了，我们来点背景 */</span>
+<span class="token selector">html</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>222,222,222<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0,43,54<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/* 文字离边框太近了 */</span>
+<span class="token selector">.styleEditor</span> <span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 45vw<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 90vh<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/* 代码高亮 */</span>
+<span class="token selector">.token.selector</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>133,153,0<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.token.property</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>187,137,0<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.token.punctuation</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.token.function</span><span class="token punctuation">{</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>42,161,152<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/* 加点 3D 效果呗 */</span>
+<span class="token selector">html</span><span class="token punctuation">{</span>
+  <span class="token property">perspective</span><span class="token punctuation">:</span> 1000px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.styleEditor</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">-webkit-transition</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">transition</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">-webkit-transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>10deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-100px<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+          <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">rotateY</span><span class="token punctuation">(</span>10deg<span class="token punctuation">)</span> <span class="token function">translateZ</span><span class="token punctuation">(</span>-100px<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/* 接下来我给自己准备一个编辑器 */</span>
+<span class="token selector">.resumeEditor</span><span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>  <span class="token property">margin</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 48vw<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 90vh<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> #222<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/* 好了，我开始写简历了 */</span>
+
+
+
+<span class="token comment" spellcheck="true">/* 这个简历好像差点什么
+ * 对了，这是 Markdown 格式的，我需要变成对 HR 更友好的格式
+ * 简单，用开源工具翻译成 HTML 就行了
+ */</span>
+
+<span class="token comment" spellcheck="true">/* 再对 HTML 加点样式 */</span>
+<span class="token selector">.resumeEditor</span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 2em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor h2</span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em 0 .5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ul,.resumeEditor ol</span><span class="token punctuation">{</span>
+  <span class="token property">list-style</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ul&gt; li::before</span><span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'•'</span><span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ol</span> <span class="token punctuation">{</span>
+  <span class="token property">counter-reset</span><span class="token punctuation">:</span> section<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor ol li::before</span> <span class="token punctuation">{</span>
+  <span class="token property">counter-increment</span><span class="token punctuation">:</span> section<span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">counters</span><span class="token punctuation">(</span>section, <span class="token string">"."</span><span class="token punctuation">)</span> <span class="token string">" "</span><span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.resumeEditor blockquote</span> <span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ddd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre></div> <div data-v-2df95543="" data-v-288975d1="" class="resumeEditor htmlMode"><div data-v-2df95543=""><h2 id="-">方应杭</h2>
+<p>资深前端工程师，资深前端讲师，现在在 <a href="http://jirengu.com">饥人谷</a> 教前端课程。</p>
+<h2 id="-">技能</h2>
+<ul>
+<li>前端开发</li>
+<li>Rails 开发</li>
+<li>Node.js 开发</li>
+<li>前端授课</li>
+</ul>
+<h2 id="-">工作经历</h2>
+<ol>
+<li><a href="http://jirengu.com">饥人谷</a></li>
+<li>腾讯即时通讯平台部</li>
+<li>阿里巴巴B2B部门</li>
+<li>彩程知人项目组</li>
+</ol>
+<h2 id="-">链接</h2>
+<ul>
+<li><a href="https://github.com/frankfang">GitHub</a></li>
+<li><a href="https://www.zhihu.com/people/zhihusucks/pins/posts">我的文章</a></li>
+</ul>
+<blockquote>
+<p>如果你喜欢这个效果，Fork <a href="https://github.com/jirengu-inc/animating-resume">我的项目</a>，打造你自己的简历！</p>
+</blockquote>
+</div></div></div><script type="text/javascript" src="/animating-resume/public/static/js/manifest.4c9b38ff9e55227eeaef.js"></script><script type="text/javascript" src="/animating-resume/public/static/js/vendor.1238791dbc82476562b4.js"></script><script type="text/javascript" src="/animating-resume/public/static/js/app.8475796382bd29594a13.js"></script></body></html>

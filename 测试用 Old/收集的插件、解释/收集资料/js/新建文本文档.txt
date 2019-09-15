@@ -1,0 +1,52 @@
+
+chocolate安装wget的方法
+
+js浮点值用升降次幂或者toFixed保留预期精度
+
+标识符就是给变量、函数和对象等指定的名字 可以是以下划线（_）、美元符($)或者字母开始 首字符不能是数字
+注意  JavaScript中的字母是采用Unicode，Unicode叫做统一编码制，是国际上通用的16位编码制，它包含了亚洲文字编码，如中文、日文、韩文等字符。所有JavaScript中的字母可以是中文、日文和韩文等亚洲字母。
+
+js函数定义有两种方式 一是函数表达式 一是函数声明
+
+不能把关键字、保留字、true、false和null用作标识符。
+
+js中的关键字可用于表示控制语句的开始或结束，或者用于执行特定操作等。按照规则，关键字也是语言保留的，不能用作标识符。以下就是ECMAScription的全部关键字：
+
+  break、else、new、var、 case、  finally 、 return、 void 、 catch  、for  、switch 、 while 、 continue、  function  、this 、 with 、default 、 if 、 throw 、 delete 、 in 、  try 、do 、 instranceof、  typeof
+
+ECMA还描述了另外一组不能用作标识符的保留字。尽管保留字在这门语言中还没有任何特定的用途，但它们有可能将来被用作关键字。下面是ECMA第3版定义的全部保留字：
+（手册看完 再做深入）
+abstract 、 enum   、int 、 short 、 boolean  、export  、interface、  static、  byte  、extends 、 long 、 super 、 char 、 final  、native  、synchronized 、 class  、float 、 package  、throws 、 const  、goto  、private 、transient 、 debugger 、 implements  、protected 、 volatile 、 double  、import  、public
+
+$("input").attr('readonly', true);
+
+$("textarea").attr('readonly', true);
+
+$(':radio').attr('disabled', true);
+$(':checkbox').attr('disabled', true);
+$(':button').attr('disabled', true);
+$('a').removeAttr('onclick');
+$('select').attr('disabled', true);
+
+js转rgb为16进制
+var hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+
+arr.join(",");
+返回一个字符串。该字符串是通过把 arrayObject 的每个元素转换为字符串，然后把这些字符串连接起来，在两个元素之间插入 separator 字符串而生成的。
+=====================================================
+var last=obj.toJSONString(); //将JSON对象转化为JSON字符
+或者
+var last=JSON.stringify(obj); //将JSON对象转化为JSON字符
+
+obj.toJSONString更严格
+要求"格式完好"，就是要求指定的字符串必须符合严格的JSON格式，例如：属性名称必须加双引号、字符串值也必须用双引号。
+如果传入一个格式不"完好"的JSON字符串将抛出一个JS异常
+
+例如：以下字符串均符合JSON格式，但它们不是格式完好的JSON字符串(因此会抛出异常)：
+// 以下均是字符串值，省略了两侧的引号，以便于展现内容
+
+{id: 1} // id是属性名称，必须加双引号
+{'id': 1} // id是属性名称，必须用双引号(不能用单引号)
+{"name": 'CodePlayer'} // name属性的值是字符串，必须用双引号(不能用单引号)
+=========================================================

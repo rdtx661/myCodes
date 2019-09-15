@@ -1,0 +1,14 @@
+伪类清除浮动 .after
+//空白符
+content: "\0020";
+display: block;
+height: 0;
+clear: both;
+//ie6不支持添加 激活hasLayout让父元素拥有自己的布局
+//IE 6会读取这条命令，其他浏览器则会直接忽略它。
+zoom:1;
+}
+父容器设置overflow:hidden可以清除浮动，识别超出容器的子元素
+ie6不支持
+===
+

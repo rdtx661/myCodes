@@ -1,0 +1,65 @@
+﻿
+css width:auto;和display：inline-block的时候一样
+
+IEcss渲染 背景使用半透明 
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#19ffffff,endColorstr=#19ffffff);
+
+单选框取消默认样式：-webkit-appearance: none;
+
+ul的li设置浮动后 ul没有高度，但在ul外的容器设置清除浮动后 虽然ul里的li仍然在浮动，但这时候li已经能撑开ul的父容器了
+
+css属性和js属性有所绑定
+
+css的border在容器宽高为0时 设置在容器四周的border是由四个三角形组成的正方形（宽高为0，以点发散）
+
+页面不需要重复使用的css样式直接写到元素标签中
+
+定义由粗到细的字符。400 等同于 normal，而 700 等同于 bold。
+
+colgroup设置table中行列的模板样式 http://www.w3school.com.cn/tags/tag_colgroup.asp 
+
+border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。
+border-collapse:collapse; 
+border-collapse:separate 默认值。边框会被分开。不会忽略 border-spacing 和 empty-cells 属性。
+
+
+border-spacing:10px 50px;属性设置相邻单元格的边框间的距离（仅用于“边框分离”模式）。
+
+box-shadow 设置了内阴影 shadow水平和垂直方向上显示的位置相反
+
+
+:first-letter 伪元素用于向文本的首字母设置特殊样式。
+:first-line 伪元素用于向文本的首行设置特殊样式。
+可以设置多重伪元素
+:before	在元素之前添加内容。
+:after	在元素之后添加内容。
+
+ul 的li在脱出ul容器后 布局会乱（上左超出 叠到一起 下右超出）
+
+left 属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移。
+注释：如果 "position" 属性的值为 "static"，那么设置 "left" 属性不会产生任何效果。
+
+content: "";是css给伪元素内容设置值使用的
+
+@keyframes name{
+from{}
+to{}
+}
+加上浏览器前缀
+
+animation: name 5s;
+-moz-animation: name 5s;	
+-webkit-animation: name 5s;	
+-o-animation: name 5s;
+谷歌safari:-webkit
+
+css3动画animation-fill-mode
+none	不改变默认行为。
+forwards	当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+backwards	在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。
+both	向前和向后填充模式都被应用。
+
+css中尽量不要出现中文，实在要用中文要转换成unicode编码
+
+
+

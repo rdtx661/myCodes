@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>初始测试模板</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="test.css">
+		<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript" src="vue.js"></script>
+	</head>
+	<body>
+		<!-- options[selectedIndex].value -->
+		
+		<script type="text/javascript">
+			function f(self){
+				// self.selectedIndex
+				// tagName 返回集合 必须设置取出的数据位置
+				alert(document.getElementsByTagName("select")[0].options[self.selectedIndex].text);
+				// alert(document.getElementsByTagName("select")[0].options[$(self).selectedIndex].text);				
+				// window.self.location.href="http://www.baidu.com";
+				// window.open("http://www.baidu.com");
+			}
+		</script>
+		<select id="select" onchange="f(this)">
+			<option value="1">s1</option>
+			<option value="2">s2</option>
+			<option value="3">s3</option>
+		</select>
+	</body>
+</html>

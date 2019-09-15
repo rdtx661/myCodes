@@ -1,0 +1,105 @@
+
+is_iterable($arr) 判断$arr是否是数组，返回布尔值 
+
+current() 函数返回数组中的当前元素的值。 http://www.w3school.com.cn/php/func_array_current.asp
+
+匿名函数中的use，其作用就是从父作用域继承变量。
+$category='';
+$subCateStr = '';
+array_walk($subCategories, function($item)use(&$subCateStr, $category){})
+如果不用use $category无效
+array_walk()对数组中的每个元素应用用户自定义函数
+
+php传入变量前加上&传入的是变量地址，可在传入的方法中修改变量的值
+function setAA(&$aa){
+    $aa++;
+}
+$aa=0;
+setAA($aa);
+echo $aa;
+
+count($arr) 获取数组的数据条数
+
+explode(",",$str)把$str字符串根据逗号","分割成数组
+
+number_format() http://www.w3school.com.cn/php/func_string_number_format.asp 格式化数字
+
+file_exists() 判断文件路径是否存在 存在返回true 否则返回false
+
+ceil() 函数向上舍入为最接近的整数。
+
+strtotime()转换为unix时间戳
+
+time()获取当前时间
+
+date_create_from_format("j-M-Y","25-Sep-2016");php时间格式转换
+
+ctype_digit(X);判断X是否是数字（ 注意，参数一定要是字符串，如果不是字符串，则会返回0/FASLE。负数和小数会检测不通过）
+
+settype(var,type);设置var(变量)的类型
+
+filter_var() 函数通过指定的过滤器过滤变量（过滤器http://www.w3school.com.cn/php/php_filter.asp）
+FILTER_VALIDATE_EMAIL 把变量var作为邮箱进行验证 有效邮箱返回true 否则false
+filter_var( $var, FILTER_VALIDATE_EMAIL )
+
+preg_match(reg,var) 用变量var匹配正则reg 成功返回1 失败返回0
+
+empty()函数是用来测试变量是否已经配置。若变量已存在、非空字符串或者非零，则返回 false 值；反之返回 true值。所以，当字符串的值为0时，也返回true，就是执行empty内部的语句。这就是陷阱 
+
+
+
+continue：跳出本次循环
+
+break：终止循环
+
+exit：用来结束程序执行
+
+return: 用来结束一段代码　
+
+onclick,click,on()的优先关系：onclick>click>on()；　
+
+mylime右键方法名进入定义方法的位置
+
+php类过程中想要输出参数 后加exit()：
+echo $var;
+exit();
+
+把字符串 "Hello world!" 中的字符 "world" 替换为 "Shanghai"：
+str_replace("world","Shanghai","Hello world!");
+
+
+file_put_contents(file,data,mode,context)
+成功返回写入到文件内数据的字节数
+file_put_contents("test.txt", "This is something.");
+如果文件不存在，则创建文件，相当于fopen()函数行为。
+如果文件存在，默认将清空文件内的内容
+mode使用 FILE_APPEND 可避免删除文件中已有的内容。
+
+mb_strlen()获取字符个数
+strlen() 返回字节数，utf-8字符返回三个单位 
+
+echo PHP_VERSION;获取PHP当前版本
+
+@是PHP提供的错误信息屏蔽的专用符号。
+比如在一个函数前使用@
+@mysql_query 不会出现Warning，
+而原来mysql_query 在遇到错误时会在页面上访提示Warning。
+例：
+// 不加@输出报错信息
+echo file_get_contents("https://yun.tim.qq.com/v3/tlssmssvr/sendmultisms2",0,20);
+
+
+//把文件读入一个字符串中
+file_get_contents(path);
+//从这里可以看出，如果没有这个文件的话
+//调用file_put_contents方法会自动创建这样的一个文件
+
+array_merge(arr1,arr2)把两个数组合并为一个数组
+
+strtotime() php 转换为秒数
+
+array_column($arr,$key) 返回输入数组中某个单一列的值。
+
+array_values() 返回数组的值 不包括键
+
+(array)$arr 强制把非数组变量$arr转换为数组形式(对本来就是数组的变量没有影响) 强制转换类型

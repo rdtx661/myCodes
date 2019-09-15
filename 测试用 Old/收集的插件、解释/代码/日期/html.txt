@@ -1,0 +1,71 @@
+<?php 
+	$this->head(['js'=>'js/date/data.js']);
+	$this->head(['css'=>'css/date/date.css']);
+	$getyear=date('Y',time());
+	$getmonth=date('n',time());
+	$getday=date('d',time());
+	$getdate=date('Y-m-d',time());
+?>
+	<div class="vch_02">
+					<span class="fonts">日期:</span>
+						<div class="vch_02_show">
+							<div class="vch_02_show_warp">
+							<input class="vch_02_input"  tabindex="1" type="text" value="<?=$getdate?>">
+								<!-- 输入提示 -->
+								<div class="vch_02_hd">
+									<span class="errormsg">输入的值无效。</span>
+									<div class="hd_over"><img src="/v/p/g/img/saas/arrow.png" alt=""></div>
+								</div>
+								<!-- 完成提示 -->
+								<div class="isclear">
+									<div class="clearctn">
+										<span class="erroricon"></span><span class="datadate"></span>期间已结账，不能插入凭证
+									</div>
+								</div>
+							</div>
+							<div class="vch_02_imgwarp"></div>
+							<div class="datewarp">
+									<div class="datahead">
+										<img class="left" src="<?php echo $this->assetsUri ?>/img/date/data-left.png" alt="">
+										<span class="year">
+											<span><span class="y_num"><?=$getyear?></span>
+											年<img class="y_down" src="<?php echo $this->assetsUri ?>/img/date/data-down.png" alt="">
+										</span>
+										<div class="yearhd">
+
+										</div>
+										</span>
+										<span class="month"><span><span class="m_num"><?=$getmonth?></span>
+										月<img class="m_down" src="<?php echo $this->assetsUri ?>/img/date/data-down.png" alt=""></span>
+										<div class="monthhd">
+											<div >1月</div>
+											<div >2月</div>
+											<div >3月</div>
+											<div >4月</div>
+											<div >5月</div>
+											<div >6月</div>
+											<div >7月</div>
+											<div >8月</div>
+											<div >9月</div>
+											<div >10月</div>
+											<div >11月</div>
+											<div >12月</div>
+										</div>
+										</span>
+										<img class="right" src="<?php echo $this->assetsUri ?>/img/date/data-right.png" alt="">
+									</div>
+									<div class="dataweek">
+										<div>日</div>
+										<div>一</div>
+										<div>二</div>
+										<div>三</div>
+										<div>四</div>
+										<div>五</div>
+										<div>六</div>
+									</div>
+									<div class="day_warp">
+								
+									</div>
+							</div>
+						</div>
+				</div>

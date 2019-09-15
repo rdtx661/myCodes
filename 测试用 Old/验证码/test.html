@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>图形验证码</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+	<script type="text/javascript" src="../jquery.js"></script>
+	<script type="text/javascript" src="test.js"></script>
+  </head>
+  <body>
+		<div class="yzm">
+		    <div class="fl">验证码：</div>
+		    <div class="fr">
+		        <input id="captcha" style="padding-left: 12px;" type="text" value="">
+		        <div class="warp">
+		            <a href="#" id="changeImg">
+		                <canvas class="show-captcha" id="canvas" width="80" height="35"></canvas>
+		            </a>
+		        </div>
+		    </div>
+		</div>
+		 <div class="fr">
+            <button type="button" class="getbtn">登录</button>
+        </div>
+  </body>
+</html>

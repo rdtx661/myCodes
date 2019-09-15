@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://segmentfault.com/a/1190000002433305 -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><meta name="renderer" content="webkit"><meta property="qc:admins" content="15317273575564615446375"><meta property="og:image" content="https://static.segmentfault.com/v-5bbf1b3b/global/img/touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ"><meta name="apple-itunes-app" content="app-id=958101793, app-argument="><title>不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否</title><meta name="description" content="所以在IE用到了其支持的filter属性，听说这个属性还有不同的效果，不单单就只有不透明度而已，所以抽个时间赶紧来充下电。"><meta name="keywords" content="滤镜,css3,css,internet-explorer"><link rel="search" type="application/opensearchdescription+xml" href="https://segmentfault.com/opensearch.xml" title="SegmentFault"><link rel="shortcut icon" href="https://static.segmentfault.com/v-5bbf1b3b/global/img/favicon.ico"><link rel="apple-touch-icon" href="https://static.segmentfault.com/v-5bbf1b3b/global/img/touch-icon.png"><meta name="msapplication-TileColor" content="#009a61"><meta name="msapplication-square150x150logo" content="https://static.segmentfault.com/v-5bbf1b3b/global/img/touch-icon.png"><meta name="baidu_union_verify" content="bcf7fd80dca60d53d46d5b46e1b990ca"><link rel="alternate" type="application/atom+xml" title="SegmentFault 最新问题" href="https://segmentfault.com/feeds/questions"><link rel="alternate" type="application/atom+xml" title="SegmentFault 最新文章" href="https://segmentfault.com/feeds/blogs"><link rel="stylesheet" href="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/global.css"><link rel="stylesheet" href="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/blog.css"><link rel="stylesheet" href="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/responsive.css"><script src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/f(6).txt"></script><script src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/hm.js.下载"></script><script async="" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/analytics.js.下载"></script><script src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/ca-pub-6330872677300335.js.下载"></script><script type="text/javascript" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/spcjs.php"></script><script type="text/javascript" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/spc.php"></script><script type="text/javascript" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/fl.js.下载"></script>
+<script charset="utf-8" id="ParadigmSDK" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/ParadigmSDK_v2.js.下载" data="216" defsi="594"></script><script>
+    ParadigmSDK.init("46e957bd9dea4acdaa15b4b64aff728f");
+    ParadigmSDK.trackDetailPageShow();
+</script><link rel="preload" href="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/f(7).txt" as="script"><script type="text/javascript" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/f(7).txt"></script></head><!-- 推荐引擎 --><body data-mod="blog" class="blog-post "><!--[if lt IE 9]><div class="alert alert-danger topframe" role="alert">你的浏览器实在<strong>太太太太太太旧了</strong>，放学别走，升级完浏览器再说 <a target="_blank" class="alert-link" href="http://browsehappy.com">立即升级</a></div><![endif]--><img id="icon4weChat" style="height: 0;width: 0;" data-src="https://static.segmentfault.com/v-5bbf1b3b/global/img/touch-icon-512.png"><div id="gridMapHoverBox" style="position:absolute; border: 1px solid #009a61; z-index:99; font-size: 10px; background:#fff"></div><div class="global-nav sf-header sf-header--index"><div class="bottom-nav visible-xs visible-sm"><div class="opts"><a class="opts-group " href="https://segmentfault.com/"><i class="fa fa-home" aria-hidden="true"></i><span>首页</span></a><a class="opts-group " href="https://segmentfault.com/questions"><i class="fa fa-comments" aria-hidden="true"></i><span>问答</span></a><a class="opts-group active" href="https://segmentfault.com/blogs"><i class="fa fa-pencil-square" aria-hidden="true"></i><span>专栏</span></a><a class="opts-group " href="https://segmentfault.com/lives"><i class="fa fa-play-circle" aria-hidden="true"></i><span>讲堂</span></a><div class="opts-group"><div class="btn-group dropup"><i class="fa fa-bars dropdown hoverDropdown" data-toggle="dropdown" aria-hidden="true"><span>更多</span></i><ul class="dropdown-menu"><li><a href="https://segmentfault.com/jobs">职位</a></li><li><a href="https://segmentfault.com/events">活动</a></li><li><a href="https://segmentfault.com/tags">标签</a></li><li><a href="https://segmentfault.com/badges">徽章</a></li></ul></div></div></div></div><nav class="container nav"><div class="visible-xs visible-sm header-response"><a href="https://segmentfault.com/search" style="display:block"><i class="fa fa-search" aria-hidden="true"></i></a><div class="sf-header__logo sf-header__logo--response"><h1><a href="https://segmentfault.com/" style="height:24px; background-size: auto 24px;"></a></h1></div><a href="https://segmentfault.com/user/login" class="pull-right login-btn"><i class="fa fa-user" aria-hidden="true"></i></a></div><script>
+mobileScroll(
+    function(direction) { 
+        try {
+            if (direction === 'down') {
+                document.querySelector('.bottom-nav').classList.add('hidden')
+            } else {
+                document.querySelector('.bottom-nav').classList.remove('hidden')
+            }
+        } catch(err) {}
+    }
+);    
+function mobileScroll( fn ) {
+    var beforeScrollTop = document.documentElement.scrollTop || document.body.scrollTop,
+        fn = fn || function() {};
+    window.addEventListener("scroll", function() {
+        var afterScrollTop = document.documentElement.scrollTop || document.body.scrollTop,
+            delta = afterScrollTop - beforeScrollTop;
+        if( delta === 0 ) return false;
+        fn( delta > 0 ? "down" : "up" );
+        beforeScrollTop = afterScrollTop;
+    }, false);
+}
+</script><div class="row hidden-xs hidden-sm"><div class="col-sm-8 col-md-9 col-lg-9"><div class="sf-header__logo"><h1><a href="https://segmentfault.com/">SegmentFault</a></h1></div><div><ul class="menu list-inline pull-left hidden-xs"><li class="menu__item"><a href="https://segmentfault.com/" class="">首页</a></li><li class="menu__item"><a href="https://segmentfault.com/questions" class="">问答</a></li><li class="menu__item"><a href="https://segmentfault.com/blogs" class="active-nav">专栏</a></li><li class="menu__item"><a href="https://segmentfault.com/lives" class="">讲堂</a></li><li class="menu__item menu__item--more dropdown"><a href="https://segmentfault.com/a/1190000002433305##" class="dropdown-toggle dropdownBtn" data-toggle="dropdown">
+                                        发现<i class="fa fa-caret-down" style="font-size: 14px;margin-left: 5px;" aria-hidden="true"></i></a><div class="dropdown-block hidden"><ul class="dropdown-content-menu"><li><a href="https://segmentfault.com/groups">圈子</a></li><li><a href="https://segmentfault.com/events">活动</a></li><li><a href="https://segmentfault.com/tags">标签</a></li><li><a href="https://segmentfault.com/jobs">找工作</a></li><li><a href="https://segmentfault.com/users">排行榜</a></li><li><a href="https://segmentfault.com/badges">徽章</a></li><li><a href="https://segmentfault.com/notes">笔记</a></li><li><a href="https://docs.segmentfault.com/" target="_blank">开发手册<i style="line-height: 20px;font-size: 12px;color: #F5A623;" class="ml10 fa fa-external-link-square"></i></a></li><li><a href="https://business.segmentfault.com/ads?utm_source=sf-header" target="_blank">广告投放<i style="line-height: 20px;font-size: 12px;color: #F5A623;" class="ml10 fa fa-external-link-square"></i></a></li></ul></div></li><li class="menu__item visible-sm-inline-block"><a href="https://segmentfault.com/search"><span class="glyphicon glyphicon-search" style="vertical-align: middle;"></span></a></li></ul><form action="https://segmentfault.com/search" class="header-search  hidden-sm hidden-xs pull-right"><button class="btn btn-link"><span class="sr-only">搜索</span><span class="glyphicon glyphicon-search"></span></button><input id="searchBox" name="q" type="text" placeholder="搜索问题或关键字" class="form-control" value=""></form></div></div><div class="col-sm-4 col-md-3 col-lg-3 text-right"><ul class="opts list-inline hidden-xs"><li class="opts__item"><a href="https://segmentfault.com/user/login" class="SFRegister btn-signin" style="margin-bottom:2px;">立即登录</a><a href="https://segmentfault.com/user/register" class="SFLogin ml10 btn-signup" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Button&#39;, &#39;Click&#39;, &#39;Login&#39;]);">免费注册</a></li></ul></div></div></nav></div>
+    
+<input id="articleId" value="1190000002433305" class="hidden">
+
+<div class="wrap" data-blogid="1200000000309635">
+    <div class="container mt15" style="position:relative">
+        <div class="row">
+            <div class="col-xs-12 col-md-9 main ">
+                                <ol class="breadcrumb mb15">
+                    <li><a href="https://segmentfault.com/blogs">专栏</a></li>
+                                        <li><a href="https://segmentfault.com/blog/news">SegmentFault 业界资讯</a></li>
+                                        <li class="active">文章详情</li>
+                </ol>
+                                <div class="post-topheader custom- pt0">
+                    <div class="mb20">
+                        <div class="block-for-right-border">
+                            <div class="row">
+                                <div class="col-md-12article__author col-sm-12 col-xs-12">
+                                
+
+                                    <div class="post-topheader__info" data-username="江小湖Laker" data-userslug="younglaker" data-useravatar="https://avatar-static.segmentfault.com/125/190/1251900584-1030000000323934_big64">
+
+                                        <div>
+
+                                            <div class="article__author">
+                                                <a href="https://segmentfault.com/u/younglaker" class="inline-block pull-left pr10">
+                                                    <img class="avatar-40" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/1251900584-1030000000323934_big64" alt="江小湖Laker">
+                                                </a>
+                                                <div style="display: inline">
+                                                <a href="https://segmentfault.com/u/younglaker" class="mr5 "><strong>江小湖Laker</strong></a>
+
+                                                                                                <img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/rp.svg" class="mr5"><span style="color:#BF7158" class="mr10">6.4k</span>
+
+                                                                                                发布于
+                                                <a href="https://segmentfault.com/blog/news">SegmentFault 业界资讯</a>
+                                                
+                                                
+                                                <span class="hidden-xs">
+                                                                                                                                                          <button type="button" class="btn btn-xs btn-success follow-article ml10" data-do="follow" data-type="blog" data-id="1200000000309635">关注专栏
+                                                       </button>
+                                                                                                                                                   </span>
+                                                </div>
+                                                
+                                                <span style="display: block">
+                                                    2014-12-19 发布
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <h1 class="h1 post-topheader__info--title" id="articleTitle" data-id="1190000002433305">
+                                            <a href="https://segmentfault.com/a/1190000002433305"> 不得不收藏的——IE中CSS-filter滤镜小知识大全</a>
+                                        </h1>
+
+                                        <div class="content__tech hidden-xs">
+                                            <a href="https://segmentfault.com/a/1190000002433305" class="blog-type-common blog-type-0-before" target="_blank" data-content="
+                                                                                        翻译自 
+                                                                                        "></a>
+                                            
+                                            <ul class="taglist--inline inline-block article__title--tag mr10">
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/%E6%BB%A4%E9%95%9C/blogs" data-toggle="popover" data-img="" data-placement="top" data-original-title="滤镜" data-id="1040000000170835">
+                                                                                                                      滤镜
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/css3/blogs" data-toggle="popover" data-img="https://avatar-static.segmentfault.com/357/990/3579900889-1040000000090141_big64" data-placement="top" data-original-title="css3" data-id="1040000000090141">
+                                                                                                                      css3
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/css/blogs" data-toggle="popover" data-img="https://avatar-static.segmentfault.com/122/960/1229606535-1040000000089434_big64" data-placement="top" data-original-title="css" data-id="1040000000089434">
+                                                                                                                      css
+                                                        </a>
+                                                    </li>
+                                                                                                    <li class="tagPopup mb5">
+                                                        <a class="tag" href="https://segmentfault.com/t/internet-explorer/blogs" data-toggle="popover" data-img="https://avatar-static.segmentfault.com/366/211/3662118394-1040000000125504_big64" data-placement="top" data-original-title="internet-explorer" data-id="1040000000125504">
+                                                                                                                      internet-explorer
+                                                        </a>
+                                                    </li>
+                                                                                            </ul>
+
+                                            <span>
+                                                23.6k 次阅读
+                                                &nbsp;·&nbsp;
+                                                读完需要 32 分钟 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- end .post-topheader -->
+
+                <div class="visible-lg">
+                    <div class="side-widget" style="display: flex;">
+                        <div class="stream__item-zan btn btn-default mt0 mb15 ml0 mr0 pt0 pb0 pl0 pr0 " id="side-widget-votes-btn">
+                            <span class="stream__item-zan-icon"></span>
+                            <span class="stream__item-zan-number" id="side-widget-votes-num">8</span>
+                        </div>
+
+                        <i class="fa fa-bookmark item " id="side-widget-bookmarks-btn"></i>
+                        <i class="fa fa-weibo item"></i>
+                        <i class="fa fa-weixin item" data-toggle="popover" data-placement="right" data-original-title="" title=""></i>
+                        <i class="fa fa-twitter item"></i>
+                        <i class="fa fa-facebook item"></i>
+                        <i class="fa fa-arrow-up item"></i>
+                    </div>
+                </div>
+
+                
+                <div class="article fmt article__content" data-id="1190000002433305" data-license="cc">
+                    
+<h2 id="articleHeader0">前言</h2>
+
+<p>前段时间在做一个专题的时候用到了<code>opacity</code>不透明度属性，因为设计图上是半透明背景，白色文字</p>
+
+<p><span class="img-wrap"><img data-src="/img/bVknaX" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/bVknaX" alt="css opacity" style="cursor: pointer; display: inline;"></span></p>
+
+<p>所以在IE用到了其支持的filter属性，听说这个属性还有不同的效果，不单单就只有不透明度而已，所以抽个时间赶紧来充下电。</p>
+
+<p>有时候我们很习惯的用到不透明属性<code>opacity</code>来增加层次感或者增加用户体验，但因这个属性是css3属性，所以对于低级浏览器的兼容性来说就达不到我们预期的效果。一般而言，我们都尽可能少用一些浏览私有属性<code>-webkit,-moz,-ms,-o</code>，这也仅仅解决了市面上很多浏览器的问题，面对IE，特别是IE9-版本的，也是显得有气无力。因此假如要使得市面上的浏览器达到统一的近类似效果，那么是非常有必要写上IE私有属性，触发IE hasLayout 特性，比如这样：</p>
+
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text=".opacity{
+    opacity:0.5;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); /*IE6~IE8*/
+}
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs css"><code><span class="hljs-selector-class">.opacity</span>{
+    <span class="hljs-attribute">opacity</span>:<span class="hljs-number">0.5</span>;
+    <span class="hljs-attribute">filter</span>:progid:DXImageTransform.Microsoft.<span class="hljs-built_in">Alpha</span>(opacity=50); <span class="hljs-comment">/*IE6~IE8*/</span>
+}
+</code></pre>
+
+<p>OK，这样的代码可以基本兼容目前市面上的浏览器。今天我们的重点是后面这个 <a rel="nofollow" href="http://w3help.org/zh-cn/causes/BT9011" target="_blank">filter</a> 属性</p>
+
+<h2 id="articleHeader1">filter历史</h2>
+
+<p>其实这个filter是<a rel="nofollow" href="http://dev.w3.org/fxtf/filters/#FilterProperty" target="_blank">CSS1</a>的属性了，但是因为老版本的IE4.0~IE9对此支持不怎么感冒，对浏览器的支持也不稳定，因此这个属性只能当做实验性技术来观察。但，对于想要探究IE的filter是怎样模拟像css3工作原理的同行不妨可以充充电。</p>
+
+<p>此属性我个人概况为<strong>css PS化</strong>，为什么，因为它的很多属性或多或少是从PS衍伸进来的，如图</p>
+
+<p><span class="img-wrap"><img data-src="/img/bVknaY" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/bVknaY" alt="css 五边形" style="cursor: pointer; display: inline;"></span></p>
+
+<p>就连我们用css3来写一个华丽丽的转场动画时，我们也可以考虑让我们的ie同样具有此功能，那么ie中的filter就体现出来了。。</p>
+
+<h2 id="articleHeader2">一、filter界面滤镜</h2>
+
+<p>在ie中 <code>filter</code> 分为静态滤镜(Visual Filters)和过渡转场(Transitions Reference)，前者是的效果可以设置元素的不透明度、渐变、模糊、对比度、明度等这些，后者注重的ie的动画效果。</p>
+
+<p><strong>对于在使用ie filter属性时，必要的前缀是需要的，对此ie在filter规范如下：</strong></p>
+
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text=".test{
+    filter:progid:DXImageTransform.Microsoft.    /*.后面都是紧跟着各种滤镜和转场函数*/
+}
+
+/*如：模糊滤镜*/
+.blur{
+    filter:progid:DXImageTransform.Microsoft.Blur()    /*.函数的开头第一个字母必须大写，括号()里面的滤镜的各种值*/
+}
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs css"><code><span class="hljs-selector-class">.test</span>{
+    <span class="hljs-attribute">filter</span>:progid:DXImageTransform.Microsoft.    <span class="hljs-comment">/*.后面都是紧跟着各种滤镜和转场函数*/</span>
+}
+
+<span class="hljs-comment">/*如：模糊滤镜*/</span>
+<span class="hljs-selector-class">.blur</span>{
+    <span class="hljs-attribute">filter</span>:progid:DXImageTransform.Microsoft.<span class="hljs-built_in">Blur</span>()    <span class="hljs-comment">/*.函数的开头第一个字母必须大写，括号()里面的滤镜的各种值*/</span>
+}
+</code></pre>
+
+<p>对于为什么要在开头写上<code>progid:DXImageTransform.Microsoft</code> 不是很清楚，估计是为了区分吧。有哪位知道麻烦贴个地址说一下哈。</p>
+
+<p><strong>1.AlphaImageLoader</strong>，这个属性是主要是针对png透明图片进行不透明度的处理，为什么要这么说呢，因为IE6的png透明图片其实是不透明的，显示会灰色背景。</p>
+
+<p><strong>语法：</strong></p>
+
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=&#39;true&#39; , sizingMethod=&#39;&#39; , src=&#39;mini.jpg&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.AlphaImageLoader()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.AlphaImageLoader(enabled=<span class="hljs-string">'true'</span> , sizingMethod=<span class="hljs-string">''</span> , src=<span class="hljs-string">'mini.jpg'</span>)
+</code></pre>
+
+<p>其值包括2个可选值，一个必选值。</p>
+
+<table>
+<thead><tr>
+<th>属性</th>
+  <th>特性</th>
+  <th>描述</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>enabled</td>
+  <td>Enabled</td>
+  <td>可选值，Boolean布尔值，默认值为ture，启用过滤器；false为不启用过滤器。所有的filter都有该属性值，下面不一一多说。</td>
+</tr>
+<tr>
+<td>sizingMethod</td>
+  <td>sizingMethod</td>
+  <td>可选值，设置或检索的方式来显示一个图像在对象边界显示方式。有三个值：crop裁剪图像以适应对象的尺寸；image，默认值，扩大或减少对象的边界,以适应图像的尺寸；scale，伸展或收缩图像填充对象的边界；</td>
+</tr>
+<tr>
+<td>src</td>
+  <td>src</td>
+  <td>必须值，引入图片。</td>
+</tr>
+</tbody>
+</table>
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/AlphaImageLoader_0.htm" target="_blank">AlphaImageLoader</a></p>
+
+<p><strong>2.Gradient</strong>，渐变滤镜。</p>
+
+<p><strong>语法：</strong></p>
+
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Gradient()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Gradient(enabled=&#39;ture&#39;,GradientType=&#39;1&#39;,StartColorStr=&#39;#00000000&#39;,EndColorStr=&#39;#FFFF3300&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Gradient()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Gradient(enabled=<span class="hljs-string">'ture'</span>,GradientType=<span class="hljs-string">'1'</span>,StartColorStr=<span class="hljs-string">'#00000000'</span>,EndColorStr=<span class="hljs-string">'#FFFF3300'</span>)
+</code></pre>
+
+<table>
+<thead><tr>
+<th>属性</th>
+  <th>特性</th>
+  <th>描述</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>enabled</td>
+  <td>Enabled</td>
+  <td>可选值，Boolean布尔值，默认值为ture，启用过滤器；false为不启用过滤器。</td>
+</tr>
+<tr>
+<td>StartColorStr</td>
+  <td>StartColor</td>
+  <td>设置或者检索开始不透明度的梯度值，整数型Integer，指定一个整数型值，值的变化从0 (transparent[透明]) to 4294967295 ([白色不透明]).</td>
+</tr>
+<tr>
+<td></td>
+  <td>StartColorStr</td>
+  <td>设置或者检索开始的颜色值，string类型字符串，值从#FF000000 到 #FFFFFFFF，默认值为：#FF000000，比如一个值为：#AARRGGBB ，那么AA代表透明度alpha，RR表示红色16进制值，GG表示绿色16进制值，BB表示黑色16进制值。</td>
+</tr>
+<tr>
+<td></td>
+  <td>EndColor</td>
+  <td>设置或者检索结束不透明度的梯度值，同上，很少用。</td>
+</tr>
+<tr>
+<td></td>
+  <td>EndColorStr</td>
+  <td>设置或者检索结束的颜色值，同上</td>
+</tr>
+<tr>
+<td></td>
+  <td>GradientType</td>
+  <td>设置渐变的方向。有两个值，1代表水平方向，0代表垂直方向渐变。</td>
+</tr>
+</tbody>
+</table>
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/gradient.htm" target="_blank">Gradient Filter</a></p>
+
+<p>稍有留意我们看了下面的style属性的时候其实就会发现，StartColorStr中的值跟我们平常的用到的#ffffff是不一样的，如图</p>
+
+<p><span class="img-wrap"><img data-src="http://img.xiaoho.com/2014/12/20141205170952.png" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/squares.svg" alt="startcolor" style="cursor: pointer;"></span></p>
+
+<p><em>写着写着发现这个 <code>filter</code> 属性很多，估计篇幅很大，那么就暂时分上下篇来写好了，不然篇幅实在过大，写的人都要挂了，何况看的人能这么蛋疼看下去？</em></p>
+
+<h2 id="articleHeader3">二、filter静态滤镜</h2>
+
+<p><strong>1.Alpha</strong>，调整对象内容的不透明度。</p>
+
+<p><strong>语法：</strong></p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Alpha()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Alpha(enabled=&#39;ture&#39;,GradientType=&#39;1&#39;,StartColorStr=&#39;#00000000&#39;,EndColorStr=&#39;#FFFF3300&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Alpha()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Alpha(enabled=<span class="hljs-string">'ture'</span>,GradientType=<span class="hljs-string">'1'</span>,StartColorStr=<span class="hljs-string">'#00000000'</span>,EndColorStr=<span class="hljs-string">'#FFFF3300'</span>)
+</code></pre>
+
+<ul>
+<li><p>Style，设置或者调整不透明度的风格。0代表默认值，1代表线性不透明，2代表径向渐变，3代表矩形渐变</p></li>
+<li><p>Opacity，设置或调整不透明度值。0~100值，其中0默认值表示全透明，100为全不透明</p></li>
+<li><p>FinishOpacity，设置或调整最后不透明度值。0~100值，其中0默认值表示全透明，100为全不透明</p></li>
+<li><p>StartX，设置或调整水平不透明最开始位置，默认值为0，即从对象最左边开始。</p></li>
+<li><p>FinishX，设置或调整水平不透明度结束位置，默认值为0</p></li>
+<li><p>StartY，设置或调整垂直方向不透明度开始位置，默认值为0</p></li>
+<li><p>FinishY，设置或调整垂直不透明度结束位置，默认值为0</p></li>
+</ul>
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Alpha.htm" target="_blank">Alpha Filter</a></p>
+
+<p><strong>2.BasicImage</strong>，调整对象的内容的颜色处理、图像旋转或不透明度。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.BasicImage()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.BasicImage(Grayscale=&#39;x&#39;, Xray=&#39;x&#39;, Mirror=&#39;x&#39;, Invert=&#39;x&#39;, Opcity=&#39;x&#39;, Rotation=&#39;x&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.BasicImage()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.BasicImage(Grayscale=<span class="hljs-string">'x'</span>, Xray=<span class="hljs-string">'x'</span>, Mirror=<span class="hljs-string">'x'</span>, Invert=<span class="hljs-string">'x'</span>, Opcity=<span class="hljs-string">'x'</span>, Rotation=<span class="hljs-string">'x'</span>)
+</code></pre>
+
+<ul>
+<li><p>GrayScale ，设置或调整对象的灰度值。</p></li>
+<li><p>Invert ，设置或调整对象的反相。</p></li>
+<li><p>Opacity ，设置或调整对象的不透明度。</p></li>
+<li><p>Mask ，设置或调整对象的的RGB是否为MashColor值，0默认值，显示正常RGB值，1表示改变内容为MashColor（不常用）</p></li>
+<li><p>Mirror ，设置或调整对象镜像。0正常显示，1内容对象将翻过来。</p></li>
+<li><p>Rotation ，设置或调整对象旋转，0正常显示，1代表旋转90°，2代表旋转180°，3代表旋转270°</p></li>
+<li><p>XRay ，设置或调整对象的X射线，布尔值，0正常显示，1代表X射线，有点像我们去医院拍X光一样的效果。</p></li>
+</ul>
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/BasicImage.htm" target="_blank">BasicImage Filter </a></p>
+
+<p><strong>3.Blur</strong>，设置对象的模糊值。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Blur()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=&#39;x&#39;, MakeShadow=&#39;x&#39;, ShadowOpacity=&#39;x&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Blur()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Blur(PixelRadius=<span class="hljs-string">'x'</span>, MakeShadow=<span class="hljs-string">'x'</span>, ShadowOpacity=<span class="hljs-string">'x'</span>)
+</code></pre>
+
+<ul>
+<li><p>PixelRadius，设置对象的模糊半径，1~100数值。</p></li>
+<li><p>MakeShadow，设置对象是否投影，布尔值，true和false</p></li>
+<li><p>ShadowOpacity，设置对象投影不透明度，0.0~1.0，假如MakeShadow为false那么该值无效。</p></li>
+</ul>
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/blur.htm" target="_blank">Blur Filter </a></p>
+
+<p>**4.Chroma **，设置对象的色彩透明度</p>
+
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Chroma()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Chroma(Color=&#39;x&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Chroma()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Chroma(Color=<span class="hljs-string">'x'</span>)
+</code></pre>
+
+<p>Color，设置颜色值。</p>
+
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Chroma.htm" target="_blank">Chroma Filter </a></p>
+
+<p>**5.Compositor **，设置新对象内容的合成颜色，这个翻译有点拗口，大概的意思就是：2个对象，要显示哪个或者隐藏哪个，或者显示他们对比之后的新对象。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Compositor()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Compositor(function=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Compositor()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Compositor(function=<span class="hljs-string">''</span>)
+</code></pre>
+
+<p>其中function值有18个值，很多很多。也不一一说了，有兴趣的的前往这里看demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Compositor.htm" target="_blank">Compositor Filter </a></p>
+
+<p>**6.DropShadow **，设置对象的投影效果。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.DropShadow()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.DropShadow(OffX=&#39;x&#39;, OffY=&#39;x&#39;, Color=&#39;x&#39;, Positive=&#39;x&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.DropShadow()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.DropShadow(OffX=<span class="hljs-string">'x'</span>, OffY=<span class="hljs-string">'x'</span>, Color=<span class="hljs-string">'x'</span>, Positive=<span class="hljs-string">'x'</span>)
+</code></pre>
+
+<ul>
+<li><p>OffX，设置投影的X位移，单位数值，默认值为5</p></li>
+<li><p>OffY，设置投影的Y位移，单位数值，默认值为5</p></li>
+<li><p>Color，设置投影的颜色值</p></li>
+<li><p>Positive，设置投影的透明或者非透明。</p></li>
+</ul>
+<p>之前有写过一篇关于css3的<a rel="nofollow" href="http://xiaoho.com/?p=816" target="_blank">shadow</a>文章，有时间的也可以点点。。。</p>
+
+<p>不妨用你的手中的IE6~8来预览一下官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/blur.htm" target="_blank">Blur Filter </a></p>
+
+<p>**7.Emboss **，设置对象的浮雕效果。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Emboss()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Emboss(Bias=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Emboss()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Emboss(Bias=<span class="hljs-string">''</span>)
+</code></pre>
+
+<p>一般来说Bias属性不需要设置，可以忽略，官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Emboss.htm" target="_blank">Emboss Filter </a></p>
+
+<p>**8.Engrave **，设置对象的雕刻效果。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Engrave()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Engrave(Bias=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Engrave()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Engrave(Bias=<span class="hljs-string">''</span>)
+</code></pre>
+
+<p>一般来说Bias属性不需要设置，可以忽略，官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Engrave.htm" target="_blank">Engrave Filter </a></p>
+
+<p>**9.Glow **，设置对象的光晕效果。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Glow()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Glow(color=&#39;&#39;, Strength=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Glow()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Glow(color=<span class="hljs-string">''</span>, Strength=<span class="hljs-string">''</span>)
+</code></pre>
+
+<ul>
+<li><p>color，设置光晕颜色。</p></li>
+<li><p>Strength，设置光晕的宽度，数值单位</p></li>
+</ul>
+<p>官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Glow.htm" target="_blank">Glow Filter </a></p>
+
+<p>**10.Light **，设置对象的亮度</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Light()
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs css"><code><span class="hljs-selector-tag">filter</span><span class="hljs-selector-pseudo">:progid</span><span class="hljs-selector-pseudo">:DXImageTransform.Microsoft.Light()</span>
+</code></pre>
+
+<ul>
+<li><p>addAmbient，加入对象环境光</p></li>
+<li><p>addCone ，加入锥形光源</p></li>
+<li><p>addPoint  加入点光源</p></li>
+<li><p>changeColor ，改变亮度颜色</p></li>
+<li><p>changeStrength，改变亮度长度</p></li>
+<li><p>clear，清除亮度</p></li>
+<li><p>moveLight，移动光源焦点。</p></li>
+</ul>
+<p>官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/shortSamples/lightEX1.htm" target="_blank">Light Filter </a></p>
+
+<p>**11.ICMFilter **，设置对象颜色内容改变，使其显示像打印设备的颜色。</p>
+
+<p><em>官方无demo，IE9时，这个滤镜仅仅应用于屏幕内容显示效果上，当内容是打印时，将不应用。</em></p>
+
+<p>**12.MaskFilter **，设置对象内容透明或者非透明颜色。</p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.MaskFilter()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.MaskFilter(Color=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.MaskFilter()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.MaskFilter(Color=<span class="hljs-string">''</span>)
+</code></pre>
+
+<p><strong>13.Matrix，调整大小、旋转或翻转使用矩阵的内容对象转换。</strong></p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Matrix()
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs css"><code><span class="hljs-selector-tag">filter</span><span class="hljs-selector-pseudo">:progid</span><span class="hljs-selector-pseudo">:DXImageTransform.Microsoft.Matrix()</span>
+</code></pre>
+
+<p>可以设置各种角度的旋转，官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/dhtml/filters/matrix.htm" target="_blank">Matrix Filter </a></p>
+
+<p><strong>14.MotionBlur，设置对象模糊，测试完demo之后感觉有点像线性模糊，就是月光投射下来不均匀的模糊效果。</strong></p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.MotionBlur()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.MotionBlur(Direction=&#39;&#39;,Strength=&#39;&#39;,Add=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.MotionBlur()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.MotionBlur(Direction=<span class="hljs-string">''</span>,Strength=<span class="hljs-string">''</span>,Add=<span class="hljs-string">''</span>)
+</code></pre>
+
+<ul>
+<li><p>Direction，设置对象模糊方向，从0°~315°照射下来。</p></li>
+<li><p>Strength ，设置对象模糊范围，单位数值，初始值为5</p></li>
+<li><p>Add，设置图像模糊是否覆盖在原图上，布尔值，true表示覆盖，false表示不覆盖</p></li>
+</ul>
+<p>官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/MotionBlur.htm" target="_blank">MotionBlur Filter </a></p>
+
+<p><strong>15.Wave，设置对象为波浪纹滤镜效果</strong></p>
+
+<div class="widget-codetool" style="display:none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Wave()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Wave(Add=&#39;&#39;, LightStrength=&#39;&#39;, Phase=&#39;&#39;, Strength=&#39;&#39;,  Freq=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Wave()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Wave(Add=<span class="hljs-string">''</span>, LightStrength=<span class="hljs-string">''</span>, Phase=<span class="hljs-string">''</span>, Strength=<span class="hljs-string">''</span>,  Freq=<span class="hljs-string">''</span>)
+</code></pre>
+
+<ul>
+<li><p>Add，设置滤镜是否覆盖在原图上，布尔值，true表示覆盖，false表示不覆盖</p></li>
+<li><p>LightStrength，亮度强度，0~100数值，数值越大滤镜效果越明显</p></li>
+<li><p>Phase，相对偏移值，0~100数值</p></li>
+<li><p>Strength，设置波浪强度，默认值为5，数值越大，波浪效果越明显。</p></li>
+<li><p>Frep，设置波浪频率，默认值为3，数值越大，波浪效果越明显。</p></li>
+</ul>
+<p>官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Wave.htm" target="_blank">Wave Filter </a></p>
+
+<p><strong>16.Shadow</strong>，设置对象阴影效果。</p>
+
+<div class="widget-codetool" style="display: none;">
+      <div class="widget-codetool--inner">
+      <span class="selectCode code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="全选"></span>
+      <span type="button" class="copyCode code-tool" data-toggle="tooltip" data-placement="top" data-clipboard-text="filter:progid:DXImageTransform.Microsoft.Shadow()
+/*完整写法*/
+filter:progid:DXImageTransform.Microsoft.Shadow(color=&#39;&#39;, Direction=&#39;&#39;, Strength=&#39;&#39;)
+" title="" data-original-title="复制"></span>
+      <span type="button" class="saveToNote code-tool" data-toggle="tooltip" data-placement="top" title="" data-original-title="放进笔记"></span>
+      </div>
+      </div><pre class="hljs groovy"><code><span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Shadow()
+<span class="hljs-comment">/*完整写法*/</span>
+<span class="hljs-string">filter:</span><span class="hljs-string">progid:</span>DXImageTransform.Microsoft.Shadow(color=<span class="hljs-string">''</span>, Direction=<span class="hljs-string">''</span>, Strength=<span class="hljs-string">''</span>)
+</code></pre>
+
+<ul>
+<li><p>Color，设置阴影颜色。</p></li>
+<li><p>Direction，设置阴影的方向，角度也是从0°~315°取值（跟PS的投影效果非常的相似。）</p></li>
+<li><p>Strength，设置投影强度，数值越大越模糊。</p></li>
+</ul>
+<p>官方demo→<a rel="nofollow" href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Shadow.htm" target="_blank"> Filter </a></p>
+
+<h2 id="articleHeader4">后话</h2>
+
+<p>总的来说，目前假如要用到的基本都是<code>Alpha</code>、<code>shadow</code>、<code>Blur</code>、<code>DropShadow</code>这些常规数值比较多。对于其他的值估计也不会感冒，在这里只是做一个介绍，更多详细可以点击参考资料。</p>
+
+<p>对了，刚开始我用打字的形式打了IE滤镜前缀<code>progid:DXImageTransform.Microsoft</code>，但是测试之后没有效果，原来是我把Image写到小写i因此，建议假如有需要设置的朋友，直接Ctrl+c以免出错，不过假如你平常习惯写驼峰写法，那么估计你就不会像我出错这么多了。</p>
+
+<p>Just. all,goodnight</p>
+
+<p>参考资料：</p>
+
+<p><a rel="nofollow" href="http://msdn.microsoft.com/en-us/library/ms532853(v=vs.85).aspx" target="_blank"></a><a rel="nofollow" href="http://msdn.microsoft.com/en-us/library/ms532853(v=vs.85).aspx" target="_blank">http://msdn.microsoft.com/en-us/library/ms532853(v=vs.85).aspx</a></p>
+
+<p>via <a rel="nofollow" href="http://xiaoho.com/?p=887" target="_blank">前端观察</a></p>
+
+                </div>
+                                                
+                <div class="clearfix mt10">
+                    <ul class="article-operation list-inline pull-left mt15"><li><a target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img class="mb5" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/creativecommons-cc.svg" height="20"></a></li><li class="dropdown js__content-ops hidden-xs" data-module="article" data-id="1190000002433305" data-typetext="文章"><a href="javascript:void(0);" class="dropdown-toggle text-muted" data-toggle="dropdown"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a><ul class="dropdown-menu dropdown-menu-left"><li><a href="https://segmentfault.com/a/1190000002433305#911" data-toggle="modal" data-target="#911" data-action="report">举报</a></li></ul></li></ul>
+                    <div class="pull-right mt-10 hidden-xs">
+                        <div class="widget-share__full" data-text="不得不收藏的——IE中CSS-filter滤镜小知识大全" data-url="https://segmentfault.com/a/1190000002433305" data-shorturl="http://sfau.lt/b5kna1"><div class="widget-share-network sharer-0" style="display: block;"><ul class="sn-inline"><li data-network="weibo"><a href="javascript:void(0);" class="entypo-weibo icon-sn-weibo share-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至新浪微博">新浪微博</a></li><li data-network="wechart"><a href="javascript:void(0);" class="entypo-wechart icon-sn-weixin share-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至微信">微信</a></li><li data-network="twitter"><a href="javascript:void(0);" class="entypo-twitter icon-sn-twitter share-3" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Twitter">Twitter</a></li><li data-network="facebook"><a href="javascript:void(0);" class="entypo-facebook icon-sn-facebook share-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="分享至 Facebook">Facebook</a></li></ul></div><a type="button" class="btn btn-sm shareMore btn-sn-more" data-toggle="popover" data-placement="top" data-url="https://segmentfault.com/a/1190000002433305" data-shorturl="http://sfau.lt/b5kna1"><span class="icon-sn-dotted" data-original-title="" title=""></span><strong class="visible-xs-inline">•••</strong></a></div>
+
+
+                    </div>
+                </div>
+                <div class="mt10 text-center mb30"><button type="button" id="mainLike" data-id="1190000002433305" class="btn btn-success btn-lg mr15 "><span id="mainLikeText">赞</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;
+                                <span id="mainLikeNum">8 </span></button><button type="button" id="mainBookmark" data-type="article" data-id="1190000002433305" class="btn btn-default btn-lg "><span id="mainBookmarkText">收藏</span>&nbsp;&nbsp;<span class="seprator">|</span>&nbsp;&nbsp;<span id="mainBookmarkNum">80</span></button><br><button type="button" data-id="1190000002433305" class="btn btn-danger btn-lg mt15 article__reward-btn">
+                                    赞赏支持
+                                </button></div><div class="mt30 mb30 text-center article__reward-info"><span class="mr10">如果觉得我的文章对你有用，请随意赞赏</span></div>                
+                                <script type="text/javascript">
+                    OA_show(3);
+                </script><div style="text-align: center; line-height: 0; background: #EEE"><script async="" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/f(8).txt"></script>
+<!-- 中部横幅广告位 -->
+<ins class="adsbygoogle" style="display: inline-block; width: 728px; height: 0px;" data-ad-client="ca-pub-6330872677300335" data-ad-slot="5598290435" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent;"><ins id="aswift_0_anchor" style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 728px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:728px;height:90px;" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><div id="beacon_f48a436db3" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div></div>
+
+
+                <h4 class="pt20 mb15 mt0 border-top">你可能感兴趣的</h4>
+
+                
+                <div class="mb15 block">
+                    <script type="text/javascript">
+                        OA_show(4);
+                    </script><div id="beacon_0d01cdc7bd" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+
+                </div>
+
+                                <div id="paradigm-article-related"><div class="recommend-post mb30"><ul class="widget-links"><li><a href="http://segmentfault.com/a/1190000015489782" title="如何机制地回答浏览器兼容性问题" target="_blank">如何机制地回答浏览器兼容性问题</a><span class="text-muted">Belinda</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/javascript">javascript</a></li><li><a href="http://segmentfault.com/a/1190000006255452" title="【译】表单组件的属性兼容性表" target="_blank">【译】表单组件的属性兼容性表</a><span class="text-muted">Levon</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E5%89%8D%E7%AB%AF">前端</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/html">html</a></li><li><a href="http://segmentfault.com/a/1190000008964321" title="CSS技巧" target="_blank">CSS技巧</a><span class="text-muted">寒青</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a></li><li><a href="http://segmentfault.com/a/1190000002481921" title="回味background" target="_blank">回味background</a><span class="text-muted">林小志</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/background">background</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a></li><li><a href="http://segmentfault.com/a/1190000015605876" title="CSS&lt;背景&gt;" target="_blank">CSS&lt;背景&gt;</a><span class="text-muted">dawdler_Bo</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/html5">html5</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a></li><li><a href="http://segmentfault.com/a/1190000015723169" title="浏览器兼容（CSS部分）" target="_blank">浏览器兼容（CSS部分）</a><span class="text-muted">mingo</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7">浏览器兼容性</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/javascript">javascript</a></li><li><a href="http://segmentfault.com/a/1190000011820571" title="简单说 CSS滤镜 filter属性" target="_blank">简单说 CSS滤镜 filter属性</a><span class="text-muted">FEWY</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/%E6%BB%A4%E9%95%9C">滤镜</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/html5">html5</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/css">css</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/javascript">javascript</a></li><li><a href="http://segmentfault.com/a/1190000003747017" title="CSS基础篇--CSS3之box-flex属性的使用" target="_blank">CSS基础篇--CSS3之box-flex属性的使用</a><span class="text-muted">风雨后见彩虹</span><a class="tag" taget="_blank" href="https://segmentfault.com/t/css3">css3</a><a class="tag" taget="_blank" href="https://segmentfault.com/t/box-flex">box-flex</a></li></ul></div></div>
+
+                
+        <div class="comments--news comments--default comments--article 
+    " data-id="1190000002433305" data-user-id="" data-author-id="1030000000323934 " data-is-admin="null" id="goToReplyArea">
+                    <div class="mb10 clearfix">
+                <strong class="comments-stat pull-left mr10">3 条评论</strong>
+
+                                                    <div class="btn-group btn-group-xs pull-right comments-sort btn-group-menu" role="menu">
+                        <a href="javascript:;" class="btn btn-default active" data-sort="default">默认排序</a>
+                        <a href="javascript:;" class="btn btn-default" data-sort="desc">时间排序</a>
+                    </div>
+                            </div>
+                <div class="comments-container">
+                                <div class="comments-list">
+                <div class="comments-item" data-id="1050000009039039">
+            <div class="pull-left">
+                <a href="https://segmentfault.com/u/smallk2010" target="_blank"><img class="avatar-32 " src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/user-64.png" alt=""></a>
+            </div>
+            <div class="comments-content">
+                <div class="comment-trigger">
+                    <div class="pull-right comment-option">
+                                                <a href="https://segmentfault.com/a/1190000002433305#911" class="ml10" data-toggle="modal" data-target="#911" data-action="report" data-action-text="举报" data-module="comment" data-id="1050000009039039" data-typetext="评论" data-placement="top" title="举报"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+                                            </div>
+                    <strong><a target="_blank" href="https://segmentfault.com/u/smallk2010">smallk2010</a></strong>
+                    <span class="comments-isAuthor hide"></span>
+                    <span class="comments-date">  ·  2017年04月12日</span>
+                </div>
+
+                <div class="fmt mb10"><p>Shadow，设置对象阴影效果。 IE678下无效啊。。。。求指导一下</p></div>
+
+                <form action="https://segmentfault.com/api/comment/1050000009039039/edit">
+                    <div class="form-group">
+                        <textarea class="editTextarea mono form-control mb10 hidden" rows="1" name="text" style="height: 28px; overflow: hidden; word-wrap: break-word;">Shadow，设置对象阴影效果。 IE678下无效啊。。。。求指导一下</textarea>
+                    </div>
+                </form>
+
+                <p class="comment-ops not-reply">
+                    <span class="comments-zan ">
+                        <i class="fa fa-thumbs-up mr4" aria-hidden="true"></i>
+                        <span class="comments-zan-text">赞</span>
+                        <span class="comments-zan-value"></span>
+                    </span>
+                    
+                    <span class="ml15 comments-reply-btn">回复</span>
+
+                    <span class="pull-right editBtns hidden">
+                      <button class="btn btn-link btn-xs cancel" type="button">取消</button>
+                      <button class="btn btn-primary btn-xs edit ml10" type="button">保存</button>
+                    </span>
+                </p>
+
+                <div class="reply-list ">
+
+                    
+                        <div class="reply-item" data-id="1050000014478252">
+                            <span class="pull-left comment-ops " style="position:absolute;">
+                                <span class="mr20 comments-zan ">
+                                    <span class="comments-zan-value comment-showhide
+                                         islike0-10
+                                        ">
+                                        0
+                                    </span>
+                                    <i class="fa fa-thumbs-up comment-showhide ml5" aria-hidden="true"></i>
+                                </span>
+                            </span>
+
+                            <div class="reply-content-block">
+                                <div class="reply-content"><p>我的也是 不知道你解决没？求分享</p></div>
+                                <form action="https://segmentfault.com/api/comment/1050000014478252/edit">
+                                    <div class="form-group">
+                                        <textarea class="editTextarea mono form-control mb10 hidden" rows="1" name="text" style="height: 28px; overflow: hidden; word-wrap: break-word;">我的也是 不知道你解决没？求分享</textarea>
+                                    </div>
+                                </form>
+                                <div class="comment-func inline-block">
+                                    
+
+                                    <span class="pull-right commentTools ml15">
+                                                                                                                                                                <a href="https://segmentfault.com/a/1190000002433305#911" class="ml10" data-toggle="modal" data-target="#911" data-module="comment" data-id="1050000014478252" data-action="report" data-typetext="评论" data-placement="top" title="举报">
+                                            <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                                        </a>
+                                    </span>
+
+                                    <span class="comment-meta inline-block">
+                                        <span> — </span>
+                                        <a target="_blank" href="https://segmentfault.com/u/_5822dce9ee362">
+                                            <strong>奕佚</strong>
+                                        </a> 
+                                        <span class="comments-isAuthor hide">
+                                            
+                                        </span> 
+                                        <span class="text-muted-plus">  ·  4月19日</span>
+                                                                            </span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="reply-item reply-item--ops" data-obj="obj">
+                        <a class="reply-inner-btn" href="javascript:;">添加回复</a>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+                <div class="comments-item" data-id="1050000009538459">
+            <div class="pull-left">
+                <a href="https://segmentfault.com/u/dfasd123" target="_blank"><img class="avatar-32 " src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/3606436868-59707211a6d52_big64" alt=""></a>
+            </div>
+            <div class="comments-content">
+                <div class="comment-trigger">
+                    <div class="pull-right comment-option">
+                                                <a href="https://segmentfault.com/a/1190000002433305#911" class="ml10" data-toggle="modal" data-target="#911" data-action="report" data-action-text="举报" data-module="comment" data-id="1050000009538459" data-typetext="评论" data-placement="top" title="举报"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></a>
+                                            </div>
+                    <strong><a target="_blank" href="https://segmentfault.com/u/dfasd123">dfasd123</a></strong>
+                    <span class="comments-isAuthor hide"></span>
+                    <span class="comments-date">  ·  2017年05月24日</span>
+                </div>
+
+                <div class="fmt mb10"><p>可惜只能成为IE的历史了！</p></div>
+
+                <form action="https://segmentfault.com/api/comment/1050000009538459/edit">
+                    <div class="form-group">
+                        <textarea class="editTextarea mono form-control mb10 hidden" rows="1" name="text" style="height: 28px; overflow: hidden; word-wrap: break-word;">可惜只能成为IE的历史了！</textarea>
+                    </div>
+                </form>
+
+                <p class="comment-ops not-reply">
+                    <span class="comments-zan ">
+                        <i class="fa fa-thumbs-up mr4" aria-hidden="true"></i>
+                        <span class="comments-zan-text">赞</span>
+                        <span class="comments-zan-value"></span>
+                    </span>
+                    
+                    <span class="ml15 comments-reply-btn">回复</span>
+
+                    <span class="pull-right editBtns hidden">
+                      <button class="btn btn-link btn-xs cancel" type="button">取消</button>
+                      <button class="btn btn-primary btn-xs edit ml10" type="button">保存</button>
+                    </span>
+                </p>
+
+                <div class="reply-list reply-list--empty">
+
+                    
+                    <div class="reply-item reply-item--ops" data-obj="obj">
+                        <a class="reply-inner-btn" href="javascript:;">添加回复</a>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+            </div>
+    <div class="comments-loading hide">载入中...</div>
+        <div class="comments-more hide"><a href="javascript:;">显示更多评论</a></div>
+    
+
+                                    <div class="comments-box" id="goToReplyEditor">
+                <div class="pull-left">
+                    <img class="avatar-32 " src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/user-128.png" alt="">
+                </div>
+                <div class="comments-box-content">
+                    <form action="https://segmentfault.com/api/article/1190000002433305/comments/add">
+                        <div class="form-group mb0">
+                            <textarea name="text" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
+                            <div class="mt15 text-right">
+                                <button type="button" class="hide"></button>
+                                <button class=" btn btn-primary" type="button">发布评论</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                                                        </div>
+    </div>
+
+
+                                    
+                
+                
+
+            </div><!-- /.main -->
+
+
+            <div class="col-md-3 side hidden-sm hidden-xs mt30" style="height: 9909px;">
+                                                
+                <div class="mb25 hidden-md hidden-sm hidden-xs">
+    <img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/20181023.png" alt="Planets" usemap="#gridsMap" width="255" height="136">
+    <map name="gridsMap" id="gridsMap"><area shape="rect" target="_blank" onmouseover="d(this)" onmouseout="e(this)" onclick="c(1750000016293298)" coords="221,0,255,34" href="https://www.3tee.cn/index.html?source=segmentfault" stitle="兼容WebRTC，快速嵌入，大华股份等上市公司都在用"><area shape="rect" target="_blank" onmouseover="d(this)" onmouseout="e(this)" onclick="c(1750000016618830)" coords="102,51,136,68" href="https://www.accesshub.cn/" stitle="免费的云、企业网络和个人终端之间极速传输产品"><area shape="rect" target="_blank" onmouseover="d(this)" onmouseout="e(this)" onclick="c(1750000016713804)" coords="0,0,102,17" href="http://uniapp.dcloud.io/?hmsr=sf&amp;hmpl=sf1&amp;hmcu=%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E7%BB%88%E6%9E%81%E6%A1%86%E6%9E%B6" stitle="终极跨平台开发框架，全面支持小程序"><area shape="rect" target="_blank" onmouseover="d(this)" onmouseout="e(this)" onclick="c(1750000016738131)" coords="17,68,102,102" href="https://www.smobiler.com/" stitle="在.NET平台上开发移动应用，其实可以更简单"></map>
+    <div style="text-align: center;"><a style="text-align:center; color:#9E9E9E; font-size:12px" href="https://segmentfault.com/sponsor">想在上方展示你的广告？</a></div>
+            <script async="" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/20181023.js.下载"></script>
+    </div>
+
+                                <style>
+                    .job-recommend-area a:not(:last-of-type) {margin-bottom:10px; display: block}
+                    .job-recommend-area a:hover {text-decoration: none;}
+                </style>
+                <div class="hidden-md">
+                    <div class="job-recommend">
+                      <h3 class="job-title">推广链接</h3>
+                      <div class="job-recommend-area">
+                                                <script type="text/javascript">
+                            OA_show(7);
+                            OA_show(9);
+                            OA_show(10);
+                            OA_show(15);
+                            OA_show(16);
+                        </script><a href="https://sponsor.segmentfault.com/ck.php?oaparams=2__bannerid=35__zoneid=7__cb=fb7f447e7c__oadest=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000016389031" target="_blank"><strong>CSS 水平垂直居中的 1010 种方式</strong><br>
+<small style="color: #999">划重点！面试必考（史上最全）</small></a><div id="beacon_fb7f447e7c" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+<a href="https://sponsor.segmentfault.com/ck.php?oaparams=2__bannerid=52__zoneid=9__cb=bf161891a2__oadest=https%3A%2F%2Fsegmentfault.com%2Fa%2F1190000016659945" target="_blank"><strong>美团如何防止 CSRF 攻击？</strong><br>
+<small style="color: #999">美团技术团队实践经验分享</small></a><div id="beacon_bf161891a2" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(3).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+<div id="beacon_2d9d9e5dfe" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(4).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+<div id="beacon_d3578832c7" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(5).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+<div id="beacon_cfd2b3f97c" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(6).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+
+                      </div>
+                    </div>
+                    <style>
+                    .job-recommend {margin-bottom: 30px;}
+                    .job-title {
+                        font-size: 14px;
+                        color: #017E66;
+                        font-weight: 500;
+                        background: #BFE6D7;
+                        margin: 0;
+                        padding-top: 6px;
+                        padding-bottom: 6px;
+                        text-align: center;
+                    }
+                    .job-recommend-area {
+                      padding: 13px;
+                      border: 3px solid #EBF7F3;
+                      border-top: none;
+                    }
+                    </style>
+                    
+                                    </div>
+
+                                
+                <div class="hidden-md ad-should-be-fixed stuckMenu isStuck" style="display: block; position: fixed; top: 10px;">
+                    <div class="mb25 block">
+                        <script type="text/javascript">
+                            OA_show(1);
+                        </script><script async="" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/f(8).txt"></script>
+<!-- 侧栏矩形 -->
+<ins class="adsbygoogle" style="display:inline-block;width:255px;height:213px" data-ad-client="ca-pub-6330872677300335" data-ad-slot="9674628595" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:213px;margin:0;padding:0;position:relative;visibility:visible;width:255px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:213px;margin:0;padding:0;position:relative;visibility:visible;width:255px;background-color:transparent;"><iframe width="255" height="213" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:255px;height:213px;" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><div id="beacon_9ed20f2f9b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/lg(7).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+
+                    </div>
+                </div>
+                <div class="post-nav hidden-xs side-outline hidden-sm" style="display: block; position: sticky; top: 238px; margin-top: 218px;">
+                    <div class="panel panel-default widget-outline">
+                        <div class="panel-heading">目录</div>
+                        <div class="panel-body">
+                            <div class="nav-body" style="overflow: scroll; top: 0px; height: 638px;">
+                                <div class="highlight-title" style="display: block; top: 81px; height: 27px;"></div>
+                                <ul class="articleIndex"><li class=""><a href="https://segmentfault.com/a/1190000002433305#articleHeader0">前言</a></li><li class=""><a href="https://segmentfault.com/a/1190000002433305#articleHeader1">filter历史</a></li><li class=""><a href="https://segmentfault.com/a/1190000002433305#articleHeader2">一、filter界面滤镜</a></li><li class="active"><a href="https://segmentfault.com/a/1190000002433305#articleHeader3">二、filter静态滤镜</a></li><li class=""><a href="https://segmentfault.com/a/1190000002433305#articleHeader4">后话</a></li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div><!-- /.side -->
+        </div>
+    </div>
+</div>
+
+<div id="shareToWeiboModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">分享</h4>
+            </div>
+            <div class="modal-body">
+                <p class="sfModal-content">
+                    分享到微博？
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default dont-likeweibo" data-dismiss="modal">取消</button>
+                <a href="https://segmentfault.com/a/1190000002433305" id="shareLink" class="btn btn-primary done-btn" target="_blank" onclick="$(&#39;#shareToWeiboModal&#39;).modal(&#39;hide&#39;)">分享</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal widget-911" id="911" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title"><span data-model="action"></span><span data-model="type"></span></h4>
+      </div>
+      <div class="modal-body">
+        <form id="reportForm">
+          <!-- 后台返回信息 -->
+          <p class="alert alert-warning" data-model="returnMsg"></p>
+          <div data-role="base">
+            <p>
+              <strong class="required">我要<span data-model="action"></span>该<span data-model="type"></span>，理由是：</strong>
+            </p>
+            <ul class="list-unstyled" data-model="list"></ul>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default pull-left" type="button" data-role="back" style="display:none">返回重选</button>
+                <button class="btn btn-default" data-dismiss="modal" type="button">取消</button>
+        <button class="btn btn-primary" data-role="submit" type="button">提交</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<div class="modal widget-seo" id="seo" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title"><span data-model="action"></span><span data-model="type"></span></h4>
+            </div>
+            <div class="modal-body">
+                <form id="seoForm">
+                    <!-- 后台返回信息 -->
+                    <p class="alert alert-warning" data-model="returnMsg" style="display: none;"></p>
+                    <div data-role="base">
+                        <div class="form-group">
+                            <label>SEO标题：</label><textarea style="min-height: 35px; width: 100%; max-height: 132px; overflow: hidden; overflow-wrap: break-word; height: 32px;" name="title" class="form-control" rows="1" placeholder="请输入SEO标题"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>SEO描述：</label><textarea style="min-height: 35px; max-height: 132px; overflow: hidden; overflow-wrap: break-word; height: 32px;" name="desc" class="form-control" rows="1" placeholder="请输入SEO描述"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>SEO keywords：</label><textarea style="min-height: 35px; max-height: 132px; overflow: hidden; overflow-wrap: break-word; height: 32px;" name="keywords" class="form-control" rows="1" placeholder="请输入SEO keywords"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type="button">取消</button>
+                <button class="btn btn-primary" data-role="submit" type="button">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div id="loginBanner" class="hidden-sm hidden-xs loginBanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-7">
+                <h1 class="title">在 SegmentFault，学习技能、解决问题</h1>
+                <p class="desc">每个月，我们帮助 1000 万的开发者解决各种各样的技术问题。并助力他们在技术能力、职业生涯、影响力上获得提升。</p>
+            </div>
+            <div class="col-lg-3 col-lg-offset-3 col-md-4 col-md-offset-1">
+                <form class="register-form clearfix" action="https://segmentfault.com/api/user/phone/register">
+
+                    
+                    <a href="https://segmentfault.com/user/register" class="SFLogin btn btn-lg btn-primary mr15">免费注册</a>
+                    <a href="https://segmentfault.com/user/login" class="SFRegister btn btn-lg btn-primary">立即登录</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row hidden-xs">
+            <dl class="col-sm-2 site-link">
+                <dt>产品</dt>
+                
+                <dd><a href="https://segmentfault.com/questions/hottest?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=%E7%83%AD%E9%97%A8%E9%97%AE%E7%AD%94">热门问答</a></dd>
+                <dd><a href="https://segmentfault.com/blogs/hottest?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=%E7%83%AD%E9%97%A8%E4%B8%93%E6%A0%8F">热门专栏</a></dd>
+                <dd><a href="https://segmentfault.com/lives?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=%E7%83%AD%E9%97%A8%E8%AE%B2%E5%A0%82">热门讲堂</a></dd>
+                <dd><a href="https://segmentfault.com/events?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=%E6%9C%80%E6%96%B0%E6%B4%BB%E5%8A%A8">最新活动</a></dd>
+                <dd><a href="https://segmentfault.com/groups?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=%E5%9C%88%E5%AD%90">圈子</a></dd>
+                <dd><a href="https://segmentfault.com/jobs?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=%E6%89%BE%E5%B7%A5%E4%BD%9C">找工作</a></dd>
+                <dd><a href="https://segmentfault.com/app?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=product&amp;utm_content=footer-links-hottest-questions&amp;utm_term=app">移动客户端</a></dd>
+                
+            </dl>
+            
+            <dl class="col-sm-2 site-link">
+                <dt>资源</dt>
+                <dd><a href="https://segmentfault.com/weekly?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-weekly&amp;utm_term=%E6%AF%8F%E5%91%A8%E7%B2%BE%E9%80%89">每周精选</a></dd>
+                <dd><a href="https://segmentfault.com/users?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-users&amp;utm_term=%E7%94%A8%E6%88%B7%E6%8E%92%E8%A1%8C%E6%A6%9C">用户排行榜</a></dd>
+                <dd><a href="https://segmentfault.com/badges?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-badges&amp;utm_term=%E5%BE%BD%E7%AB%A0">徽章</a></dd>
+                <dd><a href="https://segmentfault.com/faq?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-faq&amp;utm_term=%E5%B8%AE%E5%8A%A9%E4%B8%AD%E5%BF%83">帮助中心</a></dd>
+                <dd><a href="https://segmentfault.com/repu?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-repu&amp;utm_term=%E5%A3%B0%E6%9C%9B%E4%B8%8E%E6%9D%83%E9%99%90">声望与权限</a></dd>
+                <dd><a href="https://segmentfault.com/community?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-community&amp;utm_term=%E7%A4%BE%E5%8C%BA%E6%9C%8D%E5%8A%A1%E4%B8%AD%E5%BF%83">社区服务中心</a></dd>
+                <dd><a href="https://docs.segmentfault.com/?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-docs&amp;utm_term=%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C">开发手册</a></dd>
+
+   
+            </dl>
+
+            <dl class="col-sm-2 site-link">
+                <dt>商务</dt>
+                <dd><a href="https://business.segmentfault.com/services?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=business&amp;utm_content=footer-links-services-rencai&amp;utm_term=%E4%BA%BA%E6%89%8D%E6%9C%8D%E5%8A%A1" target="_blank">人才服务</a></dd>
+                <dd><a href="https://business.segmentfault.com/services?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=business&amp;utm_content=footer-links-services-qiyeneixun&amp;utm_term=%E4%BC%81%E4%B8%9A%E6%9C%8D%E5%8A%A1" target="_blank">企业培训</a></dd>
+                <dd><a href="https://business.segmentfault.com/services?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=business&amp;utm_content=footer-links-services-huodongcehua&amp;utm_term=%E6%B4%BB%E5%8A%A8%E7%AD%96%E5%88%92" target="_blank">活动策划</a></dd>
+                <dd><a href="https://business.segmentfault.com/ads?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=business&amp;utm_content=footer-links-ads&amp;utm_term=%E5%B9%BF%E5%91%8A%E6%8A%95%E6%94%BE" target="_blank">广告投放</a></dd>
+                <dd><a href="https://business.segmentfault.com/bc?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=business&amp;utm_content=footer-links-bc&amp;utm_term=%E5%8C%BA%E5%9D%97%E9%93%BE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" target="_blank">区块链解决方案</a></dd>
+                <dd><a href="https://business.segmentfault.com/contact?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=business&amp;utm_content=footer-links-contact&amp;utm_term=%E5%90%88%E4%BD%9C%E8%81%94%E7%B3%BB" target="_blank">合作联系</a></dd>
+            </dl>
+            
+            <dl class="col-sm-2 site-link">
+                <dt>关于</dt>
+                <dd><a href="https://about.segmentfault.com/?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=about&amp;utm_content=about-index&amp;utm_term=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC">关于我们</a></dd>
+                <dd><a href="https://about.segmentfault.com/careers.html?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=about&amp;utm_content=about-careers&amp;utm_term=%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC">加入我们</a></dd>
+                <dd><a href="https://about.segmentfault.com/contact.html?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=about&amp;utm_content=about-contact&amp;utm_term=%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a></dd>
+            </dl>
+
+            <dl class="col-sm-2 site-link">
+                <dt>关注</dt>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault" target="_blank">产品技术日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/community_admin" target="_blank">社区运营日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault_news" target="_blank">市场运营日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/segmentfault_team" target="_blank">团队日志</a></dd>
+                                <dd><a href="https://segmentfault.com/blog/interview" target="_blank">社区访谈</a></dd>
+                                <dd>
+                    <ul class="sn-inline">
+                        <li>
+                            <a class="entypo-wechart icon-sn-weixin weixin-popover-qrcode" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">微信</a>
+                        </li>
+                        <li>
+                            <a href="http://weibo.com/segmentfault" target="_blank" class="entypo-weibo icon-sn-weibo">新浪微博</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/SegmentFault" target="_blank" class="entypo-facebook icon-sn-github">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/segment_fault" target="_blank" class="entypo-twitter icon-sn-twitter">Twitter</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+
+            <dl class="col-sm-2 site-link" id="license">
+                <dt>条款</dt>
+                <dd><a href="https://segmentfault.com/tos">服务条款</a></dd>
+                <dd><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">内容许可</a></dd>
+                <dd>
+                    <a href="https://segmentfault.com/app" class="clearfix mt10 block"><img src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/appQrcode.png" class="app-qrcode"></a>
+                    <div class="app-download-desc">
+                        <p>扫一扫下载 App</p>
+                    </div>
+                    
+                </dd>
+            </dl>
+        </div>
+        <div class="copyright">
+            Copyright © 2011-2018 SegmentFault. 当前呈现版本 17.06.16<br>
+            <a href="http://www.miibeian.gov.cn/" rel="nofollow">浙ICP备 15005796号-2</a> &nbsp;
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602002000" rel="nofollow">浙公网安备 33010602002000号</a>
+            <span class="ml5">杭州堆栈科技有限公司版权所有</span>
+            <p class="mt30">CDN 存储服务由 <a target="_blank" href="https://www.upyun.com/?utm_source=segmentfault&amp;utm_medium=link&amp;utm_campaign=upyun&amp;md=segmentfault">又拍云</a> 赞助提供 </p>
+        </div>
+        <p class="text-center">
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="mobile" href="javascript:;">移动版</a>
+            <a class="js__view--selector hidden-sm hidden-md hidden-lg" data-action="desktop" href="javascript:;">桌面版</a>
+        </p>
+    </div>
+</footer>
+
+<div id="fixedTools" class="hidden-xs hidden-sm">
+    <a id="backtop" class="border-bottom" href="https://segmentfault.com/a/1190000002433305#">回顶部</a>
+</div>
+
+    <script id="loginModal" type="text/template">
+    <div class="row bg-white login-modal">
+        <div class="col-md-12 login-wrap">
+            <form action="/api/user/login" method="POST" role="form" class="mt15">
+                <div class="form-group hidden">
+                                        <input type="text" class="form-control" name="remember" value="1"
+                           autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">手机号 或 Email</label>
+                    <input type="text" class="form-control" name="username" tabindex="1" required placeholder="11 位手机号 或 Email"
+                           autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">密码</label><span class="pull-right"><a
+                                href="/user/forgot" tabindex="4">忘记密码</a></span>
+                    <input type="password" class="form-control" name="password" tabindex="2" required placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <a
+                            
+                                                    href="/user/phoneLogin"
+                            class="phoneLogin"
+                                            >手机验证码登录</a>
+                </div>
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn-block btn btn-primary pull-right pl20 pr20" tabindex="3"
+                            onclick='ga("send", "event", "email login button", "clicked", "login modal");'>登录
+                    </button>
+                </div>
+            </form>
+            <div class="text-muted text-center more-login-area">
+    <span class="more-login-words">更多登录方式</span>
+</div>
+<div class="widget-login mb15 text-center">
+    <a href="/user/oauth/google" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                class="icon-sn-google"></span></a>
+    <a href="/user/oauth/github" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                class="icon-sn-github"></span></a>
+    <a href="/user/oauth/weibo" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                class="icon-sn-weibo"></span></a>
+    <a href="/user/oauth/qq" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-qq"></span></a>
+    <a href="/user/oauth/weixin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-weixin"></span></a>
+    <a href="/user/oauth/linkedin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                class="icon-sn-linkedin"></span></a>
+    <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span></span>
+    <a href="/user/oauth/twitter" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                class="icon-sn-twitter"></span></a>
+    <a href="/user/oauth/facebook" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                class="icon-sn-facebook"></span></a>
+    <a href="/user/oauth/douban" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                class="icon-sn-douban"></span></a>
+</div>
+<div class="form-group clearfix">
+    <a class="btn-block btn btn-default pull-right pl20 pr20 
+                        SFLogin
+             "
+
+            
+        onclick='ga("send", "event", "email login button", "clicked", "login modal");'>
+                    注册新账号
+            </a>
+</div>
+<p class="text-muted text-center mb15">登录即表示你同意网站的<a href="/tos" target="_blank">《服务条款》</a></p>        </div>
+    </div>
+</script>
+    <script id="registerModal" type="text/template">
+    <div class="row bg-white login-modal">
+        <div class="col-md-12 login-wrap">
+            
+            <form action="/api/user/register" method="POST" role="form" class="mt15">
+                <div class="form-group">
+                    <label for="name" class="control-label">你的名字</label>
+                    <input type="text" class="form-control" name="name" required placeholder="真实姓名或常用昵称">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mail" class="control-label">手机号 或 Email</label>
+                    <input type="text" class="form-control" id="login-name" name="mail" required placeholder="11 位手机号 或 Email">
+                </div>
+                
+                <input type="text" class="hidden" name="register_type" value="mail">
+
+                <div class="form-group">
+                    <div class="phone-register-only hidden">
+                        <div class="captchaInput mb10">
+                            <input type="text" class="form-control" name="cap" placeholder="右侧的验证码" style="width:50%; display: inline; margin-right: 15px;">
+                            <span class="mt10">
+                                <a id="loginReloadCaptcha" href="javascript:void(0)">
+                                <img src="/user/captcha?w=135&h=34" class="cap" width="135" height="34"/></a>
+                            </span>
+                        </div>
+                        <div class="input-group">
+                            <input name="code" type="text" class="form-control js-user-login__phone-code-value" placeholder="短信验证码">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default js-user-login__phone-vaild-btn" style="width:96px;" type="button">
+                                获取验证码</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="control-label">密码</label>
+                    <input type="password" class="form-control" name="password" required placeholder="不少于 6 位的密码">
+                </div>
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn-block btn btn-primary pl20 pr20 pull-right"
+                            onclick='ga("send", "event", "email register button", "clicked", "login modal");'>注册
+                    </button>
+                </div>
+                                <div class="text-muted text-center more-login-area">
+    <span class="more-login-words">更多登录方式</span>
+</div>
+<div class="widget-login mb15 text-center">
+    <a href="/user/oauth/google" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                class="icon-sn-google"></span></a>
+    <a href="/user/oauth/github" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                class="icon-sn-github"></span></a>
+    <a href="/user/oauth/weibo" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                class="icon-sn-weibo"></span></a>
+    <a href="/user/oauth/qq" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-qq"></span></a>
+    <a href="/user/oauth/weixin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-weixin"></span></a>
+    <a href="/user/oauth/linkedin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                class="icon-sn-linkedin"></span></a>
+    <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span></span>
+    <a href="/user/oauth/twitter" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                class="icon-sn-twitter"></span></a>
+    <a href="/user/oauth/facebook" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                class="icon-sn-facebook"></span></a>
+    <a href="/user/oauth/douban" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                class="icon-sn-douban"></span></a>
+</div>
+<div class="form-group clearfix">
+    <a class="btn-block btn btn-default pull-right pl20 pr20 
+                        SFRegister
+             "
+
+            
+        onclick='ga("send", "event", "email login button", "clicked", "login modal");'>
+                    已有账号登录
+            </a>
+</div>
+<p class="text-muted text-center mb15">登录即表示你同意网站的<a href="/tos" target="_blank">《服务条款》</a></p>            </form>
+        </div>
+    </div>
+</script>
+    <script id="phoneLoginModal" type="text/template">
+
+    <div class="row bg-white login-modal phonelogin-modal">
+        <div class="col-md-12 login-wrap">
+            <form action="/api/user/phonelogin" method="POST" role="form" class="mt15">
+                <div class="form-group">
+                    <label for="phone" class="control-label required">手机号</label>
+                    <input type="text" class="form-control phonelogin--phone" name="phone" tabindex="1" required placeholder="11 位手机号"
+                           autocomplete="off">
+                    <span class="help-block"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="authCode" class="control-label required">验证码</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control bindphone--code" name="authCode" placeholder="短信验证码">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default user-bind__phone-vaild-btn" type="button">获取验证码</button>
+                        </span>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+
+                <div class="form-group">
+                    <a 
+                                                            href="/user/login"
+                                class="SFRegister"
+                                                >密码登录（手机号或 Email）</a>
+                </div>
+                <div class="form-group clearfix">
+                    <button type="submit" class="btn-block btn btn-primary pull-right pl20 pr20" tabindex="3"
+                            onclick='ga("send", "event", "email login button", "clicked", "login modal");'>登录
+                    </button>
+                </div>
+            </form>
+            <div class="text-muted text-center more-login-area">
+    <span class="more-login-words">更多登录方式</span>
+</div>
+<div class="widget-login mb15 text-center">
+    <a href="/user/oauth/google" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "google"});'><span
+                class="icon-sn-google"></span></a>
+    <a href="/user/oauth/github" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "github"});");'><span
+                class="icon-sn-github"></span></a>
+    <a href="/user/oauth/weibo" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "weibo"});'><span
+                class="icon-sn-weibo"></span></a>
+    <a href="/user/oauth/qq" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-qq"></span></a>
+    <a href="/user/oauth/weixin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "qq"});'><span
+                class="icon-sn-weixin"></span></a>
+    <a href="/user/oauth/linkedin" class=""
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "linkedin"});'><span
+                class="icon-sn-linkedin"></span></a>
+    <span id="loginShowMore" style="cursor: pointer" class="mb5"><span class="icon-sn-dotted"></span></span>
+    <a href="/user/oauth/twitter" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "twitter"});'><span
+                class="icon-sn-twitter"></span></a>
+    <a href="/user/oauth/facebook" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "facebook"});'><span
+                class="icon-sn-facebook"></span></a>
+    <a href="/user/oauth/douban" class=" hidden"
+       onclick='ga("send", "event", "3rd login button", "clicked", "login modal", {media: "douban"});'><span
+                class="icon-sn-douban"></span></a>
+</div>
+<div class="form-group clearfix">
+    <a class="btn-block btn btn-default pull-right pl20 pr20 
+                        SFLogin
+             "
+
+            
+        onclick='ga("send", "event", "email login button", "clicked", "login modal");'>
+                    注册新账号
+            </a>
+</div>
+<p class="text-muted text-center mb15">登录即表示你同意网站的<a href="/tos" target="_blank">《服务条款》</a></p>        </div>
+    </div>
+</script>
+<script id="bindPhoneModal" type="text/template">
+    <div class="bg-white bindphone-model">
+        <div class="alert alert-warning" role="alert">
+            为了保证账号安全，请先绑定手机
+        </div>
+        <div>
+            <form class="form-horizontal form__bindphone-apply" style="background-color:#fff;padding:0;">
+                <div class="form-group ">
+                    <label for="phoneNumber" class="col-sm-3 control-label required" >手机号码</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control bindphone--phone" id="phoneNumber" name="phone" placeholder="仅只支持大陆手机号">
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+                <div class="form-group">
+                    <label for="authCode" class="col-sm-3 control-label required">验证码</label>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control bindphone--code" name="code" placeholder="短信验证码">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default user-bind__phone-vaild-btn" type="button">获取验证码</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</script>
+
+
+<script>
+    window.serverTime = 1540266104000;
+</script>
+
+<script>
+    (function (w) {
+        w.SF = {
+            staticUrl: "https://static.segmentfault.com/v-5bbf1b3b"
+        };
+        w.SF.token = (function () {
+    var _kdFBopU = '67'//'aH'
++//'qkm'
+'aa5'+'67f'//'K1a'
++//'2q6'
+'b47'+'c2c'//'od4'
++'02'//'OW'
++//'e6'
+'01'+'bd4'//'VZX'
++'c'//'7'
++'5fa'//'IR'
++//'1oq'
+'07'+'d0'//'u5n'
++//'ssM'
+'b'+'0d'//'4zN'
+, _UQZmb6 = [];
+
+    for (var i = 0; i < _UQZmb6.length; i ++) {
+        _kdFBopU = _kdFBopU.substring(0, _UQZmb6[i][0]) + _kdFBopU.substring(_UQZmb6[i][1]);
+    }
+
+    return _kdFBopU;
+})();;
+    })(window);
+
+                var lock = {
+        type: "",
+        text: '',
+        table: {"ban_post":[1,"\u4f60\u5df2\u7ecf\u88ab\u7981\u8a00, \u65e0\u6cd5\u8fdb\u884c\u6b64\u64cd\u4f5c, \u5982\u6709\u7591\u4e49\u8bf7\u63d0\u4ea4\u7533\u8bc9, \u6216\u8005\u53d1\u90ae\u4ef6\u5230pr@segmentfault.com"]}
+    };
+
+        var ddosMode = false;
+    
+        (function (currentUrl) {
+        if (typeof URL != 'undefined') {
+            var baseUrl = new URL('https://segmentfault.com');
+
+            if (baseUrl.protocol != currentUrl.protocol
+                || baseUrl.host != currentUrl.host) {
+                window.location.href = baseUrl.protocol + '//' + baseUrl.host
+                    + currentUrl.pathname + currentUrl.search + currentUrl.hash;
+            }
+        }
+    })(window.location);
+    </script>
+
+             <script crossorigin="" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/assets.js.下载"></script>
+                 
+        <script crossorigin="" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/post.min.js.下载"></script>
+            
+
+<script>
+if (!!navigator.userAgent.match(/MicroMessenger/i)) {
+    require.config({
+        paths: { weixin_jsapi: '//res.wx.qq.com/open/js/jweixin-1.2.0' }
+    });
+
+    require(['weixin_jsapi'], function (wx) {
+        var share = {"title":"\u4e0d\u5f97\u4e0d\u6536\u85cf\u7684\u2014\u2014IE\u4e2dCSS-filter\u6ee4\u955c\u5c0f\u77e5\u8bc6\u5927\u5168","desc":"\u6240\u4ee5\u5728IE\u7528\u5230\u4e86\u5176\u652f\u6301\u7684filter\u5c5e\u6027\uff0c\u542c\u8bf4\u8fd9\u4e2a\u5c5e\u6027\u8fd8\u6709\u4e0d\u540c\u7684\u6548\u679c\uff0c\u4e0d\u5355\u5355\u5c31\u53ea\u6709\u4e0d\u900f\u660e\u5ea6\u800c\u5df2\uff0c\u6240\u4ee5\u62bd\u4e2a\u65f6\u95f4\u8d76\u7d27\u6765\u5145\u4e0b\u7535\u3002","link":"https:\/\/segmentfault.com\/a\/1190000002433305","imgUrl":"https:\/\/segmentfault.com\/img\/bVknaX"};
+        share.title += ' - SegmentFault 思否';
+
+        $.getJSON('/api/util/weixin/jsapi', function (o) {
+            methods = o.data.jsApiList.slice();
+
+            wx.config(o.data);
+            wx.error(console.error);
+            wx.ready(function () {
+                methods.forEach(function (method) {
+                    wx[method](share);
+                });
+            });
+        });
+    });
+}
+</script>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-918487-8']);
+    _gaq.push(['_trackPageview']);
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                
+        
+
+            
+
+    ga('create', 'UA-918487-8', 'auto', {
+        'userID'
+    : 0,
+        'createdTime'
+    : 0,
+        'now'
+    : 1540266105,
+        'allowLinker'
+    : true });
+    ga('require', 'linker');
+    ga('linker:autoLink', ['docs.segmentfault.com'] );
+    ga('set', 'dimension1', 'guest');
+    ga('send', 'pageview');
+
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?e23800c454aa573c0ccb16b52665ac26";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+
+<iframe id="p_analyse_iframe" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/saved_resource(3).html" style="display: none;"></iframe><div id="noteWidget" class="noteWidget hidden hidden-xs">
+    <div class="noteWidget-header clearfix">
+        <h2 class="h4 pull-left">记笔记</h2>
+        <ul class="list-inline pull-right mb0">
+            <li id="noteWidgetMinimize"><span class="icon-minimize"></span></li><li id="noteWidgetZoom"><span class="icon-zoom"></span></li><li id="noteWidgetClose"><span class="icon-close"></span></li>
+        </ul>
+    </div>
+    <form method="POST" action="https://segmentfault.com/api/notes/add" role="form">
+        <div class="form-group">
+            <label for="title" class="sr-only">标题</label>
+            <input type="hidden" value="" id="draftId">
+            <input type="text" name="title" data-error="" autocomplete="off" class="form-control" placeholder="笔记描述" value="">
+        </div>
+        <div class="editor-config clearfix">
+            <select name="lang" class="form-control pull-left input-sm">
+                <optgroup label="文本语法">
+                    <option value="text" data-mode="text">纯文本</option>
+                    <option value="markdown" data-mode="markdown">Markdown</option>
+                    <option value="javascript" data-mode="javascript">Javascript</option>
+                    <option value="css" data-mode="css">CSS</option>
+                    <option value="html5" data-mode="htmlmixed">HTML</option>
+                    <option value="php" data-mode="php">PHP</option>
+                    <option value="python" data-mode="python">Python</option>
+                    <option value="ruby" data-mode="ruby">Ruby</option>
+                    <option value="go" data-mode="go">Go</option>
+                    <option value="c" data-mode="clike">C/C++</option>
+                    <option value="java" data-mode="java">Java</option>
+                    <option value="bash" data-mode="shell">Shell/Bash</option>
+                </optgroup>
+            </select>
+            <div class="pull-right hidden-xs">
+                <select name="indentWithTabs" class="form-control inline-block input-sm">
+                    <optgroup label="缩进模式">
+                        <option value="false">空格缩进</option>
+                        <option value="true">Tabs 缩进</option>
+                    </optgroup>
+                </select>
+                <select name="tabSize" class="form-control inline-block input-sm">
+                    <optgroup label="缩进大小">
+                        <option value="2">2</option>
+                        <option value="4" selected="">4</option>
+                    </optgroup>
+                </select>
+                <select name="lineWrap" class="form-control inline-block input-sm">
+                    <optgroup label="换行方式">
+                        <option value="true">自动换行</option>
+                        <option value="false">不换行</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <textarea id="codeMirror" class="form-control" style="display: none;"></textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 0px;"><div style="height: 100%; min-height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="min-width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px;"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"></div><div class="CodeMirror-code"></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div class="CodeMirror-gutters"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 1px;"></div></div></div></div>
+        <div class="mt20 clearfix">
+            <div class="pull-right">
+                <span class="text-muted hidden" id="editorStatus">已保存</span>
+                <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
+                <button data-type="note" id="publishIt2" class="btn btn-default ml10" data-id="" data-do="add" data-url="" data-text="保存私密笔记" data-name="">保存私密笔记</button>
+                <button data-type="note" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="add" data-url="" data-text="保存公开笔记" data-name="">保存公开笔记</button>
+                </div>
+            </div>
+        </form></div>
+    
+<div id="atwho-container"><div id="atwho-ground-abb5a0781540266107692"><div class="atwho-view" id="at-view-64"><ul class="atwho-view-ul"></ul></div></div></div><iframe id="google_osd_static_frame_8696096903502" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./不得不收藏的——IE中CSS-filter滤镜小知识大全 - SegmentFault 业界资讯 - SegmentFault 思否_files/saved_resource(4).html"></iframe></body></html>

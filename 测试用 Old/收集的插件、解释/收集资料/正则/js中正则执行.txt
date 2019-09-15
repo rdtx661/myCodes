@@ -1,0 +1,20 @@
+非全局匹配 返回第一个查找到的匹配值结束 全局匹配匹配全部字符串
+
+^在括号外表示以这个开头 在括号内表示取反该括号的集合
+例：/^cc/ 以cc开头
+*$以*为结束
+
+正则匹配语法:
+http://www.runoob.com/regexp/regexp-syntax.html
+
+验证方式的区别：
+https://blog.csdn.net/z69183787/article/details/17886369
+
+js正则表式中正向前瞻 ：?=
+
+/\d(?=a)/.exec( 'abc2abc' ) 匹配结果为2，释义：匹配一个数字，但是这个数字后面必须跟着字母a
+/\d(?=a)/.exec( 'abc2bc' ) 匹配结果为null
+由此可以看出，?= 匹配结果中不包含它所匹配的字符，但是待匹配字符串必须符合它所对应的规则
+
+new RegExp(pattern, attributes);
+attributes：g,全局匹配，i不区分大小写，m执行多行匹配，用最多的为g和i

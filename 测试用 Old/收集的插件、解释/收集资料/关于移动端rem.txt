@@ -1,0 +1,10 @@
+1）css 设置 html,body{font-size:100px;}
+
+2）js 获取到屏幕的宽度，然后 屏幕的宽度 / 设计稿的宽度 / html,body的font-size ,最后把这个值重新复给html,body
+	eg)设计稿的宽度为 750px ,以下为js代码
+	$("html,body").css("font-zize",parseInt($(window).width() / 750 / 100) + "px" );
+3)body下的宽度都可以用rem表示，比如设计稿中一个表单的宽度为200px,替换为rem就是 200 / 100 = 2rem;
+
+tips:
+	1,如果页面有最大宽度的时候，在body下设置一个div包住页面的内容，如，div.wrap ,然后把上面公式把window替换		为wrap
+	2,html,body 的font-size 的值 可以自己设置，只要该变化的比例是一样的就可以。

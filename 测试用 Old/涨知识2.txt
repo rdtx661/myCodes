@@ -1,0 +1,24 @@
+
+
+ip、域名、dns区别
+https://blog.csdn.net/feinik/article/details/54974489
+
+vps就是可以有独立ip的虚拟机 云主机的最大特点
+就是可以无限扩展 能任意选择配置 恩 能选16个以上cpu的 就肯定是云主
+机了
+
+函数声明和函数表达式的区别
+https://www.cnblogs.com/Saints/p/5991186.html
+
+架构的解释：
+https://baike.baidu.com/item/%E6%9E%B6%E6%9E%84/13004195
+
+互联网架构的演变（对用户访问量增大产生而进化的处理机制）
+https://blog.csdn.net/yixiao1874/article/details/79383825
+
+http标头字段列表
+https://blog.csdn.net/echizao1839/article/details/81028448?utm_source=blogxgwz9
+
+
+强弱语言类型及编译、解释型语言的区别
+https://blog.csdn.net/csdn799316120/article/details/79234272

@@ -1,0 +1,1 @@
+ $('.nav .nav-dropdown-canvas #nav_b').stop(true).animate({left'-300'},200);

@@ -1,0 +1,9 @@
+div{
+	width: 300px;
+	height: 300px;
+	border:1px solid #CCCCCC;
+}
+div:empty:after{
+	content: '111';
+	background-color: red;
+}

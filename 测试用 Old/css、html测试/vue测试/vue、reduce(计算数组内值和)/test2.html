@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>初始测试模板</title>
+		<link rel="stylesheet" type="text/css" href="test.css">
+		<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript" src="vue.js"></script>
+	</head>
+	<body>
+				<div class="app">
+				  <p v-for="message in messages">
+				  	<input type="text" v-model="message.id">
+				  	{{message}}
+					<span v-if="message.id==='0'">out of stack</span>
+					<button @click="message.id++">addOne</button>
+				  </p>
+					<div>total:{{total}}</div>
+				</div>
+				<div class="app-3">
+ 					<p v-if="showDom">现在你看到我了</p>
+				</div>
+				<button @click="showMessage()">点击显示</button>
+<script>
+	// var numbers = [{"id":1},{"id":2},{"id":3}];
+	// 	var numbers2 = [1,2,3];
+	// myFunction();
+	// function myFunction(item) {
+	//     console.dir(numbers.reduce(
+	//     	(sum,numbers)=>{
+	//     		console.info(sum);
+	//     		return sum+numbers.id;
+	//     	},0)
+	//     );
+	//     console.dir(numbers2.reduce(
+	//     	(sum,numbers2)=>{
+	//     		console.info(sum);
+	//     		return sum+numbers2;
+	//     	},0)
+	//     );
+	// }
+	// var def={name:"aaaaa",name2:"bbbbb"};
+	// tt({name:"cccccc"});
+	// function tt(arr){
+
+	// 	$.extend(def,arr);
+	// }
+var aa;
+showMessage();
+function showMessage(){
+ 	aa=new Vue({
+		  el: '.app',
+		  data: {
+		  	messages:[]
+		  },
+		  computed:{
+		  	total(){
+		  		return this.messages.reduce((sum,val)=>{
+		  			return sum+parseInt(val.id);
+		  		},0);
+		  	}
+		  },
+		  created(){
+		  		this.messages=[{"id":1},{"id":2},{"id":3}];
+		  }
+	})
+}
+showMessage2();
+var bb;
+function showMessage2(){
+	bb=new Vue({
+		el:'.app-3',
+		data:{
+			showDom:''
+		},
+		computed:{
+
+		},
+		created(){
+			this.showDom=true;
+		}	
+	});
+}
+</script>
+	</body>
+</html>

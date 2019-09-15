@@ -1,0 +1,58 @@
+
+/*ÌáÊ¾¿ò*/
+.warnmsg{
+	position:absolute;
+	z-index: 999;
+	width: 350px;
+	height: 200px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+.warnmsg .warntit{
+	border-bottom:1px solid #D3D3D3;
+	color: #333;
+	height:40px;
+	line-height:40px;
+	font-size: 14px;
+	text-indent: 25px;
+	position:relative;
+} 
+.warnmsg .warntit .tuichu{
+	position: absolute;
+	display:block;
+	height: 15px;
+	width: 15px;
+	top: 12.5px;
+	right: 15px;
+	background: url('/v/p/g/img/saas/background.png') no-repeat -526px -252px;;
+} 
+.warnmsg .warntit .tuichu:hover{
+	background:url('/v/p/g/img/saas/background.png') no-repeat -526px -324px;
+	cursor: pointer;
+}
+.warnmsg .errorctn{
+	width: 350px;
+	height:100px;
+	line-height: 100px;
+	font-size: 14px;
+	text-align: center;
+}
+.warnmsg .confirmbtn{
+	height: 60px;
+	width: 350px;
+}
+.warnmsg .confirmbtn a{
+	display:block;
+	margin:0px auto;
+	width: 100px;
+	height: 30px;
+	line-height:30px;
+	border-radius: 5px;
+	text-indent: 0px;
+	text-align: center;
+	color: #fff;
+	background-color:#93D200;
+}
+.warnmsg .confirmbtn a:hover{
+	background-color: #86BF02;
+}

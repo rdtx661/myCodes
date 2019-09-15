@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.jb51.net/article/84973.htm -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta name="applicable-device" content="pc">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform">
+<title>倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="keywords" content="移动端,Web,JavaScript,js">
+<meta name="description" content="移动端Web需要照顾触摸操作的体验,以及更多的屏幕旋转与尺寸适配等问题,非常琐碎,在这里为大家倾力总结40条常见的移动端Web页面问题解决方案,欢迎收看收藏!">
+<link rel="alternate" media="only screen and(max-width: 640px)" href="https://m.jb51.net/article/84973.htm">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://m.jb51.net/article/84973.htm">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=https://m.jb51.net/article/84973.htm">
+<script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/f(5).txt"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ca-pub-6384567588307613.js.下载"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/hm.js.下载"></script><script type="text/javascript" async="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/pr.js.下载"></script><script type="text/javascript" async="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/rlptepi.js.下载"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/push.js.下载"></script><script type="text/javascript" async="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/dynamicFloat.js.下载"></script><script type="text/javascript">
+var tougao="goldensun",lmname="JavaScript",suoyin="no";
+(function(){var reWriteUrl=function(url){if(url){var Splits=url.split("/"),siteName=window.location.pathname;if(typeof siteName!=="undefined"){return "https://m.jb51.net"+siteName}}};if(/Android|webOS|iPhone|iPad|Windows Phone|iPod|BlackBerry|SymbianOS|Nokia|Mobile/i.test(navigator.userAgent)){var url=window.location.href;var pathname=window.location.pathname;if(url.indexOf("?pc")<0){try{window.location.href=reWriteUrl(url)}catch(e){}}}})();
+</script>
+<meta name="referrer" content="always">
+<link type="text/css" href="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/base.css" rel="stylesheet">
+<link type="text/css" href="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/common.css" rel="stylesheet">
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/jquery.min.js.下载"></script>
+<script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='/skin/js/jquery.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+</script>
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/function.js.下载"></script> 
+<link rel="preload" href="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/f(6).txt" as="script"><script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/f(6).txt"></script></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+<!--topTools Start -->
+<div class="topTools">
+    <div class="wrap clear_fix">
+		<div class="topToolsLeft">
+			<a href="https://www.jb51.net/" target="_blank">脚本之家</a>
+			<a href="http://s.jb51.net/" target="_blank" rel="nofollow">服务器常用软件</a>
+		<a href="https://www.yuanshichang.com/" target="_blank" style="color:red">源市场</a><a href="http://idc.jb51.net/" target="_blank" style="color:red">脚本云</a></div>
+		<div class="right">
+			<ul>
+				<li><i class="sprite md left"></i><a target="_blank" href="https://m.jb51.net/" rel="nofollow">手机版</a></li>
+				<li><i class="sprite tg left"></i><a href="http://tougao.jb51.net/" rel="nofollow" target="_blank">投稿中心</a></li>
+				<li id="wxHide"><i class="sprite wx left"></i><a href="javascript:void(0)" target="_blank">关注微信</a>
+					<div id="wxShow" class="wxHide_box"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/erwm.jpg" alt="扫一扫" width="84" hight="84" data-baiduimageplus-ignore=""></div>
+				</li>
+			</ul>
+			<!--快捷导航 开始 -->
+			<div class="text_d right" id="navHide">
+        <a rel="nofollow" href="javascript:void(0);">快捷导航 <i id="icon" class="sprite arrowRight"></i></a>
+        <div id="navBox" class="nwebNav" style="display: none;">
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4>
+                                        <a rel="nofollow" href="https://www.jb51.net/softs/" target="_blank">软件下载</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/softs/android.html" target="_blank">android</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/softs/mac.html" target="_blank">MAC</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/qudong/" target="_blank">驱动下载</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/fonts/" target="_blank">字体下载</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/dll/" target="_blank">DLL</a></dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4>
+                                        <a rel="nofollow" href="https://www.jb51.net/codes/" target="_blank">源码下载</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/codes/php.html" target="_blank">PHP</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/codes/aspnet.html" target="_blank">ASP.NET</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/codes/asp.html" target="_blank">ASP</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/codes/jsp.html" target="_blank">JSP</a></dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4><a rel="nofollow" href="https://www.jb51.net/list/index_84.htm" target="_blank">软件编程</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_85_1.htm" target="_blank">C#</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_134_1.htm" target="_blank">JAVA</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_159_1.htm" target="_blank">C 语言</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_206_1.htm" target="_blank">Delphi</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_233_1.htm" target="_blank">Android</a></dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4><a rel="nofollow" href="https://www.jb51.net/list/index_1.htm" target="_blank">网络编程</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_15_1.htm" target="_blank">PHP</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_21_1.htm" target="_blank">ASP.NET</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_2_1.htm" target="_blank">ASP</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_3_1.htm" target="_blank">JavaScript</a></dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4><a rel="nofollow" href="http://tools.jb51.net/" target="_blank">在线工具</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/tools/cssyasuo.shtml" target="_blank">CSS格式化</a>
+                                        <a rel="nofollow" href="http://tools.jb51.net/tools/js_geshihua.asp" target="_blank">JS格式化</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/tools/html-js.htm" target="_blank">Html转化为Js</a></dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4><a rel="nofollow" href="https://www.jb51.net/list/index_104.htm" target="_blank">数据库</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_112_1.htm" target="_blank">MYSQL</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_113_1.htm" target="_blank">MSSQL</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_154_1.htm" target="_blank">oracle</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_155_1.htm" target="_blank">DB2</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/list/list_252_1.htm" target="_blank">MARIADB</a></dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4><a rel="nofollow" href="https://www.jb51.net/cms/" target="_blank">CMS</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/cms/list411_1.html" target="_blank">PHPCMS</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/cms/list408_1.html" target="_blank">DEDECMS</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/cms/list578_1.html" target="_blank">帝国CMS</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/cms/list419_1.html" target="_blank">WordPress</a>
+                                </dd>
+                        </dl>
+                </div>
+                <div class="ndealList clear_fix">
+                        <div class="navTitle left">
+                                <h4><a rel="nofollow" href="javascript:0;" target="_blank">常用工具</a></h4>
+                        </div>
+                        <dl class="right">
+                                <dd>
+                                        <a rel="nofollow" href="https://www.jb51.net/zt/phphuanjing.html" target="_blank">PHP开发工具</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/zt/python.html" target="_blank">python</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/zt/photoshopxz.html" target="_blank">Photoshop</a>
+                                        <a rel="nofollow" href="https://www.jb51.net/bibei/win/index.html" target="_blank">必备软件</a></dd>
+                        </dl>
+                </div>
+        </div>
+</div>
+			<!--快捷导航 结束 -->
+		</div>
+    </div>
+</div>
+<!--topTools end -->
+
+<div class="header">
+	<!-- Logo start -->
+	<div class="wrap">
+		<div class="mtb10 clearfix">
+		  <div class="logo"><a href="https://www.jb51.net/"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/logo.gif" title="脚本之家" alt="脚本之家"></a></div>
+		  <div class="logom fl"><a href="http://www.ku86.com/" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/kuyun_370.gif" width="370" height="60"></a>
+</div>
+		  <div class="logor fr"><a href="http://tg.iopen.com.cn/pc/jbzj/index.html?utm_source=jiaobenzhijia" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/iopen60.gif" width="370" height="60"></a>
+</div>
+		</div>
+	</div>
+	<!--Logo end -->
+	
+	<!-- 导航开始 -->
+	<div class="nav_top clearfix">
+		<ul>
+			<li><a href="https://www.jb51.net/">网站首页</a></li>
+			<li><a href="https://www.jb51.net/web/">网页制作</a></li>
+			<li><a href="https://www.jb51.net/list/index_1.htm">网络编程</a></li>
+			<li><a href="https://www.jb51.net/list/index_96.htm">脚本专栏</a></li>
+			<li><a href="https://www.jb51.net/jiaoben/">脚本下载</a></li>
+			<li><a href="https://www.jb51.net/list/index_104.htm">数据库</a></li>
+			<li><a href="https://www.jb51.net/list/list_82_1.htm">服务器</a></li>
+			<li><a href="https://www.jb51.net/books/">电子书籍</a></li>
+			<li><a href="https://www.jb51.net/os/">操作系统</a></li>
+			<li><a href="https://www.jb51.net/yunying/">网站运营</a></li>
+			<li><p><i>其它</i><span>
+				<a href="https://www.jb51.net/pingmian/">平面设计</a>
+				<a href="https://www.jb51.net/media/">媒体动画</a>
+				<a href="https://www.jb51.net/diannaojichu/">电脑基础</a>
+				<a href="https://www.jb51.net/hardware/">硬件教程</a>
+				<a href="https://www.jb51.net/hack/">网络安全</a>	
+			</span></p></li>
+		</ul>
+	</div>
+	<!--导航结束-->
+</div>
+
+<!-- 二级菜单开始 -->
+<div class="wrap">
+	<div class="subnav clearfix">
+<ul><li><a href="https://www.jb51.net/list/list_61_1.htm" title="基础知识">基础知识</a></li>
+<li><a href="https://www.jb51.net/list/list_23_1.htm" title="javascript类库">javascript类库</a></li>
+<li><a href="https://www.jb51.net/list/list_22_1.htm" title="表单特效">表单特效</a></li>
+<li><a href="https://www.jb51.net/list/list_18_1.htm" title="广告代码">广告代码</a></li>
+<li><a href="https://www.jb51.net/list/list_43_1.htm" title="网页特效">网页特效</a></li>
+<li><a href="https://www.jb51.net/list/list_26_1.htm" title="黑客性质">黑客性质</a></li>
+<li><a href="https://www.jb51.net/list/list_222_1.htm" title="javascript技巧">javascript技巧</a></li>
+<li><a href="https://www.jb51.net/list/list_232_1.htm" title="DOM">DOM</a></li>
+<li><a href="https://www.jb51.net/list/list_243_1.htm" title="node.js">node.js</a></li>
+<li><a href="https://www.jb51.net/list/list_248_1.htm" title="js其它">js其它</a></li>
+</ul>
+	</div>
+</div>
+<!-- 二级菜单结束 -->	
+
+<div class="main mb10 clearfix">
+	<div class="clearfix"><div class="mainlr"><a href="http://click.aliyun.com/m/29949/" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ali0323.gif" alt="aliyun" width="1080" height="50"></a></div><div class="blank5"></div><div class="mainlr"><a href="https://cloud.tencent.com/act/special/rav?fromSource=gwzcw.1305532.1305532.1305532" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/txy.gif" alt="txyun" width="1080" height="50"></a></div><div class="blank5"></div><div class="mainlr"><a href="http://adfarm.mediaplex.com/ad/ck/10592-210885-41454-179" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/dell.jpg" alt="dell" width="1080" height="50"></a></div><div class="blank5"></div>               <div id="txtlink"><ul><li><a href="http://www.2016idc.com/cdn.html" target="_blank"><span style="color: red;">◆◆◆◆◆高防免备案CDN◆◆◆◆◆</span></a></li><li><a href="http://www.zoneidc.com/" target="_blank"><span style="color: red;">1G香港/美国/韩国等十五国云9.9元/月</span></a></li><li><a href="http://click.aliyun.com/m/15321/" target="_blank"><span style="color: red;">30余款阿里云产品免费6个月</span></a></li><li><a href="http://www.kaivps.com/cloud.html" target="_blank"><span style="color: red;">◆好优云◆抗攻击◆无视CC◆免备◆稳定◆</span></a></li><li><a href="http://www.faqiguo.cn/?ac=51wz" target="_blank"><span style="color: blue;">【正规手游(非联盟)预付高价包广告位】</span></a></li><li><a href="https://cloud.tencent.com/act/campus?fromSource=gwzcw.846004.846004.846004" target="_blank"><span style="color: blue;">【腾讯云】学生服务器套餐10元</span></a></li><li><a href="http://www.osssnet.com/" target="_blank"><span style="color: blue;">◆50M香港/美国/日本服务器380免备案◆</span></a></li><li><a href="http://ad.mobanzz.com/ad.html" target="_blank"><span style="color: blue;">阿里云服务器2核4G免费领取</span></a></li><li><a href="https://www.guowaidiaocha.com/" target="_blank"><span style="color: red;">★国外网赚月入两万，一对一教学带你★</span></a></li><li><a href="http://ok095.com/" target="_blank"><span style="color: red;">全网最新空手套白狼网赚项目实时结算</span></a></li><li><a href="http://www.hkcn2.com/51.htm" target="_blank"><span style="color: red;">**香港高防10m大带宽独服，低至999元**</span></a></li><li><a href="https://www.henghost.com/" target="_blank"><span style="color: red;">█▁恒创科技▁█香港服务器*双向CN2直连</span></a></li><li><a href="http://az.workwang.xyz/az/" target="_blank"><span style="color: blue;">★★★网赚达人日赚800★★★</span></a></li><li><a href="http://az.workwang.xyz/az/" target="_blank"><span style="color: blue;">★★★网赚达人日赚800★★★</span></a></li><li><a href="http://az.workwang.xyz/az/" target="_blank"><span style="color: blue;">★★★网赚达人日赚800★★★</span></a></li><li><a href="http://az.workwang.xyz/az/" target="_blank"><span style="color: blue;">★★★网赚达人日赚800★★★</span></a></li><li><a href="http://www.7yc.com/rent.html" target="_blank"><span style="color: red;">██云彩网络██100G防服务器450元</span></a></li><li><a href="https://www.50vm.com/" target="_blank"><span style="color: red;">4核独服199/16核独服360|创梦网络</span></a></li><li><a href="http://www.gwidc.com/rent/home/index.html" target="_blank"><span style="color: red;">港湾网络-徐州百独16核16G 800/月~</span></a></li><li><a href="http://www.ssf.cc/" target="_blank"><span style="color: red;">免备vps20/百独799/双线350/45互联</span></a></li><li><a href="http://www.ushk.net/server.html" target="_blank"><span style="color: blue;">██美港数据██高端香港服务器租用</span></a></li><li><a href="http://vps.zzidc.com/tongji/jb51w.html" target="_blank"><span style="color: blue;">★☆云服务器5折，天天抽红包抵扣☆★</span></a></li><li><a href="http://www.enkj.com/idc/zuyong/6" target="_blank"><span style="color: blue;">【亿恩】DELL品牌服务器，月付599元起</span></a></li><li><a href="http://www.xiaozhiyun.com/2016/" target="_blank"><span style="color: blue;">韩国香港美国站群服务器 巨牛网络</span></a></li><li><a href="http://www.wsisp.net/sale/20170518/?indexjb" target="_blank"><span style="color: red;">█▇▆5M独享云主机599/年▆▇█</span></a></li><li><a href="http://www.qy.com.cn/" target="_blank"><span style="color: red;">群英云服务器送10M带宽30G防御,49元起</span></a></li><li><a href="http://www.tuidc.com/" target="_blank"><span style="color: red;">服务器租用/托管-域名空间/认准腾佑科技</span></a></li><li><a href="http://www.jjidc.com/" target="_blank"><span style="color: red;">九九数据 — 工信部认可正规资质IDC接入商</span></a></li><li><a href="https://www.95idc.com/" target="_blank"><span style="color: blue;">95IDC█香港沙田CN2服务器 599/月</span></a></li><li><a href="http://www.zitian.cn/" target="_blank"><span style="color: blue;">中原地区核心数据中心，月付299元起</span></a></li><li><a href="http://www.qy.cn/gfhd.html" target="_blank"><span style="color: blue;">██群英网络██◆◆◆300G高防仅需599元◆◆◆</span></a></li><li><a href="http://www.pdidc.com/" target="_blank"><span style="color: blue;">浦东数据中心上海电信4星云主机30元/月起</span></a></li><li><a href="http://www.139w.com/" target="_blank"><span style="color: red;">鼎点网络百兆独享服务器仅需999元</span></a></li><li><a href="http://www.360jq.com/hkshuang.htm" target="_blank"><span style="color: red;">[香港双高防]无视CC★DDOS/堪比广东！</span></a></li><li><a href="http://www.cyidc.cc/" target="_blank"><span style="color: red;">畅游网络 百独服务器 包跑满 998元</span></a></li><li><a href="http://www.wdw6.com/" target="_blank"><span style="color: red;">服务器租用  199元起</span></a></li><li><a href="http://mqa.fmc5.cn/" target="_blank"><span style="color: blue;">在家宅着玩手机.轻松赚钱比你工资还高!</span></a></li><li><a href="http://mqa.fmc5.cn/" target="_blank"><span style="color: blue;">赚钱就是这么简单:手机.网上小投资.怎么赚钱!</span></a></li><li><a href="http://mqa.fmc5.cn/" target="_blank"><span style="color: blue;">互联网思维.手机微信赚钱.下一个财富风口!</span></a></li><li><a href="http://mqa.fmc5.cn/" target="_blank"><span style="color: blue;">一个发财的机会.日均上百上千不是梦!</span></a></li></ul><div class="clearfix"></div></div><div class="blank5"></div><div class="topimg"><ul><li><a href="http://www.ruixunidc.net/?jb51" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ruixun.gif" width="210" height="50"></a></li><li><a href="http://click.aliyun.com/m/17168/" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ali2371.jpg" width="211" height="50"></a></li><li><a href="https://www.simcentric.com/sc/promos/2018-sim-12th" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/sim210.gif" width="210" height="50"></a></li><li><a href="http://www.8dwww.com/cloud/" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/8dwww.gif" width="210" height="50"></a></li><li><a href="http://www.faqiguo.cn/?ac=51tp" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/keludeaps010150147083_eu131533561049507.gif" width="210" height="50"></a></li></ul></div><div class="blank5"></div><div class="mainlr"><a href="http://27.2wk.com/" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/27pan.jpg" alt="27pan" width="1080" height="50"></a></div><div class="blank5"></div><div class="mainlr"><a href="http://7616u.com/#107" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/cpjz.gif" alt="27pan" width="1080" height="50"></a></div>
+</div>
+</div>
+<div class="main clearfix">
+	<div class="NavBar clearfix ptb10">
+		<div class="fl w690">
+			<div class="box mb15 mt10"><i class="icon"></i>您的位置：<a href="https://www.jb51.net/">首页</a> → <a href="https://www.jb51.net/list/index_1.htm" title="网络编程">网络编程</a> → <a href="https://www.jb51.net/list/list_3_1.htm" title="JavaScript">JavaScript</a> → <a href="https://www.jb51.net/list/list_222_1.htm" title="javascript技巧">javascript技巧</a> → 正文内容 40条常见的移动端Web问题解决</div>
+		</div>
+		<div class="fr w300"><div class="search">
+		<form action="https://www.jb51.net/do/search.php" target="_blank">
+			<input type="hidden" name="s" value="10520733385329581432">
+			<input type="hidden" name="ie" value="gbk">
+			<input type="text" name="q" class="key_input" placeholder="请输入关键词">
+			<input type="submit" value=" " class="c_btn">
+		</form></div>
+		</div>
+	</div>
+</div>
+<!--content Star -->
+<div id="contents">
+ <!--share start-->
+ <div id="right-share" style="display: block;">
+	<div class="right-share jb-share" id="jb-share">
+		<a class="rshare-weixin" title="">微信</a>
+        <a rel="nofollow" class="rshare-qzone" target="_blank" href="https://tougao.jb51.net/" title="投稿">投稿</a>
+		<a rel="nofollow" class="rshare-sqq" target="_blank" href="http://shequ.jb51.net/" title="交流社区">交流社区</a>
+		<a rel="nofollow" class="rshare-tsina" target="_blank" href="http://tools.jb51.net/" title="在线工具">在线工具</a>
+	</div>
+	<a class="rshare-top" onclick="javascript:;"></a>
+			
+	<div id="weixin-code" class="hide">
+	<div class="popup_weixin_head"><p>关注微信公众号</p> 
+	<div id="code"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/erwm.jpg" alt="扫一扫" width="100" hight="100"></div>
+	</div>
+	</div>	
+ </div>
+<!--share end-->
+
+ <div class="main clearfix bgf">
+      <div class="w750 fl">
+      <div class="article-content border">
+      <div class="title">
+            <h1 class="YaHei">倾力总结40条常见的移动端Web页面问题解决方案</h1>
+            <p> &nbsp;更新时间：2016年05月24日 16:05:42 &nbsp; 作者：Aaron  &nbsp; <a href="https://www.jb51.net/article/84973.htm#comments"> <img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/text-message.png" width="15" height="15"> 我要评论</a> </p>
+        </div>
+        <div class="lbd clearfix"><div id="_05ek3y1d23l9" style=""><em style="width:0px;height:0px;"></em><iframe width="700" frameborder="0" height="60" scrolling="no" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/s.html"></iframe></div><script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/uphlhyovv.js.下载"></script>
+</div>
+        <div class="art_desc mt10"><div id="art_demo">移动端Web需要照顾触摸操作的体验,以及更多的屏幕旋转与尺寸适配等问题,非常琐碎,在这里为大家倾力总结40条常见的移动端Web页面问题解决方案,欢迎收看收藏!</div></div>
+        <div class="lbd clearfix"><a href="http://www.php.cn/course.html?ad51" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/phpcn.png" width="690" height="99"></a>
+</div>
+        <div id="content">
+            <p><strong>1、安卓浏览器看背景图片，有些设备会模糊。</strong></p>
+<p>用同等比例的图片在PC机上很清楚，但是手机上很模糊，原因是什么呢？</p>
+<p>经过研究，是devicePixelRatio作怪，因为手机分辨率太小，如果按照分辨率来显示网页，这样字会非常小，所以苹果当初就把iPhone 4的960640分辨率，在网页里只显示了480320，这样devicePixelRatio＝2。现在android比较乱，有1.5的，有2的也有3的。</p>
+<p>想让图片在手机里显示更为清晰，必须使用2x的背景图来代替img标签（一般情况都是用2倍）。例如一个div的宽高是100100，背景图必须得200200，然后background-size:contain;，这样显示出来的图片就比较清晰了。</p>
+<p>代码可以如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_613310" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">background:url(../images/icon/all.png) no-repeat center center;</code></div><div class="line number2 index1 alt1"><code class="js plain">-webkit-background-size:50px 50px;</code></div><div class="line number3 index2 alt2"><code class="js plain">background-size: 50px 50px;display:inline-block; width:100%; height:50px;&nbsp; </code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>或者指定 background-size:contain;都可以，大家试试！</p>
+<p><strong>2、图片加载</strong></p>
+<p>若您遇到图片加载很慢的问题，对这种情况，手机开发一般用canvas方法加载：</p>
+<p>具体的canvas API 参见：http://javascript.ruanyifeng.com/htmlapi/canvas.html</p>
+<p>下面举例说明一个canvas的例子：</p>
+<div class="jb51code">
+<div><div id="highlighter_796698" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">li</code><code class="xhtml plain">&gt;&lt;</code><code class="xhtml keyword">canvas</code><code class="xhtml plain">&gt;&lt;/</code><code class="xhtml keyword">canvas</code><code class="xhtml plain">&gt;&lt;/</code><code class="xhtml keyword">li</code><code class="xhtml plain">&gt; </code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>js动态加载图片和li 总共举例17张图片！</p>
+<div class="jb51code">
+<div><div id="highlighter_149349" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">var</code> <code class="js plain">total=17; </code></div><div class="line number2 index1 alt1"><code class="js keyword">var</code> <code class="js plain">zWin=$(window); </code></div><div class="line number3 index2 alt2"><code class="js keyword">var</code> <code class="js plain">render=</code><code class="js keyword">function</code><code class="js plain">(){ </code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">padding=2; </code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">winWidth=zWin.width(); </code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">picWidth=Math.floor((winWidth-padding*3)/4); </code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">tmpl =</code><code class="js string">''</code><code class="js plain">; </code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">for</code> <code class="js plain">(</code><code class="js keyword">var</code> <code class="js plain">i=1;i&lt;=totla;i++){ </code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">p=padding; </code></div><div class="line number10 index9 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">imgSrc=</code><code class="js string">'img/'</code><code class="js plain">+i+</code><code class="js string">'.jpg'</code><code class="js plain">; </code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">if</code><code class="js plain">(i%4==1){ </code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">p=0; </code></div><div class="line number13 index12 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">} </code></div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">tmpl +=</code><code class="js string">'&lt;li style="width:'</code><code class="js plain">+picWidth+</code><code class="js string">'px;height:'</code><code class="js plain">+picWidth+</code><code class="js string">'px;padding-left:'</code><code class="js plain">+p+</code><code class="js string">'px;padding-top:'</code><code class="js plain">+padding+</code><code class="js string">'px;"&gt;&lt;canvas id="cvs_'</code><code class="js plain">+i+</code><code class="js string">'"&gt;&lt;/canvas&gt;&lt;/li&gt;'</code><code class="js plain">; </code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">imageObj = </code><code class="js keyword">new</code> <code class="js plain">Image(); </code></div><div class="line number16 index15 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">imageObj.index = i; </code></div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">imageObj.onload = </code><code class="js keyword">function</code><code class="js plain">(){ </code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">cvs =$(</code><code class="js string">'#cvs_'</code><code class="js plain">+</code><code class="js keyword">this</code><code class="js plain">.index)[0].getContext(</code><code class="js string">'2d'</code><code class="js plain">); </code></div><div class="line number19 index18 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">cvs.width = </code><code class="js keyword">this</code><code class="js plain">.width; </code></div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">cvs.height=</code><code class="js keyword">this</code><code class="js plain">.height; </code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">cvs.drawImage(</code><code class="js keyword">this</code><code class="js plain">,0,0); </code></div><div class="line number22 index21 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">} </code></div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">imageObj.src=imgSrc; </code></div><div class="line number24 index23 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">} </code></div><div class="line number25 index24 alt2">&nbsp;</div><div class="line number26 index25 alt1"><code class="js plain">} </code></div><div class="line number27 index26 alt2"><code class="js plain">render(); </code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>3、假如手机网站不用兼容IE浏览器，一般我们会使用zeptojs</strong>。zeptojs内置Touch events方法，具体可以看http://zeptojs.com/#Touch events</p>
+<p>看了一下zeptio新版的API，已经支持IE10以上浏览器，对zeptojs可以选择使用！</p>
+<p><strong>4、防止手机中网页放大和缩小</strong>，这点是最基本的，最为手机网站开发者来说应该都知道的，就是设置meta中的viewport</p>
+<p>还有就是，有些手机网站我们看到如下声明：</p>
+<p></p><div class="codetitle"><span><a style="CURSOR: pointer" data="39248" class="copybut" id="copybut39248" onclick="doCopy(&#39;code39248&#39;)"><u>复制代码</u></a></span> 代码如下:</div><div class="codebody" id="code39248"><p></p>
+<p>&lt;!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"&gt;</p>
+<p></p></div><br>
+设置了DTD的方式是XHTML的写法，假如我们页面运用的是html5，可以不用设置DTD,直接声明&lt;!DOCTYPE html&gt;。<p></p>
+<p>使用viewport使页面禁止缩放。 通常把user-scalable设置为0来关闭用户对页面视图缩放的行为。</p>
+<div class="jb51code">
+<div><div id="highlighter_930666" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"viewport"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"user-scalable=0"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>但是为了更好的兼容，我们会使用完整的viewport设置。</p>
+<p></p><div class="codetitle"><span><a style="CURSOR: pointer" data="30962" class="copybut" id="copybut30962" onclick="doCopy(&#39;code30962&#39;)"><u>复制代码</u></a></span> 代码如下:</div><div class="codebody" id="code30962"><p></p>
+<p>&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" /&gt;</p>
+<p></p></div><p></p>
+<div class="jb51code">当然，user-scalable=0,有的人也写成user-scalable=no，都可以的。</div>
+<p><strong>5、apple-mobile-web-app-capable</strong></p>
+<p>apple-mobile-web-app-capable是设置Web应用是否以全屏模式运行。</p>
+<p>语法：</p>
+<div class="jb51code">
+<div><div id="highlighter_865364" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;meta name=</code><code class="js string">"apple-mobile-web-app-capable"</code> <code class="js plain">content=</code><code class="js string">"yes"</code><code class="js plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>说明：</p>
+<p>如果content设置为yes，Web应用会以全屏模式运行，反之，则不会。content的默认值是no，表示正常显示。你可以通过只读属性window.navigator.standalone来确定网页是否以全屏模式显示。</p>
+<p><strong>6、format-detection</strong></p>
+<p>format-detection 启动或禁用自动识别页面中的电话号码。</p>
+<p>语法：</p>
+<div class="jb51code">
+<div><div id="highlighter_696358" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;meta name=</code><code class="js string">"format-detection"</code> <code class="js plain">content=</code><code class="js string">"telephone=no"</code><code class="js plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>说明：</p>
+<p>默认情况下，设备会自动识别任何可能是电话号码的字符串。设置telephone=no可以禁用这项功能。</p>
+<p><strong>7、html5调用安卓或者ios的拨号功能</strong></p>
+<p>html5提供了自动调用拨号的标签，只要在a标签的href中添加tel:就可以了。</p>
+<p>如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_751609" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">a</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"tel:4008106999,1034"</code><code class="xhtml plain">&gt;400-810-6999 转 1034&lt;/</code><code class="xhtml keyword">a</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>拨打手机直接如下</p>
+<p>&nbsp;&lt;a href="tel:15677776767"&gt;点击拨打15677776767&lt;/a&gt;<br>
+<strong>8、html5GPS定位功能</strong></p>
+<p>具体请看：//www.jb51.net/post/html5_GPS_getCurrentPosition</p>
+<p>9、上下拉动滚动条时卡顿、慢</p>
+<div class="jb51code">
+<div><div id="highlighter_289402" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">body {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-overflow-scrolling: touch;</code></div><div class="line number3 index2 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">overflow-scrolling: touch;</code></div><div class="line number4 index3 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>Android3+和iOS5+支持CSS3的新属性为overflow-scrolling</p>
+<p><strong>10、禁止复制、选中文本</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_262034" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">Element {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-user-select: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-moz-user-select: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number4 index3 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-khtml-user-select: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number5 index4 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;</code><code class="css plain">user-select: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number6 index5 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>解决移动设备可选中页面文本(视产品需要而定)</p>
+<p><strong>11、长时间按住页面出现闪退</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_803232" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">element {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-touch-callout: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>12、iphone及ipad下输入框默认内阴影</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_153226" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">Element{</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-appearance: </code><code class="css value">none</code><code class="css plain">; </code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>13、ios和android下触摸元素时出现半透明灰色遮罩</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_578687" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">Element {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-tap-highlight-</code><code class="css keyword">color</code><code class="css plain">:rgba(</code><code class="css value">255</code><code class="css plain">,</code><code class="css value">255</code><code class="css plain">,</code><code class="css value">255</code><code class="css plain">,</code><code class="css value">0</code><code class="css plain">)</code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>设置alpha值为0就可以去除半透明灰色遮罩，备注：transparent的属性值在android下无效。</p>
+<p>后面一篇文章有详细介绍，地址：//www.jb51.net/post/phone_web_ysk</p>
+<p><strong>14、active兼容处理 即 伪类 :active 失效</strong></p>
+<p>方法一：body添加ontouchstart</p>
+<div class="jb51code">
+<div><div id="highlighter_358970" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">body</code> <code class="xhtml color1">ontouchstart</code><code class="xhtml plain">=</code><code class="xhtml string">""</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>方法二：js给 document 绑定 touchstart 或 touchend 事件</p>
+<div class="jb51code">
+<div><div id="highlighter_1165" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;style&gt;</code></div><div class="line number2 index1 alt1"><code class="js plain">a {</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;</code><code class="js plain">color:</code> <code class="js preprocessor">#000;</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div><div class="line number5 index4 alt2"><code class="js plain">a:active {</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;</code><code class="js plain">color:</code> <code class="js preprocessor">#fff;</code></div><div class="line number7 index6 alt2"><code class="js plain">}</code></div><div class="line number8 index7 alt1"><code class="js plain">&lt;/style&gt;</code></div><div class="line number9 index8 alt2"><code class="js plain">&lt;a herf=foo &gt;bar&lt;/a&gt;</code></div><div class="line number10 index9 alt1"><code class="js plain">&lt;script&gt;</code></div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;</code><code class="js plain">document.addEventListener(</code><code class="js string">'touchstart'</code><code class="js plain">,</code><code class="js keyword">function</code><code class="js plain">(){},</code><code class="js keyword">false</code><code class="js plain">);</code></div><div class="line number12 index11 alt1"><code class="js plain">&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>15、动画定义3D启用硬件加速</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_365321" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">Element {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-transform:translate</code><code class="css value">3</code><code class="css plain">d(</code><code class="css value">0</code><code class="css plain">, </code><code class="css value">0</code><code class="css plain">, </code><code class="css value">0</code><code class="css plain">)</code></div><div class="line number3 index2 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">transform: translate</code><code class="css value">3</code><code class="css plain">d(</code><code class="css value">0</code><code class="css plain">, </code><code class="css value">0</code><code class="css plain">, </code><code class="css value">0</code><code class="css plain">);</code></div><div class="line number4 index3 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>注意：3D变形会消耗更多的内存与功耗</p>
+<p><strong>16、Retina屏的1px边框</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_390009" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">Element{</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">border-width</code><code class="css plain">: </code><code class="css value">thin</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>17、webkit mask 兼容处理</strong></p>
+<p>某些低端手机不支持css3 mask，可以选择性的降级处理。</p>
+<p>比如可以使用js判断来引用不同class：</p>
+<div class="jb51code">
+<div><div id="highlighter_71924" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">if</code><code class="js plain">( </code><code class="js string">'WebkitMask'</code> <code class="js keyword">in</code> <code class="js plain">document.documentElement.style){</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">alert(</code><code class="js string">'支持mask'</code><code class="js plain">);</code></div><div class="line number3 index2 alt2"><code class="js plain">} </code><code class="js keyword">else</code> <code class="js plain">{</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">alert(</code><code class="js string">'不支持mask'</code><code class="js plain">);</code></div><div class="line number5 index4 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>18、旋转屏幕时，字体大小调整的问题</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_551522" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">html, body, form, fieldset, p, div, h</code><code class="css value">1</code><code class="css plain">, h</code><code class="css value">2</code><code class="css plain">, h</code><code class="css value">3</code><code class="css plain">, h</code><code class="css value">4</code><code class="css plain">, h</code><code class="css value">5</code><code class="css plain">, h</code><code class="css value">6</code> <code class="css plain">{</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-text-size-adjust:</code><code class="css value">100%</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>19、transition闪屏</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_349341" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">/设置内嵌的元素在 </code><code class="css value">3</code><code class="css plain">D 空间如何呈现：保留</code><code class="css value">3</code><code class="css plain">D /</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="css plain">-webkit-transform-style: preserve</code><code class="css value">-3</code><code class="css plain">d;</code></div><div class="line number4 index3 alt1"><code class="css plain">/ 设置进行转换的元素的背面在面对用户时是否可见：隐藏 /</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="css plain">-webkit-backface-</code><code class="css keyword">visibility</code><code class="css plain">:</code><code class="css value">hidden</code><code class="css plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>20、圆角bug</strong></p>
+<p>某些Android手机圆角失效</p>
+<div class="jb51code">
+<div><div id="highlighter_535901" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">background-</code><code class="css keyword">clip</code><code class="css plain">: padding-box;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>21、顶部状态栏背景色</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_40208" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-mobile-web-app-status-bar-style"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"black"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>说明：</p>
+<p>除非你先使用apple-mobile-web-app-capable指定全屏模式，否则这个meta标签不会起任何作用。</p>
+<p>如果content设置为default，则状态栏正常显示。如果设置为blank，则状态栏会有一个黑色的背景。如果设置为blank-translucent，则状态栏显示为黑色半透明。如果设置为default或blank，则页面显示在状态栏的下方，即状态栏占据上方部分，页面占据下方部分，二者没有遮挡对方或被遮挡。如果设置为blank-translucent，则页面会充满屏幕，其中页面顶部会被状态栏遮盖住（会覆盖页面20px高度，而iphone4和itouch4的Retina屏幕为40px）。默认值是default。</p>
+<p><strong>22、设置缓存</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_367437" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">http-equiv</code><code class="xhtml plain">=</code><code class="xhtml string">"Cache-Control"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"no-cache"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>手机页面通常在第一次加载后会进行缓存，然后每次刷新会使用缓存而不是去重新向服务器发送请求。如果不希望使用缓存可以设置no-cache。</p>
+<p><strong>23、桌面图标</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_445562" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">link</code> <code class="xhtml color1">rel</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-touch-icon"</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"touch-icon-iphone.png"</code> <code class="xhtml plain">/&gt;</code></div><div class="line number2 index1 alt1"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">link</code> <code class="xhtml color1">rel</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-touch-icon"</code> <code class="xhtml color1">sizes</code><code class="xhtml plain">=</code><code class="xhtml string">"76x76"</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"touch-icon-ipad.png"</code> <code class="xhtml plain">/&gt;</code></div><div class="line number3 index2 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">link</code> <code class="xhtml color1">rel</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-touch-icon"</code> <code class="xhtml color1">sizes</code><code class="xhtml plain">=</code><code class="xhtml string">"120x120"</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"touch-icon-iphone-retina.png"</code> <code class="xhtml plain">/&gt;</code></div><div class="line number4 index3 alt1"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">link</code> <code class="xhtml color1">rel</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-touch-icon"</code> <code class="xhtml color1">sizes</code><code class="xhtml plain">=</code><code class="xhtml string">"152x152"</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"touch-icon-ipad-retina.png"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>iOS下针对不同设备定义不同的桌面图标。如果不定义则以当前屏幕截图作为图标。</p>
+<p>上面的写法可能大家会觉得会有默认光泽，下面这种设置方法可以去掉光泽效果，还原设计图的效果！</p>
+<div class="jb51code">
+<div><div id="highlighter_14287" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">link</code> <code class="xhtml color1">rel</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-touch-icon-precomposed"</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"touch-icon-iphone.png"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>图片尺寸可以设定为5757（px）或者Retina可以定为114114（px），ipad尺寸为72*72（px)</p>
+<p><strong>24、启动画面</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_166815" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">link</code> <code class="xhtml color1">rel</code><code class="xhtml plain">=</code><code class="xhtml string">"apple-touch-startup-image"</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"start.png"</code><code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>iOS下页面启动加载时显示的画面图片，避免加载时的白屏。</p>
+<p>可以通过madia来指定不同的大小：</p>
+<div class="jb51code">
+<div><div id="highlighter_185462" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">&lt;!--iPhone--&gt;</code></div><div class="line number2 index1 alt1"><code class="css plain">&lt;link href=</code><code class="css string">"apple-touch-startup-image-320x460.png"</code> <code class="css plain">media=</code><code class="css string">"(device-width: 320px)"</code> <code class="css plain">rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">/&gt;</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="css plain">&lt;!-- iPhone Retina --&gt;</code></div><div class="line number5 index4 alt2"><code class="css plain">&lt;link href=</code><code class="css string">"apple-touch-startup-image-640x920.png"</code> <code class="css plain">media=</code><code class="css string">"(device-width: 320px) and (-webkit-device-pixel-ratio: 2)"</code> <code class="css plain">rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">/&gt;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="css plain">&lt;!-- iPhone </code><code class="css value">5</code> <code class="css plain">--&gt;</code></div><div class="line number8 index7 alt1"><code class="css plain">&lt;link rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">media=</code><code class="css string">"(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"</code> <code class="css plain">href=</code><code class="css string">"apple-touch-startup-image-640x1096.png"</code><code class="css plain">&gt;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="css plain">&lt;!-- iPad </code><code class="css value">portrait</code> <code class="css plain">--&gt;</code></div><div class="line number11 index10 alt2"><code class="css plain">&lt;link href=</code><code class="css string">"apple-touch-startup-image-768x1004.png"</code> <code class="css plain">media=</code><code class="css string">"(device-width: 768px) and (orientation: portrait)"</code> <code class="css plain">rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">/&gt;</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="css plain">&lt;!-- iPad </code><code class="css value">landscape</code> <code class="css plain">--&gt;</code></div><div class="line number14 index13 alt1"><code class="css plain">&lt;link href=</code><code class="css string">"apple-touch-startup-image-748x1024.png"</code> <code class="css plain">media=</code><code class="css string">"(device-width: 768px) and (orientation: landscape)"</code> <code class="css plain">rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">/&gt;</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="css plain">&lt;!-- iPad Retina </code><code class="css value">portrait</code> <code class="css plain">--&gt;</code></div><div class="line number17 index16 alt2"><code class="css plain">&lt;link href=</code><code class="css string">"apple-touch-startup-image-1536x2008.png"</code> <code class="css plain">media=</code><code class="css string">"(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"</code> <code class="css plain">rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">/&gt;</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="css plain">&lt;!-- iPad Retina </code><code class="css value">landscape</code> <code class="css plain">--&gt;</code></div><div class="line number20 index19 alt1"><code class="css plain">&lt;link href=</code><code class="css string">"apple-touch-startup-image-1496x2048.png"</code><code class="css plain">media=</code><code class="css string">"(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"</code><code class="css plain">rel=</code><code class="css string">"apple-touch-startup-image"</code> <code class="css plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>25、浏览器私有及其它meta</strong></p>
+<p>以下属性在项目中没有应用过，可以写一个demo测试以下！</p>
+<p>QQ浏览器私有</p>
+<p>全屏模式</p>
+<div class="jb51code">
+<div><div id="highlighter_502299" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"x5-fullscreen"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"true"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>强制竖屏</p>
+<div class="jb51code">
+<div><div id="highlighter_682909" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"x5-orientation"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"portrait"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>强制横屏</p>
+<div class="jb51code">
+<div><div id="highlighter_509488" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"x5-orientation"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"landscape"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>应用模式</p>
+<div class="jb51code">
+<div><div id="highlighter_279853" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"x5-page-mode"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"app"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>UC浏览器私有</p>
+<p>全屏模式</p>
+<div class="jb51code">
+<div><div id="highlighter_378999" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"full-screen"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"yes"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>强制竖屏</p>
+<div class="jb51code">
+<div><div id="highlighter_460991" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"screen-orientation"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"portrait"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>强制横屏</p>
+<div class="jb51code">
+<div><div id="highlighter_523338" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"screen-orientation"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"landscape"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>应用模式</p>
+<div class="jb51code">
+<div><div id="highlighter_21362" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"browsermode"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"application"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>其它</p>
+<p>针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓</p>
+<div class="jb51code">
+<div><div id="highlighter_471100" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"HandheldFriendly"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"true"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>微软的老式浏览器</p>
+<div class="jb51code">
+<div><div id="highlighter_303588" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"MobileOptimized"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"320"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>windows phone 点击无高光</p>
+<div class="jb51code">
+<div><div id="highlighter_23878" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">meta</code> <code class="xhtml color1">name</code><code class="xhtml plain">=</code><code class="xhtml string">"msapplication-tap-highlight"</code> <code class="xhtml color1">content</code><code class="xhtml plain">=</code><code class="xhtml string">"no"</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>26、 IOS中input键盘事件keyup、keydown、keypress支持不是很好</strong></p>
+<p>问题是这样的，用input search做模糊搜索的时候，在键盘里面输入关键词，会通过ajax后台查询，然后返回数据，然后再对返回的数据进行关键词标红。用input监听键盘keyup事件，在安卓手机浏览器中是可以的，但是在ios手机浏览器中变红很慢，用输入法输入之后，并未立刻相应keyup事件，只有在通过删除之后才能相应！</p>
+<p>解决办法：</p>
+<p>可以用html5的oninput事件去代替keyup</p>
+<div class="jb51code">
+<div><div id="highlighter_134656" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;input type=</code><code class="js string">"text"</code> <code class="js plain">id=</code><code class="js string">"testInput"</code><code class="js plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="js plain">&lt;script type=</code><code class="js string">"text/javascript"</code><code class="js plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">document.getElementById(</code><code class="js string">'testInput'</code><code class="js plain">).addEventListener(</code><code class="js string">'input'</code><code class="js plain">, </code><code class="js keyword">function</code><code class="js plain">(e){</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">value = e.target.value;</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">});</code></div><div class="line number6 index5 alt1"><code class="js plain">&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>然后就达到类似keyup的效果！</p>
+<p><strong>27、h5网站input 设置为type=number的问题</strong></p>
+<p>h5网页input 的type设置为number一般会产生三个问题，一个问题是maxlength属性不好用了。另外一个是form提交的时候，默认给取整了。三是部分安卓手机出现样式问题。</p>
+<p>问题一解决，我目前用的是js。如下</p>
+<div class="jb51code">
+<div><div id="highlighter_150285" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">&lt;input type=</code><code class="js string">"number"</code> <code class="js plain">oninput=</code><code class="js string">"checkTextLength(this ,10)"</code><code class="js plain">&gt; </code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="js keyword">function</code> <code class="js plain">checkTextLength(obj, length) {&nbsp; </code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js keyword">if</code><code class="js plain">(obj.value.length &gt; length)&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp; </code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">obj.value = obj.value.substr(0, length);&nbsp; </code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">}&nbsp; </code></div><div class="line number7 index6 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>问题二，是因为form提交默认做了表单验证，step默认是1,要设置step属性，假如保留2位小数，写法如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_372888" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">input</code> <code class="xhtml color1">type</code><code class="xhtml plain">=</code><code class="xhtml string">"number"</code> <code class="xhtml color1">step</code><code class="xhtml plain">=</code><code class="xhtml string">"0.01"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>关于step，我在这里做简单的介绍，input 中type=number，一般会自动生成一个上下箭头，点击上箭头默认增加一个step，点击下箭头默认会减少一个step。number中默认step是1。也就是step=0.01,可以允许输入2位小数，并且点击上下箭头分别增加0.01和减少0.01。</p>
+<p>假如step和min一起使用，那么数值必须在min和max之间。</p>
+<p>看下面的例子：</p>
+<div class="jb51code">
+<div><div id="highlighter_775506" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">input</code> <code class="xhtml color1">type</code><code class="xhtml plain">=</code><code class="xhtml string">"number"</code> <code class="xhtml color1">step</code><code class="xhtml plain">=</code><code class="xhtml string">"3.1"</code> <code class="xhtml color1">min</code><code class="xhtml plain">=</code><code class="xhtml string">"1"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>输入框可以输入哪些数字？</p>
+<p>首先，最小值是1，那么可以输入1.0，第二个是可以输入（1+3.1）那就是4.1,以此类推，每次点击上下箭头都会增加或者减少3.1，输入其他数字无效。这就是step的简单介绍。</p>
+<p>问题三，去除input默认样式</p>
+<div class="jb51code">
+<div class="jb51code">
+<div><div id="highlighter_664745" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">input[type=number] {</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-moz-appearance:textfield;</code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div><div class="line number4 index3 alt1"><code class="css plain">input[type=number]::-webkit-inner-spin-button,</code></div><div class="line number5 index4 alt2"><code class="css plain">input[type=number]::-webkit-outer-spin-button {</code></div><div class="line number6 index5 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css plain">-webkit-appearance: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number7 index6 alt2"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">margin</code><code class="css plain">: </code><code class="css value">0</code><code class="css plain">;</code></div><div class="line number8 index7 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+</div>
+<p><strong>28、ios 设置input 按钮样式会被默认样式覆盖</strong></p>
+<p>解决方式如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_310968" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">input,</code></div><div class="line number2 index1 alt1"><code class="js plain">textarea {</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">border: 0; </code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">-webkit-appearance: none; </code></div><div class="line number5 index4 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>设置默认样式为none</p>
+<p><strong>29、IOS键盘字母输入，默认首字母大写</strong></p>
+<p>解决方案，设置如下属性</p>
+<div class="jb51code">
+<div><div id="highlighter_907889" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">input</code> <code class="xhtml color1">type</code><code class="xhtml plain">=</code><code class="xhtml string">"text"</code> <code class="xhtml color1">autocapitalize</code><code class="xhtml plain">=</code><code class="xhtml string">"off"</code> <code class="xhtml plain">/&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>30、select 下拉选择设置右对齐</strong></p>
+<p>设置如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_736001" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">select option {</code></div><div class="line number2 index1 alt1"><code class="js plain">direction: rtl;</code></div><div class="line number3 index2 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>31、通过transform进行skew变形，rotate旋转会造成出现锯齿现象</strong></p>
+<p>可以设置如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_917020" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">-webkit-transform: rotate(-4deg) skew(10deg) translateZ(0);</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;</code><code class="js plain">transform: rotate(-4deg) skew(10deg) translateZ(0);</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;</code><code class="js plain">outline: 1px solid rgba(255,255,255,0)</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>32、移动端点击300ms延迟</strong></p>
+<p>300ms尚可接受，不过因为300ms产生的问题，我们必须要解决。300ms导致用户体验并不是很好，解决这个问题，我们一般在移动端用tap事件来取代click事件。</p>
+<p>推荐两个js，一个是fastclick，一个是tap.js</p>
+<p>关于300ms延迟，具体请看：http://thx.github.io/mobile/300ms-click-delay/</p>
+<p><strong>33、移动端点透问题</strong></p>
+<p>案例如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_968229" class="syntaxhighlighter  xhtml"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">div</code> <code class="xhtml color1">id</code><code class="xhtml plain">=</code><code class="xhtml string">"haorooms"</code><code class="xhtml plain">&gt;点头事件测试&lt;/</code><code class="xhtml keyword">div</code><code class="xhtml plain">&gt;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="xhtml plain">&lt;</code><code class="xhtml keyword">a</code> <code class="xhtml color1">href</code><code class="xhtml plain">=</code><code class="xhtml string">"www.jb51.net"</code><code class="xhtml plain">&gt;www.jb51.net&lt;/</code><code class="xhtml keyword">a</code><code class="xhtml plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>div是绝对定位的蒙层,并且z-index高于a。而a标签是页面中的一个链接，我们给div绑定tap事件：</p>
+<div class="jb51code">
+<div><div id="highlighter_389997" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$(</code><code class="js string">'#haorooms'</code><code class="js plain">).on(</code><code class="js string">'tap'</code><code class="js plain">,</code><code class="js keyword">function</code><code class="js plain">(){</code></div><div class="line number2 index1 alt1"><code class="js plain">$(</code><code class="js string">'#haorooms'</code><code class="js plain">).hide();</code></div><div class="line number3 index2 alt2"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>我们点击蒙层时 div正常消失，但是当我们在a标签上点击蒙层时，发现a链接被触发，这就是所谓的点透事件。</p>
+<p>原因：</p>
+<p>touchstart 早于 touchend 早于click。 亦即click的触发是有延迟的，这个时间大概在300ms左右，也就是说我们tap触发之后蒙层隐藏， 此时 click还没有触发，300ms之后由于蒙层隐藏，我们的click触发到了下面的a链接上。<br>
+解决：</p>
+<p>（1）尽量都使用touch事件来替换click事件。例如用touchend事件(推荐)。<br>
+（2）用fastclick，https://github.com/ftlabs/fastclick<br>
+（3）用preventDefault阻止a标签的click<br>
+（4）延迟一定的时间(300ms+)来处理事件 （不推荐）<br>
+（5）以上一般都能解决，实在不行就换成click事件。<br>
+下面介绍一下touchend事件，如下：</p>
+<div class="jb51code">
+<div><div id="highlighter_982700" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$(</code><code class="js string">"#haorooms"</code><code class="js plain">).on(</code><code class="js string">"touchend"</code><code class="js plain">, </code><code class="js keyword">function</code> <code class="js plain">(event) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;</code><code class="js plain">event.preventDefault();</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;</code><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>34、消除 IE10 里面的那个叉号</strong></p>
+<div class="jb51code">
+<div><div id="highlighter_214119" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">input:-ms-clear{</code><code class="css keyword">display</code><code class="css plain">:</code><code class="css value">none</code><code class="css plain">;}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>35、关于 iOS 与 OS X 端字体的优化(横竖屏会出现字体加粗不一致等)</strong></p>
+<p>iOS 浏览器横屏时会重置字体大小，设置 text-size-adjust 为 none 可以解决 iOS 上的问题，但桌面版 Safari 的字体缩放功能会失效，因此最佳方案是将 text-size-adjust 为 100% 。</p>
+<div class="jb51code">
+<div><div id="highlighter_820192" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">-webkit-text-size-adjust: </code><code class="css value">100%</code><code class="css plain">;</code></div><div class="line number2 index1 alt1"><code class="css plain">-ms-text-size-adjust: </code><code class="css value">100%</code><code class="css plain">;</code></div><div class="line number3 index2 alt2"><code class="css plain">text-size-adjust: </code><code class="css value">100%</code><code class="css plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>36、关于 iOS 系统中，中文输入法输入英文时，字母之间可能会出现一个六分之一空格</strong></p>
+<p>可以通过正则去掉</p>
+<div class="jb51code">
+<div><div id="highlighter_468602" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">this</code><code class="js plain">.value = </code><code class="js keyword">this</code><code class="js plain">.value.replace(/\u2006/g, </code><code class="js string">''</code><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>37、移动端 HTML5 audio autoplay 失效问题</strong></p>
+<p>这个不是 BUG，由于自动播放网页中的音频或视频，会给用户带来一些困扰或者不必要的流量消耗，所以苹果系统和安卓系统通常都会禁止自动播放和使用 JS 的触发播放，必须由用户来触发才可以播放。</p>
+<p>解决方法思路：先通过用户 touchstart 触碰，触发播放并暂停（音频开始加载，后面用 JS 再操作就没问题了）。</p>
+<p>解决代码：</p>
+<div class="jb51code">
+<div><div id="highlighter_584622" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">document.addEventListener(</code><code class="js string">'touchstart'</code><code class="js plain">, </code><code class="js keyword">function</code> <code class="js plain">() {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">document.getElementsByTagName(</code><code class="js string">'audio'</code><code class="js plain">)[0].play();</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">document.getElementsByTagName(</code><code class="js string">'audio'</code><code class="js plain">)[0].pause();</code></div><div class="line number4 index3 alt1"><code class="js plain">});</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p><strong>38、移动端 HTML5 input date 不支持 placeholder 问题</strong></p>
+<p>这个我感觉没有什么好的解决方案，用如下方法</p>
+<p></p><div class="codetitle"><span><a style="CURSOR: pointer" data="8936" class="copybut" id="copybut8936" onclick="doCopy(&#39;code8936&#39;)"><u>复制代码</u></a></span> 代码如下:</div><div class="codebody" id="code8936"><p></p>
+<p>&lt;input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')"&nbsp; id="date"&gt;</p>
+<p></p></div><p></p>
+<div class="jb51code">有的浏览器可能要点击两遍！</div>
+<p><strong>39、部分机型存在type为search的input，自带close按钮样式修改方法</strong></p>
+<p>有些机型的搜索input控件会自带close按钮（一个伪元素），而通常为了兼容所有浏览器，我们会自己实现一个，此时去掉原生close按钮的方法为</p>
+<div class="jb51code">
+<div><div id="highlighter_991884" class="syntaxhighlighter  css"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">#Search::-webkit-search-cancel-button{</code></div><div class="line number2 index1 alt1"><code class="css spaces">&nbsp;&nbsp;</code><code class="css keyword">display</code><code class="css plain">: </code><code class="css value">none</code><code class="css plain">;&nbsp; </code></div><div class="line number3 index2 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>如果想使用原生close按钮，又想使其符合设计风格，可以对这个伪元素的样式进行修改。</p>
+<p><strong>40、唤起select的option展开</strong></p>
+<p>zepto方式:</p>
+<div class="jb51code">
+<div><div id="highlighter_533528" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">$(sltElement).trrgger(</code><code class="js string">"mousedown"</code><code class="js plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>原生js方式:</p>
+<div class="jb51code">
+<div><div id="highlighter_984879" class="syntaxhighlighter  js"><div class="toolbar"><span><a href="https://www.jb51.net/article/84973.htm#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">function</code> <code class="js plain">showDropdown(sltElement) {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js keyword">var</code> <code class="js plain">event;</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">event = document.createEvent(</code><code class="js string">'MouseEvents'</code><code class="js plain">);</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">event.initMouseEvent(</code><code class="js string">'mousedown'</code><code class="js plain">, </code><code class="js keyword">true</code><code class="js plain">, </code><code class="js keyword">true</code><code class="js plain">, window);</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;</code><code class="js plain">sltElement.dispatchEvent(event);</code></div><div class="line number6 index5 alt1"><code class="js plain">};</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p></p>
+            
+            <div class="art_xg">
+<h4>您可能感兴趣的文章:</h4><ul><li><a href="https://www.jb51.net/article/90767.htm" title="Thinkphp框架开发移动端接口(2)" target="_blank">Thinkphp框架开发移动端接口(2)</a></li><li><a href="https://www.jb51.net/article/90762.htm" title="Thinkphp框架开发移动端接口(1)" target="_blank">Thinkphp框架开发移动端接口(1)</a></li><li><a href="https://www.jb51.net/article/84447.htm" title="使用jQuery Mobile框架开发移动端Web App的入门教程" target="_blank">使用jQuery Mobile框架开发移动端Web App的入门教程</a></li><li><a href="https://www.jb51.net/article/70626.htm" title="使用Thinkphp框架开发移动端接口" target="_blank">使用Thinkphp框架开发移动端接口</a></li><li><a href="https://www.jb51.net/article/79037.htm" title="Hammer.js+轮播原理实现简洁的滑屏功能" target="_blank">Hammer.js+轮播原理实现简洁的滑屏功能</a></li><li><a href="https://www.jb51.net/article/68869.htm" title="移动端JQ插件hammer使用详解" target="_blank">移动端JQ插件hammer使用详解</a></li><li><a href="https://www.jb51.net/article/77824.htm" title="jQuery 移动端artEditor富文本编辑器" target="_blank">jQuery 移动端artEditor富文本编辑器</a></li><li><a href="https://www.jb51.net/article/46213.htm" title="手机平板等移动端适配跳转URL的js代码" target="_blank">手机平板等移动端适配跳转URL的js代码</a></li><li><a href="https://www.jb51.net/article/51046.htm" title="JS判断移动端访问设备并加载对应CSS样式" target="_blank">JS判断移动端访问设备并加载对应CSS样式</a></li><li><a href="https://www.jb51.net/article/100101.htm" title="移动端脚本框架Hammer.js" target="_blank">移动端脚本框架Hammer.js</a></li></ul>
+</div>
+<div class="clearfix">
+
+
+</div>
+        <div class="jb51ewm"><div class="fl"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/jb51ewm.png"></div><div class="fr"><p>微信公众号搜索 “ <span>脚本之家</span> ” ，选择关注</p><p>程序猿的那些事、送书等活动等着你</p></div></div></div><!--endmain-->
+<div class="tags clearfix">
+	<i class="icon-tag"></i>
+	<ul class="meta-tags items">
+	  <li class="tag item"><a href="http://common.jb51.net/tag/Web/1.htm" target="_blank" title="搜索关于Web的文章" rel="nofollow">Web</a></li>
+<li class="tag item"><a href="http://common.jb51.net/tag/js/1.htm" target="_blank" title="搜索关于js的文章" rel="nofollow">js</a></li>
+
+	</ul>
+</div>        
+
+<div class="lbd clearfix">
+<div style=""><iframe width="700" frameborder="0" height="260" scrolling="no" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/s(1).html"></iframe></div><script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/1s307x.js.下载"></script>
+
+</div>
+<div id="shoucang"></div>
+
+<div class="xgcomm clearfix">
+	<h2>相关文章</h2>
+	<ul><li class="lbd clearfix"><div id="_281c3b0x7he" style=""><iframe width="700" frameborder="0" height="120" scrolling="no" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/s(2).html"></iframe><em style="width:0px;height:0px;"></em></div><script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/46pg.js.下载"></script>
+</li><li><div class="item-inner"><a href="https://www.jb51.net/article/66649.htm" title="JS和css实现检测移动设备方向的变化并判断横竖屏幕" class="img-wrap" target="_blank"> <img alt="JS和css实现检测移动设备方向的变化并判断横竖屏幕" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg0.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/66649.htm" title="JS和css实现检测移动设备方向的变化并判断横竖屏幕">JS和css实现检测移动设备方向的变化并判断横竖屏幕</a></p><div class="item-info"><div class="js">这篇文章主要介绍了JS和css实现检测移动设备方向的变化并判断横竖屏幕,本文分别给出实现代码,需要的朋友可以参考下</div><span class="lbtn" style="float:right"> 2015-05-05 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/70838.htm" title="javascript中$(function() {});写与不写有哪些区别" class="img-wrap" target="_blank"> <img alt="javascript中$(function() {});写与不写有哪些区别" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg1.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/70838.htm" title="javascript中$(function() {});写与不写有哪些区别">javascript中$(function() {});写与不写有哪些区别</a></p><div class="item-info"><div class="js">javascript中$(function() {....}) 是jQuery中的经典用法，等同于 $(document).ready(function() {....}) javascript中$(function() {});写与不写有哪些区别，需要的朋友可以参考下</div><span class="lbtn" style="float:right"> 2015-08-08 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/21726.htm" title="javascript下动态this与动态绑定实例代码" class="img-wrap" target="_blank"> <img alt="javascript下动态this与动态绑定实例代码" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg2.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/21726.htm" title="javascript下动态this与动态绑定实例代码">javascript下动态this与动态绑定实例代码</a></p><div class="item-info"><div class="js">javascript是一门动态语言，最明显就是那个dynamic this。它一般都是作为函数调用者存在。在javascript，所有关系都可以作为对象的一个关联数组元素而存在。</div><span class="lbtn" style="float:right"> 2010-01-01 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/137956.htm" title="JS中双击和单击事件冲突的解决方法" class="img-wrap" target="_blank"> <img alt="JS中双击和单击事件冲突的解决方法" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg3.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/137956.htm" title="JS中双击和单击事件冲突的解决方法">JS中双击和单击事件冲突的解决方法</a></p><div class="item-info"><div class="js">这篇文章主要为大家详细介绍了JS中双击和单击事件冲突的解决方法，具有一定的参考价值，感兴趣的小伙伴们可以参考一下</div><span class="lbtn" style="float:right"> 2018-04-04 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/49704.htm" title="利用函数的惰性载入提高javascript代码执行效率" class="img-wrap" target="_blank"> <img alt="利用函数的惰性载入提高javascript代码执行效率" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg4.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/49704.htm" title="利用函数的惰性载入提高javascript代码执行效率">利用函数的惰性载入提高javascript代码执行效率</a></p><div class="item-info"><div class="js">在 addEvent 函数每次调用的时候都要走一遍，如果浏览器支持其中的一种方法，那么他就会一直支持了，就没有必要再进行其他分支的检测了</div><span class="lbtn" style="float:right"> 2014-05-05 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/99405.htm" title="JS焦点图,JS 多个页面放多个焦点图的实例" class="img-wrap" target="_blank"> <img alt="JS焦点图,JS 多个页面放多个焦点图的实例" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg5.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/99405.htm" title="JS焦点图,JS 多个页面放多个焦点图的实例">JS焦点图,JS 多个页面放多个焦点图的实例</a></p><div class="item-info"><div class="js">下面小编就为大家带来一篇JS焦点图,JS 多个页面放多个焦点图的实例。小编觉得挺不错的，现在就分享给大家，也给大家做个参考。一起跟随小编过来看看吧</div><span class="lbtn" style="float:right"> 2016-12-12 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/138648.htm" title="javaScript产生随机数的用法小结" class="img-wrap" target="_blank"> <img alt="javaScript产生随机数的用法小结" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg6.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/138648.htm" title="javaScript产生随机数的用法小结">javaScript产生随机数的用法小结</a></p><div class="item-info"><div class="js">这篇文章主要介绍了javaScript产生随机数的用法小结,包括JavaScript Math.random()内置函数 ，Js 随机数产生6位数字的代码，需要的朋友可以参考下</div><span class="lbtn" style="float:right"> 2018-04-04 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/26760.htm" title="js中各浏览器中鼠标按键值的差异" class="img-wrap" target="_blank"> <img alt="js中各浏览器中鼠标按键值的差异" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg7.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/26760.htm" title="js中各浏览器中鼠标按键值的差异">js中各浏览器中鼠标按键值的差异</a></p><div class="item-info"><div class="js">我们知道标准鼠标有左，中，右三个键。鼠标按下时如何判断按下的是哪个键呢？</div><span class="lbtn" style="float:right"> 2011-04-04 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/46128.htm" title="检查输入的是否是数字使用keyCode配合onkeypress事件" class="img-wrap" target="_blank"> <img alt="检查输入的是否是数字使用keyCode配合onkeypress事件" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg8.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/46128.htm" title="检查输入的是否是数字使用keyCode配合onkeypress事件">检查输入的是否是数字使用keyCode配合onkeypress事件</a></p><div class="item-info"><div class="js">检查输入的是否是数字在本文使用keyCode配合onkeypress事件来实现，具体示例如下</div><span class="lbtn" style="float:right"> 2014-01-01 </span></div></div></div></div></li>
+<li><div class="item-inner"><a href="https://www.jb51.net/article/128597.htm" title="three.js中文文档学习之如何本地运行详解" class="img-wrap" target="_blank"> <img alt="three.js中文文档学习之如何本地运行详解" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcimg9.png"> </a><div class="rbox"><div class="rbox-inner"><p><a class="link title" target="_blank" href="https://www.jb51.net/article/128597.htm" title="three.js中文文档学习之如何本地运行详解">three.js中文文档学习之如何本地运行详解</a></p><div class="item-info"><div class="js">这篇文章主要给大家介绍了关于three.js中文文档学习之如何在本地运行的相关资料，文中通过示例代码介绍的非常详细，对大家的学习或者工作具有一定的参考学习价值，需要的朋友们下面随着小编来一起学习学习吧。</div><span class="lbtn" style="float:right"> 2017-11-11 </span></div></div></div></div></li>
+</ul>
+</div>
+<div class="lbd clearfix mt5">
+<div id="_0fl2p36h0le8" style=""><iframe width="700" frameborder="0" height="260" scrolling="no" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/s(3).html"></iframe></div><script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/vc0v.js.下载"></script>
+
+</div>
+<a href="https://www.jb51.net/article/84973.htm#comments"></a>
+<div id="comments">
+<h2>最新评论</h2>
+<div class="pd5"><div id="SOHUCS" sid="art_84973"></div></div>
+</div>
+      </div><!--endborder-->
+      </div><!--end fl-->
+      
+<div class="w350 fr">
+<div class="article-right">
+<div class="r300 clearfix"><script async="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/f(7).txt"></script><ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-6384567588307613" data-ad-slot="2817964327" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:300px;height:250px;" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/saved_resource(2).html"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<div class="tabTitleBar mt10 bgf borderTblue">
+<div class="borderTnone pb10 YaHei">
+<h4 class="blue">大家感兴趣的内容</h4>
+<ul class="newsList newList-in">
+<li><em class="no1">1</em><a href="https://www.jb51.net/article/14397.htm" title="js刷新页面方法大全" target="_blank">js刷新页面方法大全</a></li><li><em class="no2">2</em><a href="https://www.jb51.net/article/35535.htm" title="JS中setTimeout()的用法详解" target="_blank">JS中setTimeout()的用法详解</a></li><li><em class="no3">3</em><a href="https://www.jb51.net/article/25403.htm" title="js页面跳转常用的几种方式" target="_blank">js页面跳转常用的几种方式</a></li><li><em class="no4">4</em><a href="https://www.jb51.net/article/42482.htm" title="JS截取字符串常用方法详细整理" target="_blank">JS截取字符串常用方法详细整理</a></li><li><em class="no5">5</em><a href="https://www.jb51.net/article/35691.htm" title="JS打开新窗口的2种方式" target="_blank">JS打开新窗口的2种方式</a></li><li><em class="no6">6</em><a href="https://www.jb51.net/article/64330.htm" title="JS设置cookie、读取cookie、删除cookie" target="_blank">JS设置cookie、读取cookie、删除</a></li><li><em class="no7">7</em><a href="https://www.jb51.net/article/52038.htm" title="js数组与字符串的相互转换方法" target="_blank">js数组与字符串的相互转换方法</a></li><li><em class="no8">8</em><a href="https://www.jb51.net/article/43136.htm" title="js 将json字符串转换为json对象的方法解析" target="_blank">js 将json字符串转换为json对象的</a></li><li><em class="no9">9</em><a href="https://www.jb51.net/article/24101.htm" title="javascript深入理解js闭包" target="_blank">javascript深入理解js闭包</a></li><li><em class="no10">10</em><a href="https://www.jb51.net/article/34502.htm" title="js关闭当前页面(窗口)的几种方式总结" target="_blank">js关闭当前页面(窗口)的几种方式</a></li>
+</ul>
+</div>
+</div>
+<div class="r300 clearfix mt10"><script async="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/f(7).txt"></script><!--thea+300*250--><ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-6389290466807248" data-ad-slot="6788945816" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:300px;height:250px;" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/saved_resource(3).html"></iframe></ins></ins></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script><div class="blank5"></div><a href="http://click.aliyun.com/m/21950/" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ali_300_1.jpg" width="300" height="100"></a><div class="blank5"></div><a href="https://cloud.tencent.com/act/ecommerce?fromSource=gwzcw.1305533.1305533.1305533" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/txy300.gif" width="300" height="100"></a><div class="blank5"></div><a href="http://27.arrowshoe.com/" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/37cdn.jpg" width="300" height="100"></a><div class="blank5"></div><a href="http://tg.iopen.com.cn/pc/jbzj/index.html?utm_source=jiaobenzhijia" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/iopen100.gif" width="300" height="100"></a><div class="blank5"></div><a href="http://ad.mobanzz.com/ad.html" target="_blank"><img alt="" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/aliyun_dy.png" width="300" height="100"></a>
+</div>
+<div class="tabTitleBar mt10 bgf borderTblue">
+<div class="borderTnone pb10 YaHei">
+<h4 class="blue">最近更新的内容</h4>
+<ul class="newsListA">
+<li><a href="https://www.jb51.net/article/141435.htm" title="JS实现统计字符串中字符出现个数及最大个数功能示例" target="_blank">JS实现统计字符串中字符出现个数及最大个</a></li><li><a href="https://www.jb51.net/article/24544.htm" title="判断客户端浏览器是否安装了Flash插件的多种方法" target="_blank">判断客户端浏览器是否安装了Flash插件的多</a></li><li><a href="https://www.jb51.net/article/144829.htm" title="echarts设置图例颜色和地图底色的方法实例" target="_blank">echarts设置图例颜色和地图底色的方法实例</a></li><li><a href="https://www.jb51.net/article/35679.htm" title="JS中showModalDialog 的使用解析" target="_blank">JS中showModalDialog 的使用解析</a></li><li><a href="https://www.jb51.net/article/41195.htm" title="将Datatable转化成json发送前台实现思路" target="_blank">将Datatable转化成json发送前台实现思路</a></li><li><a href="https://www.jb51.net/article/21605.htm" title="js 创建一个浮动div的代码" target="_blank">js 创建一个浮动div的代码</a></li><li><a href="https://www.jb51.net/article/102937.htm" title="Javascript自定义事件详解" target="_blank">Javascript自定义事件详解</a></li><li><a href="https://www.jb51.net/article/9099.htm" title="我也种棵OO树JXTree[js+css+xml]" target="_blank">我也种棵OO树JXTree[js+css+xml]</a></li><li><a href="https://www.jb51.net/article/93259.htm" title="web 前端常用组件之Layer弹出层组件" target="_blank">web 前端常用组件之Layer弹出层组件</a></li><li><a href="https://www.jb51.net/article/70581.htm" title="JavaScript数组各种常见用法实例分析" target="_blank">JavaScript数组各种常见用法实例分析</a></li>
+</ul>
+</div>
+</div>   
+<div class="r300 clearfix mt10"><div class="idc3"><a href="http://www.021.net/" target="_blank"><h1>众生网络</h1><span>品牌服务器租用</span> </a><a href="http://www.geisnic.com/" target="_blank"><h1>集思网络</h1><span>VPS主机</span> </a><a href="http://www.33ip.com/" target="_blank"><h1>枫信科技</h1><span>IDC服务商</span> </a></div>
+</div>
+<div class="tabTitleBar mt10 bgf borderTblue">
+<div class="borderTnone pb10 YaHei">
+<h4 class="blue">常用在线小工具</h4>
+<ul class="newsListA"><li><a href="http://tools.jb51.net/code/css" target="_blank"><font color="red">CSS代码工具</font></a></li><li><a href="http://tools.jb51.net/code/js" target="_blank"><font color="red">JavaScript代码格式化工具</font></a></li><li><a href="http://tools.jb51.net/code/xmlformat" target="_blank">在线XML格式化/压缩工具</a></li><li><a href="http://tools.jb51.net/code/phpformat" target="_blank"><font color="red">php代码在线格式化美化工具</font></a></li><li><a href="http://tools.jb51.net/code/sqlcodeformat" target="_blank">sql代码在线格式化美化工具</a></li><li><a href="http://tools.jb51.net/transcoding/html_transcode" target="_blank">在线HTML转义/反转义工具</a></li><li><a href="http://tools.jb51.net/code/json" target="_blank">在线JSON代码检验/检验/美化/格式化</a></li><li><a href="http://tools.jb51.net/regex/javascript" target="_blank">JavaScript正则在线测试工具</a></li><li><a href="http://tools.jb51.net/transcoding/jb51qrcode" target="_blank">在线生成二维码工具(加强版)</a></li><li><a href="http://tools.jb51.net/" target="_blank">更多在线工具</a></li>
+</ul>
+</div>
+</div>
+<div class="r300 clearfix mt10 mb10"><a href="http://tuidc.com/" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/tengyou300.gif" width="300" height="100"></a><div class="blank5"></div><a href="http://www.enkj.com/special/cloud180720/" target="_blank"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/enkj300.gif" alt="云服务器" width="300" height="100"></a><div class="blank10"></div><iframe src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/zbj.html" width="300" height="100" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true"></iframe>
+</div> 
+<div class="rFixedBox" style="position: static; top: 0px;">
+<script type="text/javascript">jb51_a_d("jb51xf");</script><script type="text/javascript">var cpro_id="u1397867";(window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id]={at:"3",rsi0:"300",rsi1:"380",pat:"6",tn:"baiduCustNativeAD",rss1:"#FFFFFF",conBW:"1",adp:"1",ptt:"0",titFF:"%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",titFS:"14",rss2:"#000000",titSU:"0",ptbg:"90",piw:"0",pih:"0",ptp:"0"}</script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/c.js.下载" type="text/javascript"></script><div id="BAIDU_SSP__wrapper_u1397867_0" style="width: 300px; height: 380px; display: inline-block;"><iframe id="iframeu1397867_0" name="iframeu1397867_0" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/bcdm.html" width="300" height="380" align="center,center" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="border:0;vertical-align:bottom;margin:0;width:300px;height:380px" allowtransparency="true"></iframe></div>
+</div>
+  </div>   
+      
+      </div><!--end fr-->
+      </div>
+</div><!--end content-->
+<div id="footer">
+<div class="main clearfix">
+<p>
+<a rel="nofollow" href="https://www.jb51.net/about.htm" target="_blank">关于我们</a> - 
+<a rel="nofollow" href="https://www.jb51.net/support.htm" target="_blank">广告合作</a> - 
+<a rel="nofollow" href="https://www.jb51.net/linkus.htm" target="_blank">联系我们</a> -  
+<a rel="nofollow" href="https://www.jb51.net/sm.htm" target="_blank">免责声明</a> -  
+<a rel="nofollow" href="https://www.jb51.net/sitemap.htm" target="_blank">网站地图</a> - 
+<a rel="nofollow" href="tencent://message/?uin=461478385&amp;Site=http://www.jb51.net" target="_blank">投诉建议</a> - 
+<a rel="nofollow" href="https://www.jb51.net/up.htm" target="_blank">在线投稿</a>
+</p>
+<p><a rel="nofollow" class="ba" target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32031102000137"><img src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ghs.png"> 苏公网安备 32031102000137号</a>&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" class="ba" rel="nofollow" target="_blank">苏ICP备14036222号</a></p>
+<p>&#169;CopyRight 2006-2018 JB51.Net Inc All Rights Reserved. 脚本之家 版权所有</p>
+</div>
+</div><!--end footer-->
+<link type="text/css" rel="stylesheet" href="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/shCore.css">
+<link type="text/css" rel="Stylesheet" href="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/shThemeDefault.css">
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/shCore.js.下载"></script>
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/shAutoloader.js.下载"></script>
+<script type="text/javascript">
+(function(){
+	var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+/*更多导航*/
+$(".nav_top p").hover(function(){$(this).addClass("hover")},function(){$(this).removeClass("hover")});
+
+if (top.location != self.location)top.location=self.location;
+
+var varwindow=$(window);
+$(function(){
+	$('#content').find('img').each(function(){
+        var img = this;
+        if (img.width >= 650){
+            img.style.width = "650px";
+            img.style.height = "auto";
+            //$(img).removeAttr('height');
+            var aTag = document.createElement('a');
+            aTag.href = img.src;
+			aTag.target="_blank";
+            $(aTag).addClass('bPic')
+            .insertAfter(img).append(img)
+          }
+    });
+	varwindow.scroll(function()
+    {	
+    	//rFixedBox跟随滚动
+    	var h = varwindow.height();
+        var top = varwindow.scrollTop();
+    	var rFixedBox = $('.rFixedBox').prev().offset();
+        var fixedTop = rFixedBox.top;
+		
+        if(top>=fixedTop+344)
+        {
+			var h1 = parseInt($('#content').children('.main').height());
+			if(parseInt(top) + 340 < h1){
+				$('.rFixedBox').css({'position':'fixed','top': 0});
+			}else{
+				$('.rFixedBox').css({'position':'absolute','top': h1-510});
+			}
+        }
+        else
+        {
+            $('.rFixedBox').css({'position':'static', 'top':0});   
+        }	
+       /* return true;*/
+	   
+	   /*右侧快捷菜单*/
+	   sideFixed();
+    });
+	var ww = varwindow.width();
+	
+	function sideFixed(){
+	var scrolltop = document.body.scrollTop || document.documentElement.scrollTop;
+	var a1 = 550;
+	if(ww>440){
+		if(a1<=scrolltop){
+			$('#right-share').slideDown();
+			}
+		else{
+			$('#right-share').slideUp();
+			}
+		}
+	}
+	$('.rshare-weixin').hover(function(){
+			$('#weixin-code').removeClass('hide');
+		},function(){
+			$('#weixin-code').addClass('hide');
+		});
+	/*二维码*/
+	$('#right-share .rshare-top').on('click',function(){
+        $('html,body').animate({'scrollTop':0},500);
+    });
+/*$(document).ready(function() {
+  $("#content img").unveil();
+});	*/
+
+if(suoyin=="ok"){
+	GenerateContentList();
+}
+
+SyntaxHighlighter.autoloader(
+	'applescript			/jslib/syntaxhighlighter/scripts/shBrushAppleScript.js',
+	'actionscript3 as3		/jslib/syntaxhighlighter/scripts/shBrushAS3.js',
+	'bash shell				/jslib/syntaxhighlighter/scripts/shBrushBash.js',
+	'coldfusion cf			/jslib/syntaxhighlighter/scripts/shBrushColdFusion.js',
+	'cpp c					/jslib/syntaxhighlighter/scripts/shBrushCpp.js',
+	'obj-c objc				/jslib/syntaxhighlighter/scripts/shBrushObjC.js',
+	'c# c-sharp csharp		/jslib/syntaxhighlighter/scripts/shBrushCSharp.js',
+	'css					/jslib/syntaxhighlighter/scripts/shBrushCss.js',
+	'delphi pascal			/jslib/syntaxhighlighter/scripts/shBrushDelphi.js',
+	'diff patch pas			/jslib/syntaxhighlighter/scripts/shBrushDiff.js',
+	'erl erlang				/jslib/syntaxhighlighter/scripts/shBrushErlang.js',
+	'groovy					/jslib/syntaxhighlighter/scripts/shBrushGroovy.js',
+	'haxe hx				/jslib/syntaxhighlighter/scripts/shBrushHaxe.js',
+	'java					/jslib/syntaxhighlighter/scripts/shBrushJava.js',
+	'jfx javafx				/jslib/syntaxhighlighter/scripts/shBrushJavaFX.js',
+	'js jscript javascript	/jslib/syntaxhighlighter/scripts/shBrushJScript.js',
+	'perl pl				/jslib/syntaxhighlighter/scripts/shBrushPerl.js',
+	'php					/jslib/syntaxhighlighter/scripts/shBrushPhp.js',
+	'text plain				/jslib/syntaxhighlighter/scripts/shBrushPlain.js',
+	'py python				/jslib/syntaxhighlighter/scripts/shBrushPython.js',
+	'ruby rails ror rb		/jslib/syntaxhighlighter/scripts/shBrushRuby.js',
+	'scala					/jslib/syntaxhighlighter/scripts/shBrushScala.js',
+	'sql					/jslib/syntaxhighlighter/scripts/shBrushSql.js',
+	'vb vbnet				/jslib/syntaxhighlighter/scripts/shBrushVb.js',
+	'ps powershell			/jslib/syntaxhighlighter/scripts/shBrushPowerShell.js',
+	'xml xhtml xslt html	/jslib/syntaxhighlighter/scripts/shBrushXml.js'
+);
+SyntaxHighlighter.all();
+});
+var ourl="";
+</script>
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/arcts.js.下载"></script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script>
+<script>jbLoader();</script><script class="closetag">jbLoader(true);</script>
+<div id="tongji">
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/tongji.js.下载"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/stat.php" language="JavaScript"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1585378" target="_blank" title="站长统计">站长统计</a><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/stat(1).php" language="JavaScript"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/core(1).php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=5488951" target="_blank" title="站长统计">站长统计</a>
+</div><iframe id="google_osd_static_frame_6188191422675" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/saved_resource(4).html"></iframe>
+<script type="text/javascript">
+//tu+
+var cpro_id = "u1893014";
+document.write('<scri'+'pt src="//cpro.baidustatic.com/cpro/ui/i.js" type="text/javascript"></s'+'cript>');
+(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?2f793ca9dd6f4c32488903eed5c7fbcb":"https://jspassport.ssl.qhimg.com/11.0.1.js?2f793ca9dd6f4c32488903eed5c7fbcb";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/i.js.下载" type="text/javascript"></script><script src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/11.0.1.js.下载" id="sozz"></script><script charset="utf-8" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/ab77b6ea7f3fbf79.js.下载"></script> 
+<script type="text/javascript" src="./倾力总结40条常见的移动端Web页面问题解决方案_javascript技巧_脚本之家_files/pl.asp.下载"></script>
+<script type="application/ld+json">
+        {
+            "@context": "https://ziyuan.baidu.com/contexts/cambrian.jsonld",
+            "@id": "https://www.jb51.net/article/84973.htm",
+            "appid": "1549322409310619",
+            "title": "倾力总结40条常见的移动端Web页面问题解决方案",
+            "description": "移动端Web需要照顾触摸操作的体验,以及更多的屏幕旋转与尺寸适配等问题,非常琐碎,在这里为大家倾力总结40条常见的移动端Web页面问题解决方案,欢迎收看收藏!",
+            "pubDate": "2016-05-24T16:05:42",
+			"upDate": "2016-05-24T16:05:42"
+        }
+</script>
+
+
+<!-- published at 2018/8/21 0:34:07By dxycms qq:461478385  -->
+</body></html>

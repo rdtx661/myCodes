@@ -1,0 +1,31 @@
+.s_warp .listWarp{
+	max-height: 140px;
+	display: inline-block;
+	overflow-y: scroll;
+	background-color: #fff;
+	border:1px solid #ECECED;
+	position: absolute;
+	top: 37px;
+	left: 0px;
+	z-index: 10;
+	width: 250px;
+	display: none;
+}
+.s_warp .listWarp div{
+	height: 35px;
+	line-height: 35px;
+	text-indent: 5px;
+	display: none;
+}
+.s_warp .listWarp div:hover{
+	background-color: #EFFCEB;
+	cursor: pointer;
+}
+.s_warp .listWarp .hasChange{
+	background-color: #EFFCEB;
+}
+.s_warp .listWarp .showDiv{
+	display: block;
+}
+
+

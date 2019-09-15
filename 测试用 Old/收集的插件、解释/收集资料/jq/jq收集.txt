@@ -1,0 +1,64 @@
+
+
+animate() 的-= 和 += 表示相对动画 在之前基础上进行变化
+
+.prop()检索属性值
+.attr()检索属性
+
+    // 事件怎么绑定 怎么触发
+    $(".mField .cmSlidPanel ul:eq(0) li:eq(0)").trigger("click");
+    $(".mField .cmSlidPanel ul:eq(0) li:eq(0)").trigger("click");
+
+append() - 在被选元素的结尾插入内容
+prepend() - 在被选元素的开头插入内容
+after() - 在被选元素之后插入内容
+before() - 在被选元素之前插入内容
+
+prompt(）弹出输入框 返回用户输入的值
+
+对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。
+选中状态attr不能获取
+
+遍历元素集合cateItems index为当前遍历下标
+cateItems.each(function(index){ 
+
+
+$("div").text($("form").serialize());获取js序列化表单值
+FirstName=Bill&LastName=Gates
+
+
+ajax传入参数(url data backfunc type) backfunc 请求成功时执行的回调函数。
+
+closest(".XX") 匹配第一个XX类祖先元素
+
+toggleClass 变化当前class类 有则取消 无则增加
+
+
+js事件冒泡 绑定事件第三参数为false（例：dom.addEventListener("click",function(){},flase)） 
+
+jq的on实现js的事件冒泡
+target 事件属性可返回事件的目标节点（触发该事件的节点）
+
+例：
+利用事件冒泡实现：
+
+　　　　　　　$("ul").on("mouseover",function(e){
+                $(e.target).css("background-color","#ddd").siblings().css("background-color","white");
+            })
+也许有人会说，我们直接给所有li都绑上事件也可以啊，一点也不麻烦，只要……
+　　　　　　　$("li").on("mouseover",function(){
+                $(this).css("background-color","#ddd").siblings().css("background-color","white");
+            })
+是，这样也行。而且从代码简洁程度上，两者是相若仿佛的。但是，前者少了一个遍历所有li节点的操作，所以在性能上肯定是更优的。
+
+
+jq和js对象互转
+
+var jqToJs=$(this)[0];
+var jsDom=document.getElementById("div");
+var jsToJq=$(jsDom);
+
+event.preventDefault();阻止元素发生默认行为 比如阻止点击A链接时访问A链接的url
+
+trigger触发元素事件

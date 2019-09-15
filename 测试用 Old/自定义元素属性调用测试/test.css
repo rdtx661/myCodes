@@ -1,0 +1,41 @@
+/*.lenDetail{
+	position: relative;
+	left: 0px;
+	top:0px;
+}
+.lenDetail .desc{
+	display: inline-block;
+	position: relative;
+	top:10px;
+	left: 0px;
+}
+.lenDetail .levelList{
+	border:1px solid red;
+	position:relative;
+	top: 30px;
+}*/
+/*.lenDetail:before{
+	content: "\0020";
+	display: block;
+	height: 1px;
+	clear:both;
+	zoom:1;
+}*/
+div{
+	width: 150px;
+	height: 30px;
+	border:1px solid red;
+	position: relative;
+}
+/*.div1{
+	position: relative;
+	top: 20px;
+	border:1px solid black;
+}*/
+.div1{
+	border:1px solid black;
+	margin-top: 20px;
+}
+.div2{
+	margin-bottom: 50px;
+}

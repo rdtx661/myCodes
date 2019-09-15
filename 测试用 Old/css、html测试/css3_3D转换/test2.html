@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>初始测试模板</title>
+		<link rel="stylesheet" type="text/css" href="test.css">
+		<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="test.js"></script>
+		<script type="text/javascript" src="vue.js"></script>
+	<style>
+		div{
+			width:50px;
+			height: 50px;
+			background-color: red;
+		}
+		.divC{
+			-webkit-animation: xuanzhuan 2s;
+			/*保持动画完毕后最后一个属性*/
+			-webkit-animation-fill-mode : forwards;
+		}
+		@-webkit-keyframes xuanzhuan{
+			from{transform: rotateX(0deg);}
+			to{transform: rotateX(180deg);}
+		}
+	</style>
+	</head>
+	<body>
+		<div class="" onclick="this.setAttribute('class','divC');var dom=this;setTimeout(function(){dom.classList.remove('divC')},2000);">你好</div>
+	</body>
+</html>

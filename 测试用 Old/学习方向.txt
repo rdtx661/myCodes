@@ -1,0 +1,127 @@
+
+2018.11.16
+博客先放一放，看js手册和css手册还有jq手册 顺序是js jq css
+
+尝试zend studio、vim编辑器 
+
+-------------
+sdk是什么
+https://baike.baidu.com/item/sdk/7815680?fr=aladdin
+
+2018.11.15
+闭包的作用 阮一峰
+http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
+
+深入javascript之原型和原型链
+https://blog.csdn.net/yucihent/article/details/79424506
+
+JS-Global对象
+https://blog.csdn.net/qq_32758013/article/details/74781788
+
+深入理解 JavaScript 变量的作用域和作用域链
+https://www.cnblogs.com/aaron-qk/p/5999562.html
+
+JavaScript中作用域和作用域链的简单理解（变量提升）
+https://www.cnblogs.com/buchongming/p/5858026.html
+
+js、esX区分及学习方向
+https://huangxuan.me/2015/09/22/js-version/
+//es5、6特性
+https://www.cnblogs.com/fuheng01/articles/JS.html
+
+js接口：
+https://drafts.csswg.org/cssom-view/#extensions-to-the-document-interface
+
+js对解释型语言的辩证及js中声明提示等操作的解释
+https://baijiahao.baidu.com/s?id=1591528352410621144&wfr=spider&for=pc
+
+let声明变量
+https://www.cnblogs.com/asand/p/7205632.html
+
+html全局属性等HTML知识
+http://www.w3school.com.cn/tags/tag_section.asp
+
+
+前端技巧
+https://coding.imooc.com/class/evaluation/129.html#Anchor
+-----------------
+
+vim配合Linux
+
+2018.11.14
+Linux教程
+https://www.bilibili.com/video/av21303002?from=search&seid=17859339744556686357
+
+计算机网络
+https://www.bilibili.com/video/av10921041?from=search&seid=18040150619279323620
+
+php与mysql第四版pdf
+
+python
+----------------------------------------------
+lareval
+//thinkphp
+// vue.js用法(构建界面框架，针对某些网页)
+// react ng webpack
+后端难点：缓存机制, 高并发, sql优化, 分布式, 网站架构
+
+js框架： VUE  Angular React
+
+面向对象编程
+
+正则表达式
+
+我们通常说 统一资源定位URL 从协议，域名，端口，路径一顺下来， 你这个连协议都不一样，有啥可比性？
+Python 爬虫 抓取网页
+
+pm2 node.js
+
+php函数看了看ajax
+
+
+基础：php函数 jq手册（ajax） js速查手册 可视化架构 
+升级：js变量提升
+
+看正则语法
+找源码和实例看
+js手册
+
+11.07
+在阿里云买了个阿里云服务器 避免忘记 记录一下
+
+11.08
+有时间学习了解一下python ruby lisp
+
+查找博客搭建相关知识，晚上先做两个英语单元测试
+
+远程桌面连接（linux系统 ssh连接）云服务器
+
+视频文件并发 上 cdn
+2018.11.09
+以后尝试使用多个云服务器（参考互联网架构的演变）
+https://blog.csdn.net/yixiao1874/article/details/79383825
+
+云服务器不等于vps(Virtual Private Server 虚拟专用服务器)
+
+最后可以了解下运维 网站冗余排除单点故障等（单个部分导致整个网络瘫痪）
+ 
+rfc文档
+
+ietf（The Internet Engineering Task Force）互联网工程任务组
+
+git操作手册
+https://gitee.com/progit/index.html
+
+域名备案，域名解析
+
+2018.11.10
+
+php邮箱发送邮件
+
+2018.11.13
+
+机器智能，机器如果有了智能，逻辑思想上就是天使的形象？
+
+了解mysql 了解C
+
+

@@ -1,0 +1,6 @@
+
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	border-radius: 10px;
+	-ms-behavior: url(../PIE.htc);
+    behavior: url(../PIE.htc);

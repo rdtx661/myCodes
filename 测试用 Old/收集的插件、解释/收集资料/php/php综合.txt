@@ -1,0 +1,33 @@
+
+time返回当前时间的时间戳，mktime返回指定时间的时间戳，可以用date函数传入时间戳转换为日期
+
+如:
+$sql = "insert into article (`channel_id`,`title`,`detail`,`pub_time`) values ('{$cid}','{$title}','{$detail}','{$time}');";
+不加似乎也可以,加{}是什么意思呢?
+还有字段名 为什么要以``包括呢?
+
+加{}有时候是为了防止变量名和后面的字符串连在一起嘛
+例如
+{$cid}dd
+如果cid=aa
+那么{$cid}dd=aadd
+不加的话你自己看看了$ciddd，岂不变成了ciddd变量了~~ 
+
+标点错误会导致语法报错;
+
+$a=$c??$b;
+等同于 $a=isset($c)?$c:$b;
+
+$a=$c?:$b;
+
+等同于 $a=$c?$c:$b;
+
+PHP替代语法流程控制
+<?php if ($a<0): ?>
+    是负数拉
+<?php endif; ?>
+ 
+上面的语句等同于
+<?php if （$a<0）{ ?>
+    是负数拉
+<?php } ?>

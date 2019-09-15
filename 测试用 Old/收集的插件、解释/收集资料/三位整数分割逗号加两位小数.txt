@@ -1,0 +1,19 @@
+
+			function getcomma(num){
+						var tempstr='';
+						var temparr=(num.toFixed(2)+'').split('.');
+						var temparr2=temparr[0].split('');
+						var b=0;
+						for(var i=temparr2.length-1;i>=0;i--){
+							tempstr+=temparr2[b];
+							 if(i%3==0&&i!=0){
+								tempstr+=',';
+							 }
+							 b++;
+						}
+						// 有小数点
+						if(temparr.length>=2){
+							tempstr+='.'+temparr[1];								
+						}
+					return tempstr;
+			}

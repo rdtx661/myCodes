@@ -1,0 +1,86 @@
+git clone 
+git pull  
+git branch 
+git checkout
+git add .
+git commit -m 'XXXX'
+git push 
+git rebase
+git fetch 
+
+ LF will be replaced by CRLF in tatus.
+The file will have its original line endings in your working directory.错误
+原因是路径中存在 / 的符号转义问题，false就是不转换符号默认是true，相当于把路径的 / 符号进行转义，这样添加的时候就有问题
+git config --global core.autocrlf false 解决
+====================================================
+ctrl+c终止当前操作
+
+设置缓存为500mb
+git config --global http.postBuffer 524288000
+
+1 , git push 停留在writing objects 的问题
+
+原因 : 有上传比较大的文件.?
+
+
+解决方法 : $ git config --global http.postBuffer 524288000
+
+原理 : 因为http.postBuffer默认上限为1M,上面的命令是把git的配置里http.postBuffer的变量改大为500M
+
+
+==========================
+
+
+2，
+文件大,上传慢
+
+解决方法 : 把远程仓库的上传由原来的HTTPS改为SSH上传
+
+$ git remote set-url origin [你的ssh地址]
+
+
+
+原理 : github在国内本身就慢，还可能被dns污染 , 因此推荐使用SSH上传
+
+
+验证更改成功 :
+
+
+$ git remote -v
+
+
+#origin? git@github.com:USERNAME/REPOSITORY.git (fetch)
+
+#origin? git@github.com:USERNAME/REPOSITORY.git (push)
+改变上传方式
+git remote set-url origin https://github.com/rdtx661/truthFile.git（https地址）或者git@github.com:USERNAME/REPOSITORY.git（ssh地址）
+
+==========================
+
+git pull --rebase origin master
+fatal: Updating an unborn branch with changes added to the index. 
+
+后来发现原来是 提交到版本库中的文件没有没有提交到 分支中,还在暂存区
+所以执行 
+git commit -m 'xx' 就行了
+
+====================================================
+git remote -v 查看当前上传方式
+
+
+选择单个文件上传
+git add fileName
+git add -A
+
+git commit -m "XXX" 上传文件增加描述
+
+然后提交、然后git push -u origin master 放至主源目录（git）
+git pull --rebase origin master git pull(从git主源目录拉取)到本地同步
+ 
+
+如果选择-A则把所有文件都上传，此时一些.exe、.o文件都会被上传，这时我们可以用git的gitignore方法。具体用法如下：
+
+首先右键仓库，Git Bash Here进入仓库。输入 touch .gitignore，就会生成一个名为”.gitignore”的文件。
+然后自己在文件中找到该文件，点击编辑，输入要屏蔽的文件类型即可。例如输入： 
+*.o 
+*.exe

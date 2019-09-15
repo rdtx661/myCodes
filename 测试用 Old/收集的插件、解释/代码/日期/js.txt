@@ -1,0 +1,458 @@
+		var isover=false;
+		var st02;
+        var hdclear;
+$(document).ready(function(){
+        //1930-2050 
+        for(var i=2050;i>=1930;i--){
+            $('.vch_02 .vch_02_show .datewarp .datahead .yearhd').prepend('<div>'+i+'年</div>');
+        }
+        $(".vch_02_show .vch_02_show_warp .vch_02_input").keyup(function(event) {
+            errormsg($(this));
+        });
+        $(".vch_02_show .vch_02_show_warp .vch_02_input").focus(function(){
+            $(this).parents('.vch_02').find('.isclear').css("display","none")
+            errormsg($(this));
+        })
+        $(".vch_02_show .vch_02_show_warp .vch_02_input").blur(function(){
+            var getval=$(this).val();
+            var getvals=getval.split('-');
+            var vallen=getvals.length;
+            if(vallen>2){
+                var tempyr=getvals[0];
+                var tempmth=parseInt(getvals[1]);
+                var tempnd=parseInt(getvals[2]);
+                if(tempmth<10){
+                    tempmth='0'+tempmth;
+                }
+                if(tempnd<10){
+                    tempnd='0'+tempnd;
+                }
+                $(this).parents('.vch_02_show').find('.vch_02_input').val(tempyr+'-'+tempmth+'-'+tempnd);
+                //显示已结账
+                var mydate=new Date();
+                if(tempyr<mydate.getFullYear()){
+                    $(this).parents('.vch_02_show_warp').children('.isclear').children('.datadate').text(tempyr+''+tempmth);
+                    $(this).parents('.vch_02').find('.isclear').css("display","block");
+                    clearTimeout(hdclear);
+                    hdclear=setTimeout(function(){
+                        if($(this).parents('.vch_02').find('.isclear').css("display")=='block'){
+                            $(this).parents('.vch_02').find('.isclear').css("display",'none');
+                        }
+                        clearTimeout(hdclear);
+                    },2000);
+                }
+            } 
+            $(this).parents('.vch_02_show_warp').children('.vch_02_hd').css("display","none");
+        });
+        $('.vch_02_show .vch_02_imgwarp').click(function(){
+                    if($(this).parents('.vch_02_show').children('.datewarp').css('display')=='block'){
+                        $(this).parents('.vch_02_show').children('.datewarp').css('display','none');
+                    }else{
+                        var val=$(this).parents('.vch_02_show').find('.vch_02_input').val();
+                        var vals=val.split('-');
+                        var year =vals[0];  
+                        var month =vals[1];
+                        // datewarp datahead month m_num datewarp datahead year y_num
+                        $(this).parents('.vch_02_show').find('.y_num').text(year);
+                        $(this).parents('.vch_02_show').find('.m_num').text(month);
+                        cgrl($(this),year,month); 
+                        $(this).parents('.vch_02_show').children('.datewarp').css('display','block');
+                    }
+        });
+        $('.vch_02_show .datewarp .datahead .year>span').click(function(){
+               var tempday=getinputime($(this));
+               yearshow_control($(this).parents('.year'));        
+        });
+        $('.vch_02_show .datewarp .datahead .month>span').click(function(){
+               monthshow_control();        
+        });
+        $('.vch_02_show .datewarp .datahead .year .yearhd>div').click(function(){
+             var val=parseInt($(this).text());
+             $(this).parents('.vch_02_show').find('.year').find('.y_num').text(val);
+             $(this).parents('.vch_02_show').find('.year').find('.yearhd').css('display','none');
+            changedata($(this));
+        });
+        $('.vch_02_show .datewarp .datahead .month .monthhd>div').click(function(){
+            var val=parseInt($(this).text());
+            if(val<10){
+                val='0'+parseInt(val);
+            }
+            $(this).parents('.vch_02_show').find('.month').find('.m_num').text(val);
+            $(this).parents('.vch_02_show').find('.month').find('.monthhd').css('display','none');
+            changedata($(this));
+        });
+        // 点击左右切换月份
+        $('.vch_02 .vch_02_show .datewarp .datahead .left').click(function(){
+                var month=parseInt($(this).parents('.vch_02_show').find('.month').find('.m_num').text());
+                if(month==1){
+                    var year=parseInt($(this).parents('.vch_02_show').find('.year').find('.y_num').text());
+                    $(this).parents('.vch_02_show').find('.year').find('.y_num').text(year-1);
+                    $(this).parents('.vch_02_show').find('.month').find('.m_num').text(12);
+                }else{
+                    $(this).parents('.vch_02_show').find('.month').find('.m_num').text(month-1);
+                }
+                changedata($(this));
+        });
+        $('.vch_02 .vch_02_show .datewarp .datahead .right').click(function(){
+                var month=parseInt($(this).parents('.vch_02_show').find('.month').find('.m_num').text());
+                if(month==12){
+                    var year=parseInt($(this).parents('.vch_02_show').find('.year').find('.y_num').text());
+                    $(this).parents('.vch_02_show').find('.year').find('.y_num').text(year+parseInt(1));
+                    $(this).parents('.vch_02_show').find('.month').find('.m_num').text(1);
+                }else{
+                    $(this).parents('.vch_02_show').find('.month').find('.m_num').text(month+parseInt(1));
+                }
+                changedata($(this));
+        });
+        //===========================选择日期，小于当前年返回false(不选择)
+        $('.vch_02 .vch_02_show .datewarp .day_warp>div>div').click(function(){
+            changeinputdata($(this));
+        });
+        $('body *').click(function(event){
+            if($('.vch_02_show .datewarp .datahead .year .yearhd').css('display')=='block'&&$(event.target).parents('.year').length<=0){
+                $('.vch_02_show .datewarp .datahead .year .yearhd').css('display','none');
+            }
+            if($('.vch_02_show .datewarp .datahead .month .monthhd').css('display')=='block'&&$(event.target).parents('.month').length<=0){
+                $('.vch_02_show .datewarp .datahead .month .monthhd').css('display','none');
+            }
+            if($(event.target).parents('.vch_02').length<=0){
+                    $('.vch_02_show .datewarp').css('display','none');
+            }
+        });
+
+})      
+            //日期输入错误时提示的信息
+            function errormsg(dom){
+                    var val=$(dom).val();
+                    /*判断输入是否正确，改变当前月份之前所有月份天数样式*/
+                    var patter= /^[0-9]{4}-[0-1]?[0-9]{1}-[0-3]?[0-9]{1}$/;
+                    var canpass=true;
+                    var canpass2=true;
+                    var tempdays=val.split('-');
+                    var tempyr=tempdays[0];
+                    var tempm=tempdays[1];
+                    var tempd=tempdays[2];
+                    var mydate = new Date();   
+                    if(tempyr<mydate.getFullYear()){
+                        canpass=false;
+                    }
+                    if(!patter.test(val)){
+                        //格式不对
+                        $(dom).parents('.vch_02_show_warp').find('.errormsg').text('输入的值无效。');
+                        canpass2=false;
+                    }else{
+                        $(dom).parents('.vch_02_show_warp').children('.vch_02_hd').css({"opacity":'0','display':'none'});
+                    }
+                    var tempdd=getsumday(parseInt(tempyr),parseInt(tempm)); 
+                    //格式对但值不对 
+                    if(parseInt(tempm)>12||parseInt(tempd)>parseInt(tempdd)){
+                        canpass2=false;
+                    }
+                    if(!canpass2){
+                        hdshow2(dom);
+                    }else if(patter.test(val)&&!canpass){
+                        //输入的值成立，但不在当前工作年及未来工作年中则视为超出范围
+                        $(dom).parents('.vch_02_show_warp').find('.errormsg').text('此值超出范围。');
+                        hdshow2(dom);
+                    }
+            }
+            //改变输入框日期
+            function changeinputdata(dom){
+                // $('.vch_02 .vch_02_show .datewarp .day_warp>div>div').click(function(){
+                if(!$(dom).hasClass('bfm')){
+                         var mydate=new Date();
+                         var year=mydate.getFullYear();
+                         var getyear=parseInt($(dom).parents('.vch_02_show').find('.year').find('.y_num').text());
+                         if(getyear<year&&!$(dom).hasClass('nnm')){
+                            return false;
+                         }else{
+                            var getmonth=parseInt($(dom).parents('.vch_02_show').find('.month').find('.m_num').text());
+                            if($(dom).hasClass('nnm')){
+                                if(getmonth==12){
+                                    getyear=getyear+1;
+                                    getmonth=1;
+                                }else{
+                                    if($(dom).parents('div').index()!=0){
+                                        getmonth=getmonth+1;
+                                    }else{
+                                        if(getmonth==1){
+                                            getyear=getyear-1;
+                                            getmonth=12;
+                                        }else{
+                                            getmonth=getmonth-1;
+                                        }
+                                    }
+                                }
+                            }
+                            var getday=parseInt($(dom).text());
+                            if(getday<10){
+                                getday='0'+getday;
+                            }
+                            if(getmonth<10){
+                                getmonth='0'+getmonth;
+                            }
+                            $(dom).parents('.vch_02').find('.vch_02_input').val(getyear+'-'+getmonth+'-'+getday);
+                            $(dom).parents('.vch_02').find('.year').find('.y_num').text(getyear);
+                            $(dom).parents('.vch_02').find('.month').find('.m_num').text(getmonth);
+                            $(dom).parents('.vch_02_show').find('.datewarp').css('display','none'); 
+                         }
+                }
+            }
+            //改变查看日期
+            function changedata(dom){
+                    var year=$(dom).parents('.vch_02').find('.year').find('.y_num').text();
+                    var month=$(dom).parents('.vch_02').find('.month').find('.m_num').text();
+                    cgrl($(dom),parseInt(year),parseInt(month));
+            }    
+            function getinputime(dom){
+                 return $(dom).parents('.vch_02').find('.vch_02_input').val();
+             }
+            function yearshow_control(dom){
+                if($('.vch_02_show .datewarp .datahead .year .yearhd').css('display')=='block'){
+                    $('.vch_02_show .datewarp .datahead .year .yearhd').css('display','none');
+                }else{
+                    $('.vch_02_show .datewarp .datahead .year .yearhd').css('display','block');
+                    // $('.datewarp .datahead .year .yearhd').scrollTop(50); 25乘以年
+                    //year-1930
+                    var year=parseInt($(dom).find('.y_num').text());
+                    var needgotime=year-1930;
+                    var needgolen=needgotime*25;
+                    $('.vch_02_show .datewarp .datahead .year .yearhd').scrollTop(needgolen); 
+                }
+            }
+            function monthshow_control(){
+                if($('.vch_02_show .datewarp .datahead .month .monthhd').css('display')=='block'){
+                    $('.vch_02_show .datewarp .datahead .month .monthhd').css('display','none');
+                }else{
+                    $('.vch_02_show .datewarp .datahead .month .monthhd').css('display','block');
+                }
+            }
+			function hdshow2(dom){
+                if($(dom).parents(".vch_02_show_warp").children('.vch_02_hd').css("display")=='none'){
+                    clearInterval(st02);
+                    $(dom).parents(".vch_02_show_warp").children('.vch_02_hd').css({"display":"block","opacity":0});
+                    var golen=0;
+					st02=setInterval(function(){
+                        golen=golen+0.02;
+                        $(dom).parents(".vch_02_show_warp").children('.vch_02_hd').css("opacity",golen);
+						if(golen>=1){
+							clearInterval(st02);
+							return;
+						}
+					},2);
+                }
+			}
+function cgrl(dom,year,month){
+        //过去n年总天数
+        year=parseInt(year);
+        month=parseInt(month);
+        var get=datesum(year,month);
+		//year年month月的天数
+        var tempnum=getsumday(year,month); 
+        var domstrat=$(this).parents('.vch_02').find('.year').find('.y_num');
+        var domstrat2=$(this).parents('.vch_02').find('.month').find('.m_num');
+        $(dom).parents('.vch_02').find('.day_warp').children('div').children('div').removeClass('nowday');
+        $(domstrat).text(year);
+        $(domstrat2).text(month);
+        // 当页总共显示多少天 (get+1)%7 7 
+        // datewarp day_warp
+        var str='<div>';
+        str+='<div></div>';
+        str+='<div></div>';
+        str+='<div></div>';
+        str+='<div></div>';
+        str+='<div></div>';
+        str+='<div></div>';
+        str+='<div></div>';
+        str+='</div>';
+        //加上 7
+        var sumday=tempnum+(get+1)%7+(7-((get+tempnum)%7+1));
+        //总行数
+        var eachtime=sumday/7;
+        domstr=$(dom).parents('.vch_02').find('.datewarp');
+        $(domstr).find('.day_warp').html('');
+        if(eachtime==6){
+            $(domstr).css('height','245px');
+        }else{
+            $(domstr).css('height','215px');
+        }
+        for(var i=0;i<eachtime;i++){
+          $(domstr).find('.day_warp').append(str);  
+        }
+        var tempgo=0;       
+        var ttt=get;
+        for(var i=1;i<=tempnum;i++){
+            var totaldays=ttt+i;
+        	var tempgo2=totaldays % 7;
+            var tempday=getinputime(dom);
+       		if(tempday!=''&&tempday!=null&&tempday!=undefined){
+	       		var tempdays=tempday.split('-');
+	       		var templen=tempdays.length;
+	       		if(templen>2){
+		       		var tempnd=tempdays[2];
+		       		var tempmth=tempdays[1];
+		       		var tempyr=tempdays[0];
+	       		}
+       		}
+       		if(i==1&&tempgo2!=0){
+            	var tempmonth=0;
+                var year2=year;
+        		if(month!=1){
+        			tempmonth=month-1;
+        		}else{
+        			tempmonth=12;
+        	        year2=year-1;
+            	}
+                    var tempnumbf=getsumday(year2,tempmonth);
+                    //本月开始第一天
+                    //星期日开头 
+                   //倒取值，倒赋值
+                   if((ttt+1)%7!=0){
+                         //倒赋 
+                       for(var c=(ttt+1)%7-1;c>=0;c--){
+                            var domstr2=$(dom).parents('.vch_02').find('.day_warp').children('div:eq('+0+')').children('div:eq('+c+')');
+                               $(domstr2).text(tempnumbf);
+                               var mydate = new Date();   
+                                if(year2<mydate.getFullYear()){
+                                //第一排非本年非本月内容
+                                    $(domstr2).addClass("bfm");
+                                }else{    
+                                //第一排是本年非本月内容
+                                    $(domstr2).addClass("nnm");
+                                }
+                                var mydate = new Date();   
+                                if(tempnd==tempnumbf&&tempmth==tempmonth&&tempyr==year2&&year2>=mydate.getFullYear()){
+                                    $(domstr2).addClass('nowday');
+                                }
+                                //倒取
+                                tempnumbf--;
+                       }
+                    }
+        	}
+            //tempgo2=6 星期六
+    	 	if(i==tempnum&&tempgo2!=6){
+                    var tempmonth=0;
+                    var year2=year;
+            		if(month!=12){
+            			tempmonth=parseInt(month)+parseInt(1);
+            		}else{
+                        year2=year+1;
+            			tempmonth=1;
+            		}
+            		var aftempgo=1;
+                    //顺序赋值 (ttt+tempnumbf)%7获取month月最后一天是星期几
+                    var tempnumbf=getsumday(year2,month);
+                    if((ttt+tempnumbf)%7!=6){
+                        for(var b=(ttt+tempnumbf)%7+1;b<=6;b++){
+                            var domstr3=$(dom).parents('.vch_02').find('.day_warp').children('div:eq('+(eachtime-1)+')').children('div:eq('+b+')');
+                            $(domstr3).text(aftempgo);  
+                            var mydate = new Date();    
+                            if(year2<mydate.getFullYear()){
+                                $(domstr3).addClass("bfm");
+                            }else{
+                                $(domstr3).addClass("nnm");
+                            }
+                            var mydate = new Date();   
+                            if(tempnd==aftempgo&&tempmth==tempmonth&&tempyr==year2&&year2>=mydate.getFullYear()){
+                                $(domstr3).addClass('nowday');
+                            }
+                            aftempgo++;
+                        }
+                    }
+        	}
+            var domstr4=$(dom).parents('.vch_02').find('.day_warp').children('div:eq('+tempgo+')').children('div:eq('+tempgo2+')');
+	      	$(domstr4).text(i);
+            var mydate = new Date();    
+        	if(year<mydate.getFullYear()){
+                $(domstr4).addClass('bfmn');
+       		}
+        	if(tempnd==i&&tempmth==month&&tempyr==year&&year>=mydate.getFullYear()){
+				$(domstr4).addClass('nowday');
+        	}
+        	if(tempgo2==6){
+        		tempgo++;
+        	}
+        }
+        $('.vch_02 .vch_02_show .datewarp .day_warp>div>div').click(function(){
+            changeinputdata($(this));
+        });
+}
+function getsumday(year,month){
+	     var tempnum=0;
+         var isrun = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) ? 1 : 0;  
+         switch(month){  
+         	case 12:  
+                tempnum  = 31;  
+        	break;
+            case 11: 	 
+                tempnum= 30;  
+                break;
+            case 10:  
+                tempnum = 31;    
+                break;
+            case 9:  
+                tempnum = 30;   
+                break;
+            case 8:  
+                tempnum = 31;   
+                break;
+            case 7:  
+                tempnum =31;   
+                break;
+            case 6:  
+                tempnum= 30;   
+                break;
+            case 5:  
+                tempnum = 31;   
+                break;
+            case 4:  
+                tempnum = 30;   
+                break;
+            case 3:  
+                tempnum = 31;   
+                break;
+            case 2:  
+                isrun ? (tempnum  = 29) : (tempnum  =28); 
+                break;
+            case 1:  
+                tempnum = 31;    
+                break;
+        }  
+        return tempnum;
+}
+function datesum(year,month){  
+		var totaldays=0;
+        for(var i = 1900;i < year;i++) {  
+            if((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0)) {  
+                totaldays += 366;  
+            }else{  
+                totaldays += 365;  
+            }  
+        }  
+        var isrun = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) ? 1 : 0;  
+        switch(month - 1) {  
+            case 11: 	 
+                totaldays += 30;  
+            case 10:  
+                totaldays += 31;  
+            case 9:  
+                totaldays += 30; 
+            case 8:  
+                totaldays += 31; 
+            case 7:  
+                totaldays += 31; 
+            case 6:  
+                totaldays += 30; 
+            case 5:  
+                totaldays += 31; 
+            case 4:  
+                totaldays += 30; 
+            case 3:  
+                totaldays += 31; 
+            case 2:  
+                isrun ? (totaldays += 29) : (totaldays +=28); 
+            case 1:  
+                totaldays += 31;  
+        }  
+        return totaldays;
+}

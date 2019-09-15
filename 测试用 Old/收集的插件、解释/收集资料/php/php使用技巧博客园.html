@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://www.cnblogs.com/cbryge/p/6201847.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="origin">
+<title>include文件时尽量使用绝对路径 - 工作的感觉是啥样 - 博客园</title>
+<meta property="og:description" content="1、如果能将类的方法定义成static，就尽量定义成static，它的速度会提升将近4倍。 2、$row[’id’] 的速度是$row[id]的7倍。 3、echo 比 print 快，并且使用ech">
+<link type="text/css" rel="stylesheet" href="./php使用技巧博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./php使用技巧博客园_files/bundle-Nerium.css">
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./php使用技巧博客园_files/bundle-Nerium-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/cbryge/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/cbryge/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/cbryge/wlwmanifest.xml">
+<script async="" src="./php使用技巧博客园_files/analytics.js.下载"></script><script src="./php使用技巧博客园_files/jquery-2.2.0.min.js.下载"></script>
+<script type="text/javascript">var currentBlogApp = 'cbryge', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="./php使用技巧博客园_files/blog-common.js.下载" type="text/javascript"></script>
+<script src="./php使用技巧博客园_files/bundle-Nerium.js.下载" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/cbryge/"><img id="blogLogo" src="./php使用技巧博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/cbryge/">服务器-老张</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator" style="overflow: hidden;">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/cbryge/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%84%9F%E8%A7%89%E6%98%AF%E5%95%A5%E6%A0%B7">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/cbryge/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/cbryge/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 256&nbsp; </span>
+<span id="stats_article_count">文章 - 2&nbsp; </span>
+<span id="stats-comment_count">评论 - 5</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/cbryge/p/6201847.html">include文件时尽量使用绝对路径</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>1、如果能将类的方法定义成static，就尽量定义成static，它的速度会提升将近4倍。</p>
+<p>2、$row[’id’] 的速度是$row[id]的7倍。</p>
+<p>3、echo 比 print 快，并且使用echo的多重参数(译注：指用逗号而不是句点)代替字符串连接，比如echo $str1,$str2。</p>
+<p>4、在执行for循环之前确定最大循环数，不要每循环一次都计算最大值，最好运用foreach代替。</p>
+<p>5、注销那些不用的变量尤其是大数组，以便释放内存。</p>
+<p>6、尽量避免使用__get，__set，__autoload。</p>
+<p>7、require_once(2881064151)代价昂贵。</p>
+<p>8、include文件时尽量使用绝对路径，因为它避免�<a href="http://www.codesec.net/list/4/" target="_blank">php</a>去include_path里查找文件的速度，解析操作系统路径所需的时间会更少。</p>
+<p>9、如果你想知道脚本开始执行(译注：即服务器端收到客户端请求)的时刻，使用$_SERVER[‘REQUEST_TIME’]要好于time()。</p>
+<p>10、函数代替正则表达式完成相同功能。</p>
+<p>11、str_replace函数比preg_replace函数快，但strtr函数的效率是str_replace函数的四倍。</p>
+<p>12、如果一个字符串替换函数，可接受数组或字符作为参数，并且参数长度不太长，那么可以考虑额外写一段替换代码，使得每次传递参数是一个字符，而不是只写一行代码接受数组作为查询和替换的参数。</p>
+<p>13、使用选择分支语句(译注：即switch case)好于使用多个if，else if语句。</p>
+<p>14、用@屏蔽错误消息的做法非常低效，极其低效。</p>
+<p>15、打开apache的mod_deflate模块，可以提高网页的浏览速度。</p>
+<p>16、数据库连接当使用完毕时应关掉，不要用长连接。</p>
+<p>17、错误消息代价昂贵。</p>
+<p>18、在方法中递增局部变量，速度是最快的。几乎与在函数中调用局部变量的速度相当。</p>
+<p>19、递增一个全局变量要比递增一个局部变量慢2倍。</p>
+<p>20、递增一个对象属性(如：$this-&gt;prop++)要比递增一个局部变量慢3倍。</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag">标签: <a href="https://www.cnblogs.com/cbryge/tag/php/">php</a></div>
+<div id="blog_post_info"><div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(6201847,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+            <a id="green_channel_follow" onclick="follow(&#39;543b9a16-378c-e611-845c-ac853d9f53ac&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./php使用技巧博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./php使用技巧博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/cbryge/" target="_blank"><img src="./php使用技巧博客园_files/20161007105111.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="http://home.cnblogs.com/u/cbryge/">工作的感觉是啥样</a><br>
+            <a href="http://home.cnblogs.com/u/cbryge/followees">关注 - 35</a><br>
+            <a href="http://home.cnblogs.com/u/cbryge/followers">粉丝 - 17</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;543b9a16-378c-e611-845c-ac853d9f53ac&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(6201847,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">0</span>
+    </div>
+    <div class="buryit" onclick="votePost(6201847,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="https://www.cnblogs.com/cbryge/p/6201705.html" class="p_n_p_prefix">« </a> 上一篇：<a href="https://www.cnblogs.com/cbryge/p/6201705.html" title="发布于2016-12-20 10:43">array_reduce方法用回调函数迭代地将对数组的值进行操作</a><br><a href="https://www.cnblogs.com/cbryge/p/6201852.html" class="p_n_p_prefix">» </a> 下一篇：<a href="https://www.cnblogs.com/cbryge/p/6201852.html" title="发布于2016-12-20 11:11">param STRING $username 要检查的用户名</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2016-12-20 11:09</span> <a href="https://www.cnblogs.com/cbryge/">工作的感觉是啥样</a> 阅读(<span id="post_view_count">895</span>) 评论(<span id="post_comment_count">0</span>)  <a href="https://i.cnblogs.com/EditPosts.aspx?postid=6201847" rel="nofollow">编辑</a> <a href="https://www.cnblogs.com/cbryge/p/6201847.html#" onclick="AddToWz(6201847);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=309480,cb_entryId=6201847,cb_blogApp=currentBlogApp,cb_blogUserGuid='543b9a16-378c-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/20 11:09:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/cbryge/p/6201847.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/cbryge/p/6201847.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】超50万VC++源码: 大型组态工控、电力仿真CAD与GIS源码库！</a><br><a href="https://cloud.tencent.com/developer/edu/major-100008?fromSource=gwzcw.1297698.1297698.1297698" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-腾讯蓝鲸&#39;)">【推荐】企业SaaS应用开发实战，快速构建企业运营/运维系统</a><br><a href="https://www.grapecity.com.cn/developer/activereports?utm_source=cnblogs&amp;utm_medium=blogpage&amp;utm_term=bottom&amp;utm_content=AR&amp;utm_campaign=community" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-ActiveReports&#39;)">【推荐】ActiveReports 报表控件，全面满足 .NET开发需求</a><br></div>
+<div id="opt_under_post"></div>
+<div id="cnblogs_c1" class="c_ad_block"><a href="https://cloud.tencent.com/act/ecommerce?fromSource=gwzcw.1191780.1191780.1191780" target="_blank"><img width="300" height="250" src="./php使用技巧博客园_files/24442-20180814102629155-1096944426.png" alt="qcloud0814" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C1&#39;);"></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="https://news.cnblogs.com/n/605808/" target="_blank">趣店的困境与自救</a><br> ·  <a href="https://news.cnblogs.com/n/605810/" target="_blank">特朗普再批谷歌有偏见：首页推奥巴马演讲而不是我的</a><br> ·  <a href="https://news.cnblogs.com/n/605818/" target="_blank">“我恨Google无人车”</a><br> ·  <a href="https://news.cnblogs.com/n/605817/" target="_blank">搜狐起诉魅族完全屏蔽其广告：停售相关产品赔偿210万</a><br> ·  <a href="https://news.cnblogs.com/n/605816/" target="_blank">“美版拼多多”爆红，带给中国电商哪些启示？</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="cnblogs_c2" class="c_ad_block"><a href="http://clickc.admaster.com.cn/c/a113319,b2799157,c1705,i0,m101,8a1,8b3,h" target="_blank"><img width="468" height="60" src="./php使用技巧博客园_files/24442-20180821211532241-413062430.jpg" alt="华为CH0822" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;C2&#39;);"></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="https://kb.cnblogs.com/page/603663/" target="_blank">如何招到一个靠谱的程序员</a><br> ·  <a href="https://kb.cnblogs.com/page/573614/" target="_blank">一个故事看懂“区块链”</a><br> ·  <a href="https://kb.cnblogs.com/page/603697/" target="_blank">被踢出去的用户</a><br> ·  <a href="https://kb.cnblogs.com/page/603279/" target="_blank">成为一个有目标的学习者</a><br> ·  <a href="https://kb.cnblogs.com/page/602903/" target="_blank">历史转折中的“杭派工程师”</a><br></div>» <a href="https://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="https://home.cnblogs.com/u/cbryge/">工作的感觉是啥样</a><br>园龄：<a href="https://home.cnblogs.com/u/cbryge/" title="入园时间：2016-10-07">1年10个月</a><br>粉丝：<a href="https://home.cnblogs.com/u/cbryge/followers/">17</a><br>关注：<a href="https://home.cnblogs.com/u/cbryge/followees/">35</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="follow(&#39;543b9a16-378c-e611-845c-ac853d9f53ac&#39;)">+加关注</a></div><script>getFollowStatus('543b9a16-378c-e611-845c-ac853d9f53ac')</script></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/07/01&#39;);return false;">&lt;</a></td><td align="center">2018年8月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2018/09/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td class="CalOtherMonthDay" align="center">31</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td class="CalWeekendDay" align="center">4</td></tr><tr><td class="CalWeekendDay" align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td class="CalWeekendDay" align="center">11</td></tr><tr><td class="CalWeekendDay" align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center">16</td><td align="center">17</td><td class="CalWeekendDay" align="center">18</td></tr><tr><td class="CalWeekendDay" align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center">23</td><td align="center">24</td><td class="CalWeekendDay" align="center">25</td></tr><tr><td class="CalWeekendDay" align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td><td class="CalTodayDay" align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td></tr><tr><td class="CalOtherMonthDay" align="center">2</td><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/cbryge/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="https://www.cnblogs.com/cbryge/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="https://www.cnblogs.com/cbryge/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="https://www.cnblogs.com/cbryge/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="https://www.cnblogs.com/cbryge/tag/" title="我的博客的标签列表">我的标签</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="https://www.cnblogs.com/cbryge/tag/php/">php</a>(230)</li><li><a href="https://www.cnblogs.com/cbryge/tag/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>(6)</li><li><a href="https://www.cnblogs.com/cbryge/tag/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/">网站优化</a>(4)</li><li><a href="https://www.cnblogs.com/cbryge/tag/html/">html</a>(3)</li><li><a href="https://www.cnblogs.com/cbryge/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>(3)</li><li><a href="https://www.cnblogs.com/cbryge/tag/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/">网站建设</a>(1)</li><li><a href="https://www.cnblogs.com/cbryge/tag/%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1/">网站设计</a>(1)</li><li><a href="https://www.cnblogs.com/cbryge/tag/phph/">phph</a>(1)</li><li><a href="https://www.cnblogs.com/cbryge/tag/seo/">seo</a>(1)</li><li><a href="https://www.cnblogs.com/cbryge/tag/session%E5%87%BD%E6%95%B0/">session函数</a>(1)</li><li><a href="https://www.cnblogs.com/cbryge/tag/">更多</a></li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div id="sidebar_postarchive" class="catListPostArchive sidebar-block">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="https://www.cnblogs.com/cbryge/archive/2018/05.html">2018年5月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="https://www.cnblogs.com/cbryge/archive/2018/03.html">2018年3月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="https://www.cnblogs.com/cbryge/archive/2017/08.html">2017年8月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="https://www.cnblogs.com/cbryge/archive/2017/06.html">2017年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="https://www.cnblogs.com/cbryge/archive/2016/12.html">2016年12月 (80)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="https://www.cnblogs.com/cbryge/archive/2016/11.html">2016年11月 (117)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="https://www.cnblogs.com/cbryge/archive/2016/10.html">2016年10月 (55)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/cbryge/p/6189291.html#4025943">1. Re:学Python后到底能干什么？</a></li>
+        <li class="recent_comment_body">标签 PHP？</li>
+        <li class="recent_comment_author">--何必诗债换酒钱</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/cbryge/p/6189291.html#4001327">2. Re:学Python后到底能干什么？</a></li>
+        <li class="recent_comment_body">某雪峰博客上的一样的话？？？也不说一声的？？？</li>
+        <li class="recent_comment_author">--小小怪l</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/cbryge/p/6189280.html#3936291">3. Re:在HTML文件的表单中添加{%csrf_token%}便可以解决问题</a></li>
+        <li class="recent_comment_body">@NewBoy999form标签后面...</li>
+        <li class="recent_comment_author">--颜值跟智商同样碾压你</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/cbryge/p/6189280.html#3633421">4. Re:在HTML文件的表单中添加{%csrf_token%}便可以解决问题</a></li>
+        <li class="recent_comment_body">可以讲解一下在HTML文件的表单中什么位置添加{%csrf_token%}吗？</li>
+        <li class="recent_comment_author">--NewBoy999</li>
+        <li class="recent_comment_title"><a href="https://www.cnblogs.com/cbryge/p/5935742.html#3592430">5. Re:如何使用数据库保存session的方法简介</a></li>
+        <li class="recent_comment_body">$key 多处变量没过滤  容易导致SQL注入漏洞</li>
+        <li class="recent_comment_author">--这个变量没过滤</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="https://www.cnblogs.com/cbryge/p/6189291.html">1. 学Python后到底能干什么？(236738)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/5954021.html">2. 如何使用CREATE INDEX语句对表增加索引？(10067)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/6189280.html">3. 在HTML文件的表单中添加{%csrf_token%}便可以解决问题(5607)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/5935695.html">4. PHP如何通过SQL语句将数据写入MySQL数据库呢？(5520)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/6088609.html">5. java密码验证正则表达式校验(4043)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="https://www.cnblogs.com/cbryge/p/6189291.html">1. 学Python后到底能干什么？(2)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/6189280.html">2. 在HTML文件的表单中添加{%csrf_token%}便可以解决问题(2)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/5935742.html">3. 如何使用数据库保存session的方法简介(1)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="https://www.cnblogs.com/cbryge/p/6114892.html">1. Elasticsearch mysql 增量同步 三表联合 脚本(1)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/6201564.html">2. array_sum函数 number array_sum(1)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/6189291.html">3. 学Python后到底能干什么？(1)</a></li><li><a href="https://www.cnblogs.com/cbryge/p/6164487.html">4. MySQL配置文件改变了datadir值(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright ©2018 工作的感觉是啥样
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+</body></html>
