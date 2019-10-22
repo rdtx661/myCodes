@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="../pz.css" type="text/css" />
-    <script type="text/javascript" src="../pz.js"></script>
+    <link rel="stylesheet" href="pz.css" type="text/css" />
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="pz.js"></script>
 </head>
 <body>
 <div class="projselect">
@@ -25,7 +26,8 @@
         <span><span class="addicon"></span><span>新增科目</span></span>
     </div>
 </div>
-<div class="editcontainer" style="display: none;">
+<!-- style="display: none;" -->
+<div class="editcontainer" >
         <div class="edittitle">记账凭证</div>
         <div class="tuichu"></div>
         <div class="vcmain">
@@ -38,9 +40,9 @@
                     </div>
                 </div>
                 <div class="datewarp">
-                <?php
+                <!-- <?php
                 $this->module('saas_account_helper', 'date');
-                ?>
+                ?> -->
                 </div>
                 <div class="vch_03 hashdshow">
                     附单据<input maxlength="4" type="text" value="">张

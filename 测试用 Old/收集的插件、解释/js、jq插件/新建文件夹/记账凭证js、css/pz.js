@@ -11,12 +11,12 @@
 			//判断滚动条滚动方向(上、下)
 			var tempnum=0;
 $(document).ready(function(){
-			/*$(".vcright .btn_more").click(function(){
-				window.location.href="/admin/saas/accounting/account_helper/pingzheng/look";
-				// replace无法使用回退 覆盖url
-				// window.location.replace("/admin/saas/accounting/account_helper/pingzheng/look");
-				// history.go(-1) 回退按钮
-			});*/
+				/*$(".vcright .btn_more").click(function(){
+					window.location.href="/admin/saas/accounting/account_helper/pingzheng/look";
+					// replace无法使用回退 覆盖url
+					// window.location.replace("/admin/saas/accounting/account_helper/pingzheng/look");
+					// history.go(-1) 回退按钮
+				});*/
 				//'.edit-btn' 触发显示凭证的类 
 				$('.edit-btn').click(function(){
 				var geth=$(window).height();
@@ -234,9 +234,9 @@ $(document).ready(function(){
 					$('.templi').find('.textmore').val($(this).text());
 					fc_change();
 			})
-/*			$(".maincl_warp .cl_divs .addulicon").click(function(){
+			$(".maincl_warp .cl_divs .addulicon").click(function(){
 					adddiv($(this));
-			});*/
+			});
 			$(".maincl_warp").scroll(function(){
 				if($('.projselect').css("display")=='block'){		
 					msrcoll();
@@ -336,7 +336,7 @@ $(document).ready(function(){
 						var cname='cl_divs';
 						var len=$(".maincl_warp .cl_divs").length;
 						var idx=$(dom).parents('.cl_divs').index();
-						if((len-1)==idx){
+						if ((len-1)==idx) {
 							cname+=" cl_last";
 							$(".maincl_warp").find('.cl_last').removeClass('cl_last');
 						}

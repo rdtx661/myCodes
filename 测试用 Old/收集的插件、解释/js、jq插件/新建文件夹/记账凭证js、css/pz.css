@@ -1,3 +1,13 @@
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.addulicon{
+    border:1px solid red!important;
+}
 .editcontainer{
     position: absolute;
     z-index: 999;
@@ -21,11 +31,11 @@
     top: 10px;
     width: 15px;
     height: 15px;
-    background:url('/v/p/g/img/saas/background.png') no-repeat -526px -252px;
+    /*background:url('/v/p/g/img/saas/background.png') no-repeat -526px -252px;*/
 }
 .editcontainer .tuichu:hover{
     cursor: pointer;
-    background:url('/v/p/g/img/saas/background.png') no-repeat -526px -324px;
+    /*background:url('/v/p/g/img/saas/background.png') no-repeat -526px -324px;*/
 }
 /*=========================================================*/
 .vcmain{
@@ -233,11 +243,11 @@
     display: block;
     right: 5px;
     top: 20px;
-    background: url('/v/p/g/img/saas/add-subject.png') no-repeat;
+    /*background: url('/v/p/g/img/saas/add-subject.png') no-repeat;*/
     background-size: 15px 15px;
 }
 .common_list .cl_divs>.addulicon:hover span{
-    background: url('/v/p/g/img/saas/add-subject-active.png') no-repeat;
+    /*background: url('/v/p/g/img/saas/add-subject-active.png') no-repeat;*/
     background-size: 15px 15px;
 }
 .common_list .cl_divs>.delulicon{
@@ -248,11 +258,11 @@
     display: block;
     left: 5px;
     top: 20px;
-    background: url('/v/p/g/img/saas/del-subject.png') no-repeat;
+    /*background: url('/v/p/g/img/saas/del-subject.png') no-repeat;*/
     background-size: 15px 15px;
 }
 .common_list .cl_divs>.delulicon:hover span{
-    background: url('/v/p/g/img/saas/del-subject-hover.png') no-repeat;
+    /*background: url('/v/p/g/img/saas/del-subject-hover.png') no-repeat;*/
     background-size: 15px 15px;
 }
 .cl_divs .cl_divs_ul{
@@ -394,7 +404,7 @@
     width: 16px;
     height: 16px;
     margin-top: 7px;
-    background: url('/v/p/g/img/saas/background.png') no-repeat -228px -387px;
+    /*background: url('/v/p/g/img/saas/background.png') no-repeat -228px -387px;*/
     margin-right: 5px;
 }
 .projselect:hover{
@@ -621,7 +631,7 @@
 }
 .cl_footdiv .customer .md_name .editicon:hover span{
     cursor: pointer;
-    background: url('/v/p/g/img/saas/edit-hover.png') no-repeat;
+    /*background: url('/v/p/g/img/saas/edit-hover.png') no-repeat;*/
 }
 .cl_footdiv .customer .md_name .editicon span{
     display: block;
@@ -630,7 +640,7 @@
     height: 15px;
     right: 0px;
     top: 0px;
-    background: url('/v/p/g/img/saas/edit.png') no-repeat;
+    /*background: url('/v/p/g/img/saas/edit.png') no-repeat;*/
 }
 .defbtn>div{
     background-color:#93D200;
