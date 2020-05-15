@@ -1,0 +1,49 @@
+// 开始时间 时间字符串 时间长度分钟
+    setTimeStep (startTime, minLength) {
+      // 时间长度减去已消耗时间就是倒计时时间
+      // minLength - (nowtime-startTime) 都转化为秒钟
+      const app = this
+      const hasConsume = (app.$dayjs().unix() - app.$dayjs(startTime).unix()) / 1000
+      // 剩余秒数
+      let surplusSecond = minLength * 60 - hasConsume
+      // 如果为负就 = 0
+      if (!surplusSecond) {
+        surplusSecond = 0
+      }
+      const dataObj = {
+        day: '',
+        hour: '',
+        minute: '',
+        seconds: ''
+      }
+      dataObj.day = surplusSecond / (60 * 60 * 24)
+      if (dataObj.day < 1) {
+        dataObj.day = 0
+      }
+      dataObj.hour = Math.floor((surplusSecond - dataObj.day * 24 * 60 * 60) / (60 * 60))
+      dataObj.minute = Math.floor((surplusSecond - ((dataObj.day * 24 * 60 * 60) + (dataObj.hour * 60 * 60))) / 60)
+      dataObj.seconds = Math.floor(surplusSecond - ((dataObj.day * 24 * 60 * 60) + (dataObj.hour * 60 * 60) + (dataObj.minute * 60)))
+      // 倒计时开始
+      this.st = setInterval(() => {
+        if (dataObj.hour === 0) {
+          if (dataObj.day > 0) {
+            dataObj.day--
+            dataObj.hour = 23
+          }
+        }
+        if (dataObj.minute === 0) {
+          if (dataObj.hour > 0) {
+            dataObj.hour--
+            dataObj.minute = 59
+          }
+        }
+        if (dataObj.seconds === 0) {
+          if (dataObj.hour > 0) {
+            dataObj.minute--
+            dataObj.seconds = 59
+          }
+        }
+        dataObj.seconds--
+        this.timeStr = `将在${dataObj.day}天${dataObj.hour}小时${dataObj.minute}分钟${dataObj.seconds}秒后关闭!`
+      }, 1000)
+    }
